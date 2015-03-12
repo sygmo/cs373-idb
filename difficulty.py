@@ -1,8 +1,8 @@
 from flask import Flask
-app flask(__name__)
+app Flask(__name__)
 
 @app_route("/")
-def hello() :
+def difficulty() :
 	return "Hello World!"
 
 if __name__ == "__main__" :
