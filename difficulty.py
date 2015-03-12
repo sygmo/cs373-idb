@@ -1,9 +1,9 @@
 from flask import Flask
-app Flask(__name__)
+app = Flask(__name__)
 
-@app_route("/")
-def difficulty() :
-	return "Hello World!"
+@app.route("/")
+def difficulty():
+    return "Hello World!"
 
-if __name__ == "__main__" :
-	app.run()
+if __name__ == "__main__":
+    app.run()
