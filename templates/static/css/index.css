@@ -1,0 +1,18 @@
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+.text-hvcenter {
+	text-align: center;
+	vertical-align:middle;
+}
+
+#home {
+	background: url("../images/splash.jpg") no-repeat center center fixed;
+	height:100%;
+	width:100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
