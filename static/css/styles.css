@@ -7,15 +7,10 @@ html, body {
 	background-size: cover;
 }
 
-h1 {
-	margin-top:0px;
-}
-
-.navbar {
-  position: relative;
-  min-height: 50px;
-  margin-bottom: 0;
-  border: 1px solid transparent;
+.img-center {
+	margin: 0 auto;
+	background-color: #FFFFFF;
+	opacity: 1;
 }
 
 .section-padding {
@@ -29,23 +24,9 @@ h1 {
 
 #home {
 	position: relative;
-
-#features {
-	background-color: #00CCCC;
-	height:100%;
-	width:100%;
-	position: relative;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
 }
 
-#about {
-	background-color: #00CCCC;
-	height:100%;
-	width:100%;
-	position: relative;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
+#about-us {
+	background-color: #BFBFBF;
+	opacity: 0.85;
 }
