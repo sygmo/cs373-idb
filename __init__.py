@@ -34,7 +34,15 @@ def close_db(error):
 
 @app.route('/')
 def homepage():
-	return render_template("index.html");
+	return render_template("index.html")
+	
+@app.route('/aboutus')
+def aboutuspage():
+	return render_template("aboutus.html")
+	
+@app.route('/dictionary')
+def dictionarypage():
+	return render_template("dictionary.html")
 
 if __name__ == "__main__":
 	with app.app_context():
