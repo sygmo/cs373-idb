@@ -1,15 +1,23 @@
 <nav class="navbar navbar-inverse">
-			  <div class="container-fluid">
-				<div class="navbar-header">
-				  <a class="navbar-brand" href="index.html">Star Lords</a>
-				</div>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Planets</a></li>
-					<li><a href="#">Moons</a></li>
-					<li><a href="#">Comets</a></li>
-					<li><a href="#">Asteroids</a></li>
-					<li><a href="#">Regions</a></li>
-					<li><a href="#">About Us</a></li>
-				  </ul>
-			  </div>
-		  </nav>
+  <div class="container-fluid">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#spaceNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+	  <a class="navbar-brand" href="/">Star Lords</a>
+	</div>
+	<div class="collapse navbar-collapse" id="spaceNavbar">
+		<ul class="nav navbar-nav navbar-right">   
+			<li><a href="#">Planets</a></li>
+			<li><a href="#">Moons</a></li>
+			<li><a href="#">Comets</a></li>
+			<li><a href="#">Asteroids</a></li>
+			<li><a href="#">Regions</a></li>
+			<li {% if request.path == "/aboutus" %}class="active"{% endif %}><a href="/aboutus">About Us</a></li>
+			<li {% if request.path == "/dictionary" %}class="active"{% endif %}><a href="/dictionary">Dictionary</a></li>
+		</ul>
+	</div>
+  </div>
+</nav>
