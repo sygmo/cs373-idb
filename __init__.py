@@ -35,6 +35,22 @@ def close_db(error):
 @app.route('/')
 def homepage():
 	return render_template("index.html")
+
+@app.route('/constellations')
+def constellationspage():
+    return render_template("constellations.html")
+
+@app.route('/stars')
+def starspage():
+    return render_template("stars.html")
+
+@app.route('/planets')
+def planetspage():
+    return render_template("planets.html")
+
+@app.route('/moons')
+def moonspage():
+    return render_template("moons.html")
 	
 @app.route('/aboutus')
 def aboutuspage():

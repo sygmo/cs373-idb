@@ -10,11 +10,10 @@
 	</div>
 	<div class="collapse navbar-collapse" id="spaceNavbar">
 		<ul class="nav navbar-nav navbar-right">   
-			<li><a href="#">Planets</a></li>
-			<li><a href="#">Moons</a></li>
-			<li><a href="#">Comets</a></li>
-			<li><a href="#">Asteroids</a></li>
-			<li><a href="#">Regions</a></li>
+			<li {% if request.path == "/constellations" %}class="active"{% endif %}><a href="/constellations">Constellations</a></li>
+			<li {% if request.path == "/stars" %}class="active"{% endif %}><a href="/stars">Stars</a></li>
+			<li {% if request.path == "/planets" %}class="active"{% endif %}><a href="/planets">Planets</a></li>
+			<li {% if request.path == "/moons" %}class="active"{% endif %}><a href="/moons">Moons</a></li>
 			<li {% if request.path == "/aboutus" %}class="active"{% endif %}><a href="/aboutus">About Us</a></li>
 			<li {% if request.path == "/dictionary" %}class="active"{% endif %}><a href="/dictionary">Dictionary</a></li>
 		</ul>
