@@ -1,6 +1,10 @@
-from flask import Flask
-from flask_bootstrap import Bootstrap
+from flask import Flask, render_template, url_for, g, request, session, redirect, abort, flash
+import sqlite3
+import os
+
 app = Flask(__name__)
+
+app.config
 
 @app.route("/")
 def difficulty() :
