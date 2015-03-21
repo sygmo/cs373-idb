@@ -33,9 +33,13 @@ def close_db(error):
         g.sqlite_db.close()
 
 @app.route('/')
-def homepage():
+def indexpage():
 	return render_template("index.html")
 
+@app.route('/families')
+def familiespage():
+    return render_template("families.html")
+	
 @app.route('/constellations')
 def constellationspage():
     return render_template("constellations.html")
@@ -59,6 +63,18 @@ def aboutuspage():
 @app.route('/dictionary')
 def dictionarypage():
 	return render_template("dictionary.html")
+
+@app.route('/ursamajor')
+def ursamajorpage():
+	return render_template("ursamajor.html")	
+
+@app.route('/home')
+def homepage():
+	return render_template("home.html")
+
+@app.route('/perseus')
+def perseuspage():
+	return render_template("perseus.html")		
 
 if __name__ == "__main__":
 	with app.app_context():

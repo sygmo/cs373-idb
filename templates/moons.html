@@ -20,11 +20,44 @@
 	<!-- Optional theme -->
 	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
 	 <body>
-		{% include 'navbar.html' %}
-	    <div id="about-us" class="container">
-			<div class="text-hvcenter">
-				<h1>MOONS</h1>
-			</div>
+		{% include 'navbar.html' %}<div class="container">
+		<h2>Moons</h2>
+		<div class="table-responsive">          
+		  <table class="table table-hover">
+			<thead>
+			  <tr>
+				<th>Name</th>
+				<th>Planet</th>
+				<th>Star</th>
+				<th>Constellation</th>
+				<th>Family</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td>Europa</td>
+				<td>Jupiter</td>
+				<td>Sun</td>
+				<td>Solar System</td>
+				<td>Home</td>
+			  </tr>
+			  <tr>
+				<td>Ganymede</td>
+				<td>Jupiter</td>
+				<td>Sun</td>
+				<td>Solar System</td>
+				<td>Home</td>
+			  </tr>
+			  <tr>
+				<td>Callisto</td>
+				<td>Jupiter</td>
+				<td>Sun</td>
+				<td>Solar System</td>
+				<td>Home</td>
+			  </tr>
+			</tbody>
+		  </table>
+		  </div>
 		</div>
 	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		

@@ -26,7 +26,7 @@ html, body {
 	position: relative;
 }
 
-#about-us {
+.container {
 	background-color: #BFBFBF;
 	opacity: 0.85;
 }

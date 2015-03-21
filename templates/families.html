@@ -20,35 +20,25 @@
 	<!-- Optional theme -->
 	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
 	 <body>
-		{% include 'navbar.html' %}<div class="container">
-		<h2>Constellations</h2>
+		{% include 'navbar.html' %}
+	    <div class="container">
+		<h2>Families</h2>
 		<div class="table-responsive">          
 		  <table class="table table-hover">
 			<thead>
 			  <tr>
 				<th>Name</th>
-				<!--<th>Area</th>-->
-				<!--<th>Stars with Planets</th>-->
-				<!--<th>Brightest Star</th>-->
-				<!--<th>Nearest Star</th>-->
-				<th>Family</th>
-				<!--<th>Photo Link</th>-->
-				<!--<th>Photo</th>-->
-				<!--<th>History</th>-->
 			  </tr>
 			</thead>
 			<tbody>
 			  <tr>
-				<td>Andromeda</td>
-				<td>Perseus</td>
+				<td><a href="/home">Home</a></td>
 			  </tr>
 			  <tr>
-				<td>Draco</td>
-				<td>Ursa Major</td>
+				<td><a href="/perseus">Perseus</a></td>
 			  </tr>
 			  <tr>
-				<td>Solar System</td>
-				<td>Home</td>
+				<td><a href="/ursamajor">Ursa Major</a></td>
 			  </tr>
 			</tbody>
 		  </table>
