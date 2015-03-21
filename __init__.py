@@ -74,8 +74,56 @@ def homepage():
 
 @app.route('/perseus')
 def perseuspage():
-	return render_template("perseus.html")		
+	return render_template("perseus.html")
 
+@app.route('/andromeda')
+def andromedapage():
+	return render_template("andromeda.html")
+	
+@app.route('/draco')
+def dracopage():
+	return render_template("draco.html")
+	
+@app.route('/solarsystem')
+def solarsystem_page():
+	return render_template("solarsystem.html")
+
+@app.route('/iota-draconis')
+def iotadraconispage():
+	return render_template("iota-draconis.html")
+	
+@app.route('/wasp-1')
+def wasp1page():
+	return render_template("wasp-1.html")
+	
+@app.route('/sun')
+def solarsystempage():
+	return render_template("sun.html")	
+
+@app.route('/iota-draconis-b')
+def iotadraconisbpage():
+	return render_template("iota-draconis-b.html")
+	
+@app.route('/wasp-1b')
+def wasp1bpage():
+	return render_template("wasp-1b.html")
+	
+@app.route('/jupiter')
+def jupiterpage():
+	return render_template("jupiter.html")	
+	
+@app.route('/europa')
+def europapage():
+	return render_template("iota-draconis.html")
+	
+@app.route('/io')
+def iopage():
+	return render_template("wasp-1.html")
+	
+@app.route('/callistro')
+def callistropage():
+	return render_template("callistro.html")		
+	
 if __name__ == "__main__":
 	with app.app_context():
 		cur = get_db().execute("select * from constellation")
