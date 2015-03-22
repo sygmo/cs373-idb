@@ -1,0 +1,72 @@
+All have: star, known moons=0
+http://exoplanet.eu/catalog
+
+Name	WASP-1 b
+Discovered in	2006	
+Semi-major axis	0.0382 (± 0.0013) AU	WASP-1b and WASP-2b: Two new transiting exoplanets
+Orbital period	2.5199464 (± 8e-07) day	Two Upper Limits on the Rossiter-McLaughlin Effect, with Differing Implications: WASP-1 has a High Obliquity and WASP-2 is Indeterminate
+Detection Method	Primary Transit	
+Star	WASP-1
+
+Name	GJ 758 b	
+Discovered in	2009	
+Semi-major axis	44.8 ( -14.1 +44.4 ) AU	Near-infrared Multi-band Photometry of the Substellar Companion GJ 758 B
+Orbital period	109000.0 ( -62000.0 +198000.0 ) day	Near-infrared Multi-band Photometry of the Substellar Companion GJ 758 B
+Detection Method	Imaging	
+Star	GJ 758
+
+Name	HD 7924 b	
+Discovered in	2009	
+Semi-major axis	0.057 AU	The NASA-UC Eta-Earth Program: I. A Super-Earth Orbiting HD 7924
+Orbital period	5.39785 (± 0.00096697) day	On the Eccentricity Distribution of Short-Period Single-Planet Systems
+Detection Method	Radial Velocity	
+Star	JD 7924
+
+Name	WASP-72 b	
+Discovered in	2013	
+Semi-major axis	0.03708 (± 0.0005) AU	WASP-64b and WASP-72b: two new transiting highly irradiated giant planets 
+Orbital period	2.2167421 (± 8.1e-06) day	WASP-64b and WASP-72b: two new transiting highly irradiated giant planets 
+Detection Method	Primary Transit	
+Star WASP-72
+
+Name	ups And c	
+Discovered in	1999	
+Semi-major axis	0.861 AU	New Observational Constraints on the υ Andromedae System with Data from the Hubble Space Telescope and Hobby-Eberly Telescope
+Orbital period	240.937 (± 0.06) day	The 3-dimensional architecture of the Upsilon Andromedae planetary system
+Detection Method	Radial Velocity	
+Star	Upsilon Andromedae
+
+Name	HD 189733 b	
+Discovered in	2005	
+Semi-major axis	0.03142 (± 0.00052) AU	Homogeneous studies of transiting extrasolar planets. III. Additional planets and stellar models
+Orbital period	2.21857312 ( -7.6e-07 +7.6e-07 ) day	Spin-orbit angle measurements for six southern transiting planets; New insights into the dynamical origins of hot Jupiters
+Detection Method	Primary Transit
+Star	HD 189733
+
+Name	Jupiter
+Discovered in	Prehistoric
+Semi-major axis	5.204267 AU
+Orbital Period	4332.59 d
+Detection Method	Eyes
+Star	Sun
+
+Name	GJ 3021 b
+Discovered in	2000
+Semi-major axis	0.495[2] AU
+Orbital Period	133.71 ± 0.20 d
+Detection Method	Radial Velocity
+Star	GJ 3021
+
+Name	Uranus
+Discovered in	1781
+Semi-major axis	19.189253 AU
+Orbital Period	30687.15 d
+Detection Method	Telescope
+Star	Sun
+
+Name	Neptune
+Discovered in	1846
+Semi-major axis	30.070900 AU
+Orbital Period	60190.03 d
+Detection Method	Telescope
+Star	Sun

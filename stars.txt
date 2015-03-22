@@ -1,0 +1,66 @@
+http://exoplanet.eu/catalog
+
+
+Name	WASP-1	
+Spectral type	F7V	
+Mass	1.24 (± 0.17) MSun	Efficient identification of exoplanetary transit candidates from SuperWASP light curves
+Effective temperature	6200.0 (± 200.0) K	WASP-1b and WASP-2b: Two new transiting exoplanets
+Radius	1.382 (± 0.1) RSun	Efficient identification of exoplanetary transit candidates from SuperWASP light curves	
+Planetary system	1 planet
+Constellation	Andromeda
+
+Name	GJ 758	
+Spectral type	K0V		
+Mass	0.97 MSun	Discovery of the Coldest Imaged Companion of a Sun-Like Star
+Effective temperature	5425.0 K	
+Radius	0.88 RSun	Discovery of the Coldest Imaged Companion of a Sun-Like Star
+Planetary system	1 planet
+Constellation	Lyrah
+
+Name	HD 7924	
+Spectral type	K0V		
+Mass	0.832 ( -0.036 +0.036 ) MSun	The NASA-UC Eta-Earth Program: I. A Super-Earth Orbiting HD 7924
+Effective temperature	5177.0 (± 44.0) K	The NASA-UC Eta-Earth Program: I. A Super-Earth Orbiting HD 7924
+Radius	0.78 (± 0.02) RSun	The NASA-UC Eta-Earth Program: I. A Super-Earth Orbiting HD 7924		
+Planetary system	1 planet
+Constellation 	Cassiopeia
+
+Name	WASP-72	
+Spectral type	F7	
+Mass	1.386 (± 0.055) MSun	WASP-64b and WASP-72b: two new transiting highly irradiated giant planets 	
+Effective temperature	6250.0 (± 100.0) K	WASP-64b and WASP-72b: two new transiting highly irradiated giant planets 
+Radius	1.98 (± 0.24) RSun	WASP-64b and WASP-72b: two new transiting highly irradiated giant planets 	
+Planetary system	1 planet
+Constellation	Fornax
+
+Name	Upsilon Andromedae / ups And
+Spectral type	F8 V	
+Mass	1.27 (± 0.06) MSun	F- and G-type stars with planetary companions:  Andromedae, 1 Cancri,  Bootis, 16 Cygni and  Coronae 
+Effective temperature	6212.0 (± 80.0) K	Eleven Exoplanet Host Star Angular Diameters from the Chara Array
+Radius	1.631 (± 0.014) RSun	Eleven Exoplanet Host Star Angular Diameters from the Chara Array
+Planetary system	4 planets
+Constellation Andromeda
+
+Name	HD 189733	
+Spectral type	K1-K2	
+Mass	0.8 (± 0.4) MSun	The Geneva-Copenhagen survey of the Solar neighbourhood.
+Effective temperature	4875.0 (± 43.0) K	Stellar Diameters and Temperatures VI. High angular resolution measurements of the transiting exoplanet host stars HD 189733 and HD 209458 and implications for models of cool dwarfs 
+Radius	0.805 (± 0.016) RSun	Stellar Diameters and Temperatures VI. High angular resolution measurements of the transiting exoplanet host stars HD 189733 and HD 209458 and implications for models of cool dwarfs 		
+Planetary system	1 planet
+Constellation	Vulpecula
+
+Name	Sun
+Spectral Type	G2V
+Mass	(1.98855±0.00025)×1030 kg
+Effective Temperature	5,778 K
+Radius	109 × Earth
+Planetary system	8 planets
+Constellation	Solar System
+
+Name	GJ 3021
+Spectral Type	G6V
+Mass	 1.00 ± 0.10 MSun
+Effective Temperature	5,572 ± 40 K
+Radius	0.86 ± 0.07 RSun
+Planetary system	1 planet
+Constellation	Hydrus

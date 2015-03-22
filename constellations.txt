@@ -1,0 +1,59 @@
+"id" int NOT NULL,
+"name" TEXT NOT NULL,
+"meaning" TEXT,
+"stars_with_planets" int,
+"fk_constellation_family" int,
+"history" TEXT,
+"photo_link" TEXT,
+"photo" bytea,
+PRIMARY KEY ("id") 
+
+Name	Draco
+Meaning	dragon
+Stars with planets	19
+Family	Ursa Major
+
+Name	Fornax
+Meaning	chemical furnace
+Stars with planets	7
+Family	La Caille
+
+Name	Hercules
+Meaning	Hercules
+Stars with planets	15
+Family	Hercules
+
+Name	Solar System
+Meaning	sol
+Stars with planets
+Family
+
+Name	Horologium
+Meaning	pendulum clock
+Stars with planets	2
+Family 	La Caille
+
+Name	Hydra
+Meaning	Hydra
+Stars with planets	17
+Family	Hercules
+
+Name	Musca
+Meaning	fly
+Stars with planets	3
+Family	Bayer
+
+Name	Puppis
+Meaning	Poop Deck
+Stars with planets	6
+Family	Heavenly Water
+
+Name	Sagittarius
+Meaning	archer
+Stars with planets	32
+Family	Zodiac
+
+Name	Triangulum
+Meaning	triangle
+Stars with planets	3
+Family Perseus
