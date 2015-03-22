@@ -1,46 +1,67 @@
 FORMAT: 1A
 
 # StarLords
-Starlords API is a *thing we made* service similar to its physical paper presence on your table.
+An API to access resources in our Universe database (https://github.com/sygmo/cs373-idb/)
 
-# Group Notes
-Notes related resources of the **Notes API**
+# Group Constellation
+Constellation related resources of the **Notes API**
 
-## Notes Collection [/notes]
-### List all Notes [GET]
+## Constellation Collection [/api/constellation]
+A list of all constellation objects
+### List all Constellations [GET]
 + Response 200 (application/json)
 
-        [{
-          "id": 1, "title": "Jogging in park"
-        }, {
-          "id": 2, "title": "Pick-up posters from post-office"
+        [{ 
+                "id": 1, 
+                "name": "Draco", 
+                "meaning": "dragon", 
+                "stars_with_planets": 19, 
+                "fk_constellation_family": 3, 
+                "history": "lies in the far northern sky. eighth-largest constellation", 
+                "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/c3/DracoCC.jpg", 
+                "photo": 000
+            }, { 
+                "id": 2, 
+                "name": "Fornax", 
+                "meaning": "chemical furnace", 
+                "stars_with_planets": 7, 
+                "fk_constellation_family": 4, 
+                "history": "lies in the southern sky. is in the southern hemisphere", 
+                "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/ce/Constellation_Fornax.jpg", 
+                "photo": 101
         }]
 
-### Create a Note [POST]
-+ Request (application/json)
-
-        { "title": "Buy cheese and bread for breakfast." }
-
-+ Response 201 (application/json)
-
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
-
-## Note [/notes/{id}]
-A single Note object with all its details
+## Constellation [/api/constellation/{id}]
+A single Constellation object with all its details
 
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
+    + id (required, int, `1`) ... int `id` of the Constellation to perform action with. Has example value.
 
-### Retrieve a Note [GET]
+### Retrieve a Constellation [GET]
 + Response 200 (application/json)
 
     + Header
 
-            X-My-Header: The Value
-
     + Body
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
+            { 
+                "id": 1, 
+                "name": "Draco", 
+                "meaning": "dragon", 
+                "stars_with_planets": 19, 
+                "fk_constellation_family": 3, 
+                "history": "lies in the far northern sky. eighth-largest constellation", 
+                "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/c3/DracoCC.jpg", 
+                "photo": 000
+            }
 
-### Remove a Note [DELETE]
-+ Response 204
++ Response 404 (application/json)
+
+    + Header
+
+    + Body
+    
+            { 
+                "error": "Sorry. That constellation doesn't exist."
+            }
+
