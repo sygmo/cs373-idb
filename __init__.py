@@ -65,14 +65,14 @@ def aboutuspage():
 def dictionarypage():
 	return render_template("dictionary.html")
 
-@app.route('/ursamajor')
-def ursamajorpage():
-	return render_template("ursamajor.html")	
+@app.route('/bayer')
+def bayerpage():
+	return render_template("bayer.html")	
 
 @app.route('/home')
 def homepage():
 	return render_template("home.html")
-
+	
 @app.route('/perseus')
 def perseuspage():
 	return render_template("perseus.html")
@@ -81,17 +81,17 @@ def perseuspage():
 def andromedapage():
 	return render_template("andromeda.html")
 	
-@app.route('/draco')
-def dracopage():
-	return render_template("draco.html")
+@app.route('/vulpecula')
+def vulpeculapage():
+	return render_template("vulpecula.html")
 	
 @app.route('/solarsystem')
 def solarsystem_page():
 	return render_template("solarsystem.html")
 
-@app.route('/iota-draconis')
-def iotadraconispage():
-	return render_template("iota-draconis.html")
+@app.route('/hd189733')
+def hd189733page():
+	return render_template("hd189733.html")
 	
 @app.route('/wasp-1')
 def wasp1page():
@@ -101,9 +101,9 @@ def wasp1page():
 def solarsystempage():
 	return render_template("sun.html")	
 
-@app.route('/iota-draconis-b')
-def iotadraconisbpage():
-	return render_template("iota-draconis-b.html")
+@app.route('/hd189733b')
+def hd189733bpage():
+	return render_template("hd189733b.html")
 	
 @app.route('/wasp-1b')
 def wasp1bpage():
