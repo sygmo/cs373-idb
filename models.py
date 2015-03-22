@@ -1,87 +1,91 @@
 import os
 import sys
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import Column, ForeignKey, Integer, String, Text, Float, LargeBinary, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-from sqlalchemy import create_engine
+
+from difficulty import db
  
-Base = declarative_base()
 
-class family(Base):
+class family(db.Model):
 	__tablename__ = "family"
-	id = Column(Integer, primary_key = True)
-	name = Column(String(250), nullable = False)
+	id = db.Column(Integer, primary_key = True)
+	name = db.Column(String(250), nullable = False)
 
-class constellation(Base):
+class constellation(db.Model):
 	__tablename__ = "constellation"
-	id = Column(Integer, primary_key = True)
-	name = Column(String(250), nullable = False)
-	history = Column(String(500))
-	photo_link = Column(String(250))
-	area = Column(String(250))
-	stars_with_planets = Column(Integer)
-	brightest_star = Column(String(250))
-	nearest_star = Column(String(250))
-	fk_constellation_family = Column(Integer, ForeignKey("family.id"))
+	id = db.Column(Integer, primary_key = True)
+	name = db.Column(Text, nullable = False)
+	area = db.Column(Float)
+	stars_with_planets = db.Column(Integer)
+	brightest_star = db.Column(Text)
+	nearest_star = db.Column(Text)
+	history = db.Column(Text)
+	photo_link = db.Column(Text)
+	photo = db.Column(LargeBinary)
+	fk_constellation_family = db.Column(Integer, ForeignKey("family.id"))
 
-class planet(Base):
+
+class planet(db.Model):
 	__tablename__ = "planet"
-	id = Column(Integer, primary_key = True)
-	name = Column(String(250), nullable = False)
-	radius = Column(Number)
-	rings = Column(Integer)
-	distance_from_sun = Column(Number)
-	composition = Column(String(250))
-	is_dwarf = Column(Boolean)
-	days_of_revolution = Column(String(250))
-	volume = Column(Number)
-	mass = Column(Number)
-	density = Column(Number)
-	surface_area = Column(Number)
-	gravity = Column(Number)
-	length_of_day = Column(Number)
-	length_of_year = Column(Number)
-	surface_temperature = Column(Number)
-	atmosphere = Column(String(250))
-	number_of_moons = Column(Integer)
-	history = Column(String(500))
-	photo_link = Column(String(250))
-	fk_star_planet = Column(Integer, ForeignKey("star.id"))
+	id = db.Column(Integer, primary_key = True)
+	name = db.Column(Text, nullable = False)
+	radius = db.Column(Float)
+	rings = db.Column(Integer)
+	distance_from_sun = db.Column(Float)
+	composition = db.Column(Text)
+	is_dwarf = db.Column(Boolean)
+	orbital_period = db.Column(Float)
+	volume = db.Column(Float)
+	mass = db.Column(Float)
+	density = db.Column(Float)
+	surface_area = db.Column(Float)
+	gravity = db.Column(Float)
+	length_of_day = db.Column(Float)
+	length_of_year = db.Column(Float)
+	surface_temperature = db.Column(Float)
+	atmosphere = db.Column(Text)
+	number_of_moons = db.Column(Integer)
+	history = db.Column(Text)
+	photo_link = db.Column(Text)
+	photo = db.Column(LargeBinary)
+	fk_star_planet = db.Column(Integer, ForeignKey("star.id"))
 
-class star(Base):
+class star(db.Model):
 	__tablename__ = "star"
-	id = Column(Integer, primary_key = True)
-	name = Column(String(250), nullable = False)
-	mass = Column(Number)
-	radius = Column(Number)
-	age = Column(Number)
-	temperature = Column(Number)
-	stellar_distance = Column(Number)
-	stellar_classification = Column(String(250))
-	henry_draper_catalogue = Column(Integer)
-	hipparcos_catalogue = Column(Integer)
-	right_ascension = Column(String(250))
-	declination = Column(String(250))
-	apparent_magnitude = Column(Number)
-	absolute_magnitude = Column(Number)
-	luminosity = Column(String(250))
-	photo_link = Column(String(250))
-	history = Column(String(500))
-	fk_constellation_star = Column(Integer, ForeignKey("constellation.id"))
+	id = db.Column(Integer, primary_key = True)
+	name = db.Column(Text, nullable = False)
+	mass = db.Column(Float)
+	radius = db.Column(Float)
+	temperature = db.Column(Float)
+	luminosity = db.Column(Float)
+	surface_gravity = db.Column(Float)
+	stellar_distance = db.Column(Float)
+	stellar_classification = db.Column(Text)
+	henry_draper_catalogue = db.Column(Integer)
+	hipparcos_catalogue = db.Column(Integer)
+	apparent_magnitude = db.Column(Float)
+	absolute_magnitude = db.Column(Float)
+	parallax = db.Column(Float)	
+	photo_link = db.Column(Text)
+	history = db.Column(Text)
+	photo = db.Column(LargeBinary)
+	fk_constellation_star = db.Column(Integer, ForeignKey("constellation.id"))
 
-class moon(Base):
+class moon(db.Model):
 	__tablename__ = "moon"
-	id = Column(Integer, primary_key = True)
-	name = Column(String(250), nullable = False)
-	radius = Column(Number)
-	volume = Column(Number)
-	mass = Column(Number)
-	distance_from_planet = Column(Number)
-	orbital_period = Column(Number)
-	surface_gravity = Column(Number)
-	history = Column(String(500))
-	photo_link = Column(String(250))
-	fk_planet_moon = Column(Integer, ForeignKey("planet.id"))
+	id = db.Column(Integer, primary_key = True)
+	name = db.Column(Text, nullable = False)
+	radius = db.Column(Float)
+	volume = db.Column(Float)
+	mass = db.Column(Float)
+	distance_from_planet = db.Column(Float)
+	orbital_period = db.Column(Float)
+	surface_gravity = db.Column(Float)
+	history = db.Column(Text)
+	photo_link = db.Column(Text)
+	photo = db.Column(LargeBinary)
+	fk_planet_moon = db.Column(Integer, ForeignKey("planet.id"))
 	
 
 
