@@ -12,8 +12,8 @@ A list of all Constellation objects
         [{ 
             "id": 1, 
             "name": "Draco", 
-            "meaning": "dragon", 
             "stars_with_planets": 19, 
+            "meaning": "dragon", 
             "fk_constellation_family": 3, 
             "history": "lies in the far northern sky. eighth-largest constellation", 
             "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/c3/DracoCC.jpg", 
@@ -21,8 +21,8 @@ A list of all Constellation objects
         }, { 
             "id": 2, 
             "name": "Fornax", 
-            "meaning": "chemical furnace", 
             "stars_with_planets": 7, 
+            "meaning": "chemical furnace", 
             "fk_constellation_family": 4, 
             "history": "lies in the southern sky. is in the southern hemisphere", 
             "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/ce/Constellation_Fornax.jpg", 
@@ -45,12 +45,12 @@ A single Constellation object with all its details
             { 
                 "id": 1, 
                 "name": "Draco", 
-                "meaning": "dragon", 
                 "stars_with_planets": 19, 
+                "meaning": "dragon", 
                 "fk_constellation_family": 3, 
                 "history": "lies in the far northern sky. eighth-largest constellation", 
                 "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/c3/DracoCC.jpg", 
-                "photo": 000
+                "photo": \000
             }
 
 + Response 404 (application/json)
@@ -61,6 +61,72 @@ A single Constellation object with all its details
     
             { 
                 "error": "Sorry. That constellation doesn't exist."
+            }
+
+# Group Exoplanet Resources
+## Exoplanet Collection [/api/exoplanet]
+A list of all Exoplanet objects
+### List all Exoplanets [GET]
++ Response 200 (application/json)
+
+        [{ 
+            "id": 1, 
+            "name": "Kepler-107d", 
+            "discovered": 2014, 
+            "orbital_period": "7.95", 
+            "semi_major_axis": 0.0780, 
+            "discovery_method": "Transit", 
+            "history": "discovered by the Kepler spacecraft", 
+            "fk_star_planet": 2,
+            "photo_link": "http://www.robotplanet.dk/astro/exoplanets/kepler-107_d.png",
+            "photo": \000
+        }, { 
+            "id": 2, 
+            "name": "WASP-14b", 
+            "discovered": 2009, 
+            "orbital_period": "2.24", 
+            "semi_major_axis": 0.03677, 
+            "discovery_method": "Transit", 
+            "history": "one of the densest exoplanets known.", 
+            "fk_star_planet": 4,
+            "photo_link": "http://upload.wikimedia.org/wikipedia/en/thumb/1/15/Planet_WASP-14_b.png/250px-Planet_WASP-14_b.png",
+            "photo": \001
+        }]
+
+## Exoplanet [/api/exoplanet/{id}]
+A single Exoplanet object with all its details
+
++ Parameters
+    + id (required, int, `1`) ... int `id` of the Exoplanet to perform action with. Has example value.
+
+### Retrieve a Exoplanet [GET]
++ Response 200 (application/json)
+
+    + Header
+
+    + Body
+    
+            { 
+                "id": 1, 
+                "name": "Kepler-107d", 
+                "discovered": 2014, 
+                "orbital_period": "7.95", 
+                "semi_major_axis": 0.0780, 
+                "discovery_method": "Transit", 
+                "history": "discovered by the Kepler spacecraft", 
+                "fk_star_planet": 2,
+                "photo_link": "http://www.robotplanet.dk/astro/exoplanets/kepler-107_d.png",
+                "photo": \000
+            }
+
++ Response 404 (application/json)
+
+    + Header
+
+    + Body
+    
+            { 
+                "error": "Sorry. That Exoplanet doesn't exist."
             }
 
 # Group Family Resources
@@ -113,22 +179,30 @@ A list of all Moon objects
 
         [{ 
             "id": 1, 
-            "name": "Draco", 
-            "meaning": "dragon", 
-            "stars_with_planets": 19, 
-            "fk_Moon_family": 3, 
-            "history": "lies in the far northern sky. eighth-largest Moon", 
-            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/c3/DracoCC.jpg", 
-            "photo": \000
+            "name": "Phobos", 
+            "radius": 11.26, 
+            "volume": 5783.61, 
+            "mass": 1.0659, 
+            "distance_from_planet": 5826, 
+            "orbital_period": .318, 
+            "surface_gravity": 0.0057,
+            "history": "named after the Greek god Phobos - the personfication of Horror", 
+            "photo_link": "http://en.wikipedia.org/wiki/File:Phobos_colour_2008.jpg", 
+            "photo": \000,
+            "fk_planet_moon": 2
         }, { 
             "id": 2, 
-            "name": "Fornax", 
-            "meaning": "chemical furnace", 
-            "stars_with_planets": 7, 
-            "fk_Moon_family": 4, 
-            "history": "lies in the southern sky. is in the southern hemisphere", 
-            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/ce/Moon_Fornax.jpg", 
-            "photo": \001
+            "name": "Io", 
+            "radius": 1818.1, 
+            "volume": 2.53, 
+            "mass": 8.931, 
+            "distance_from_planet": 421700, 
+            "orbital_period": 1.769, 
+            "surface_gravity": 1.796,
+            "history": "driest known object in the Solar System", 
+            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Io_highest_resolution_true_color.jpg/260px-Io_highest_resolution_true_color.jpg", 
+            "photo": \001,
+            "fk_planet_moon": 3
         }]
 
 ## Moon [/api/moon/{id}]
@@ -146,13 +220,17 @@ A single Moon object with all its details
 
             { 
                 "id": 1, 
-                "name": "Draco", 
-                "meaning": "dragon", 
-                "stars_with_planets": 19, 
-                "fk_Moon_family": 3, 
-                "history": "lies in the far northern sky. eighth-largest Moon", 
-                "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/c3/DracoCC.jpg", 
-                "photo": 000
+                "name": "Phobos", 
+                "radius": 11.26, 
+                "volume": 5783.61, 
+                "mass": 1.0659, 
+                "distance_from_planet": 5826, 
+                "orbital_period": .318, 
+                "surface_gravity": 0.0057,
+                "history": "named after the Greek god Phobos - the personfication of Horror", 
+                "photo_link": "http://en.wikipedia.org/wiki/File:Phobos_colour_2008.jpg", 
+                "photo": \000,
+                "fk_planet_moon": 2
             }
 
 + Response 404 (application/json)
@@ -172,23 +250,49 @@ A list of all Planet objects
 + Response 200 (application/json)
 
         [{ 
-            "id": 2, 
-            "name": "Fornax", 
-            "meaning": "chemical furnace", 
-            "stars_with_planets": 7, 
-            "fk_Planet_family": 4, 
-            "history": "lies in the southern sky. is in the southern hemisphere", 
-            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/ce/Planet_Fornax.jpg", 
-            "photo": \001
+            "id": 1, 
+            "name": "Jupiter", 
+            "distance_from_sun": 483800000, 
+            "composition": 7, 
+            "orbital_period": 4332.59, 
+            "volume": 1.43, 
+            "mass": 1.89, 
+            "density": 1.3, 
+            "surface_area": 6.14, 
+            "semi_major_axis": 778547200, 
+            "rings": 0, 
+            "gravity": 3.70, 
+            "length_of_day": 9, 
+            "length_of_year": 12, 
+            "surface_temperature": 440, 
+            "atmosphere": "NH3, H2O, NH4SH", 
+            "number_of_moons": 0, 
+            "history": "largest planet in the Solar System", 
+            "fk_star_planet": 7, 
+            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Jupiter_New_Horizons.jpg/260px-Jupiter_New_Horizons.jpg", 
+            "photo": \000
         }, { 
             "id": 2, 
-            "name": "Fornax", 
-            "meaning": "chemical furnace", 
-            "stars_with_planets": 7, 
-            "fk_Planet_family": 4, 
-            "history": "lies in the southern sky. is in the southern hemisphere", 
-            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/ce/Planet_Fornax.jpg", 
-            "photo": \001
+            "name": "Saturn", 
+            "distance_from_sun": 483800000, 
+            "composition": 7, 
+            "orbital_period": 4332.59, 
+            "volume": 1.43, 
+            "mass": 1.89, 
+            "density": 1.3, 
+            "surface_area": 6.14, 
+            "semi_major_axis": 778547200, 
+            "rings": 0, 
+            "gravity": 3.70, 
+            "length_of_day": 9, 
+            "length_of_year": 12, 
+            "surface_temperature": 440, 
+            "atmosphere": "NH3, H2O, NH4SH", 
+            "number_of_moons": 0, 
+            "history": "largest planet in the Solar System", 
+            "fk_star_planet": 7, 
+            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Jupiter_New_Horizons.jpg/260px-Jupiter_New_Horizons.jpg", 
+            "photo": \000
         }]
 
 ## Planet [/api/planet/{id}]
@@ -206,13 +310,26 @@ A single Planet object with all its details
 
             { 
                 "id": 1, 
-                "name": "Draco", 
-                "meaning": "dragon", 
-                "stars_with_planets": 19, 
-                "fk_Planet_family": 3, 
-                "history": "lies in the far northern sky. eighth-largest Planet", 
-                "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/c3/DracoCC.jpg", 
-                "photo": 000
+                "name": "Jupiter", 
+                "distance_from_sun": 483800000, 
+                "composition": 7, 
+                "orbital_period": 4332.59, 
+                "volume": 1.43, 
+                "mass": 1.89, 
+                "density": 1.3, 
+                "surface_area": 6.14, 
+                "semi_major_axis": 778547200, 
+                "rings": 0, 
+                "gravity": 3.70, 
+                "length_of_day": 9, 
+                "length_of_year": 12, 
+                "surface_temperature": 440, 
+                "atmosphere": "NH3, H2O, NH4SH", 
+                "number_of_moons": 0, 
+                "history": "largest planet in the Solar System", 
+                "fk_star_planet": 7, 
+                "photo_link": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Jupiter_New_Horizons.jpg/260px-Jupiter_New_Horizons.jpg", 
+                "photo": \000
             }
 
 + Response 404 (application/json)
