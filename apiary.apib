@@ -253,7 +253,7 @@ A list of all Planet objects
             "id": 1, 
             "name": "Jupiter", 
             "distance_from_sun": 483800000, 
-            "composition": 7, 
+            "composition": "H2, He, CH4, NH3, HD, C2H6, H2O", 
             "orbital_period": 4332.59, 
             "volume": 1.43, 
             "mass": 1.89, 
@@ -274,25 +274,25 @@ A list of all Planet objects
         }, { 
             "id": 2, 
             "name": "Saturn", 
-            "distance_from_sun": 483800000, 
-            "composition": 7, 
-            "orbital_period": 4332.59, 
-            "volume": 1.43, 
-            "mass": 1.89, 
-            "density": 1.3, 
-            "surface_area": 6.14, 
-            "semi_major_axis": 778547200, 
-            "rings": 0, 
-            "gravity": 3.70, 
-            "length_of_day": 9, 
-            "length_of_year": 12, 
-            "surface_temperature": 440, 
-            "atmosphere": "NH3, H2O, NH4SH", 
-            "number_of_moons": 0, 
-            "history": "largest planet in the Solar System", 
-            "fk_star_planet": 7, 
-            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Jupiter_New_Horizons.jpg/260px-Jupiter_New_Horizons.jpg", 
-            "photo": \000
+            "distance_from_sun": 890700000, 
+            "composition": "H2, He, CH4, NH3, HD, C2H6", 
+            "orbital_period": 10759.22, 
+            "volume": 8.73, 
+            "mass": 5.68, 
+            "density": 0.687, 
+            "surface_area": 4.27, 
+            "semi_major_axis": 1433449370, 
+            "rings": "Yes", 
+            "gravity": 10.44, 
+            "length_of_day": 10.39, 
+            "length_of_year": 29, 
+            "surface_temperature": 227, 
+            "atmosphere": "H2, He", 
+            "number_of_moons": 62, 
+            "history": "named after the Roman god of agriculture", 
+            "fk_star_planet": 8, 
+            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Saturn_Equinox_09212014.jpg/280px-Saturn_Equinox_09212014.jpg", 
+            "photo": \001
         }]
 
 ## Planet [/api/planet/{id}]
@@ -349,22 +349,34 @@ A list of all Star objects
 + Response 200 (application/json)
 
         [{ 
-            "id": 1, 
-            "name": "Draco", 
-            "meaning": "dragon", 
-            "stars_with_planets": 19, 
-            "fk_Star_family": 3, 
-            "history": "lies in the far northern sky. eighth-largest Star", 
-            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/c3/DracoCC.jpg", 
+            "id": 1,
+            "name": "Upsilon Andromedae"
+            "mass": 1.27,
+            "radius": 1.48,
+            "spectral_type": "F8 V",
+            "temperature": 6074,
+            "luminosity": 3.57,
+            "stellar_distance": 101,
+            "parallax": 30.91,
+            "planetary systems": 4,
+            "fk_constellation_star": 2,
+            "history": "located 44 light-years from Earth",
+            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/UAnd_planets.png/200px-UAnd_planets.png",
             "photo": \000
         }, { 
-            "id": 2, 
-            "name": "Fornax", 
-            "meaning": "chemical furnace", 
-            "stars_with_planets": 7, 
-            "fk_Star_family": 4, 
-            "history": "lies in the southern sky. is in the southern hemisphere", 
-            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/ce/Star_Fornax.jpg", 
+            "id": 2,
+            "name": "Regulus"
+            "mass": 3.8,
+            "radius": 3.09,
+            "spectral_type": "B7 V",
+            "temperature": 12.46,
+            "luminosity": 288,
+            "stellar_distance": 127,
+            "parallax": 41.14,
+            "planetary systems": 9,
+            "fk_constellation_star": 6,
+            "history": "79 light years from earth",
+            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Leo_IAU.svg/250px-Leo_IAU.svg.png",
             "photo": \001
         }]
 
@@ -382,14 +394,20 @@ A single Star object with all its details
     + Body
 
             { 
-                "id": 1, 
-                "name": "Draco", 
-                "meaning": "dragon", 
-                "stars_with_planets": 19, 
-                "fk_Star_family": 3, 
-                "history": "lies in the far northern sky. eighth-largest Star", 
-                "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/c3/DracoCC.jpg", 
-                "photo": 000
+                "id": 1,
+                "name": "Upsilon Andromedae"
+                "mass": 1.27,
+                "radius": 1.48,
+                "spectral_type": "F8 V",
+                "temperature": 6074,
+                "luminosity": 3.57,
+                "stellar_distance": 101,
+                "parallax": 30.91,
+                "planetary systems": 4,
+                "fk_constellation_star": 2,
+                "history": "located 44 light-years from Earth",
+                "photo_link": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/UAnd_planets.png/200px-UAnd_planets.png",
+                "photo": \000
             }
 
 + Response 404 (application/json)
