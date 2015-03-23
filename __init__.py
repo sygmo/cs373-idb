@@ -61,9 +61,9 @@ def moonspage():
 def aboutuspage():
 	return render_template("aboutus.html")
 	
-@app.route('/dictionary')
-def dictionarypage():
-	return render_template("dictionary.html")
+@app.route('/exoplanets')
+def exoplanetspage():
+	return render_template("exoplanets.html")
 
 @app.route('/bayer')
 def bayerpage():
@@ -127,10 +127,10 @@ def callistropage():
 	
 if __name__ == "__main__":
 	with app.app_context():
-		cur = get_db().execute("select * from constellation")
+		"""cur = get_db().execute("select * from constellation")
 		entries = cur.fetchall()
 
 		for i in entries:
-			print(i['name']);
+			print(i['name']);"""
 
 	app.run()
