@@ -1,34 +1,32 @@
 FORMAT: 1A
 
 # StarLords
-An API to access resources in our Universe database (https://github.com/sygmo/cs373-idb/)
+An API to access resources in our [Universe database] (https://github.com/sygmo/cs373-idb/)
 
-# Group Constellation
-Constellation related resources of the **Notes API**
-
+# Group Constellation Resources
 ## Constellation Collection [/api/constellation]
-A list of all constellation objects
+A list of all Constellation objects
 ### List all Constellations [GET]
 + Response 200 (application/json)
 
         [{ 
-                "id": 1, 
-                "name": "Draco", 
-                "meaning": "dragon", 
-                "stars_with_planets": 19, 
-                "fk_constellation_family": 3, 
-                "history": "lies in the far northern sky. eighth-largest constellation", 
-                "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/c3/DracoCC.jpg", 
-                "photo": 000
-            }, { 
-                "id": 2, 
-                "name": "Fornax", 
-                "meaning": "chemical furnace", 
-                "stars_with_planets": 7, 
-                "fk_constellation_family": 4, 
-                "history": "lies in the southern sky. is in the southern hemisphere", 
-                "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/ce/Constellation_Fornax.jpg", 
-                "photo": 101
+            "id": 1, 
+            "name": "Draco", 
+            "meaning": "dragon", 
+            "stars_with_planets": 19, 
+            "fk_constellation_family": 3, 
+            "history": "lies in the far northern sky. eighth-largest constellation", 
+            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/c3/DracoCC.jpg", 
+            "photo": \000
+        }, { 
+            "id": 2, 
+            "name": "Fornax", 
+            "meaning": "chemical furnace", 
+            "stars_with_planets": 7, 
+            "fk_constellation_family": 4, 
+            "history": "lies in the southern sky. is in the southern hemisphere", 
+            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/ce/Constellation_Fornax.jpg", 
+            "photo": \001
         }]
 
 ## Constellation [/api/constellation/{id}]
@@ -65,3 +63,224 @@ A single Constellation object with all its details
                 "error": "Sorry. That constellation doesn't exist."
             }
 
+# Group Family Resources
+## Family Collection [/api/family]
+A list of all Family objects
+### List all Families [GET]
++ Response 200 (application/json)
+
+        [{ 
+            "id": 1, 
+            "name": "Ursa Major"
+        }, { 
+            "id": 2, 
+            "name": "Zodiac"
+        }]
+
+## Family [/api/family/{id}]
+A single Family object with all its details
+
++ Parameters
+    + id (required, int, `1`) ... int `id` of the Family to perform action with. Has example value.
+
+### Retrieve a Family [GET]
++ Response 200 (application/json)
+
+    + Header
+
+    + Body
+
+            { 
+                "id": 1, 
+                "name": "Ursa Major"
+            }
+
++ Response 404 (application/json)
+
+    + Header
+
+    + Body
+    
+            { 
+                "error": "Sorry. That Family doesn't exist."
+            }
+
+# Group Moon Resources
+## Moon Collection [/api/moon]
+A list of all Moon objects
+### List all Moons [GET]
++ Response 200 (application/json)
+
+        [{ 
+            "id": 1, 
+            "name": "Draco", 
+            "meaning": "dragon", 
+            "stars_with_planets": 19, 
+            "fk_Moon_family": 3, 
+            "history": "lies in the far northern sky. eighth-largest Moon", 
+            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/c3/DracoCC.jpg", 
+            "photo": \000
+        }, { 
+            "id": 2, 
+            "name": "Fornax", 
+            "meaning": "chemical furnace", 
+            "stars_with_planets": 7, 
+            "fk_Moon_family": 4, 
+            "history": "lies in the southern sky. is in the southern hemisphere", 
+            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/ce/Moon_Fornax.jpg", 
+            "photo": \001
+        }]
+
+## Moon [/api/moon/{id}]
+A single Moon object with all its details
+
++ Parameters
+    + id (required, int, `1`) ... int `id` of the Moon to perform action with. Has example value.
+
+### Retrieve a Moon [GET]
++ Response 200 (application/json)
+
+    + Header
+
+    + Body
+
+            { 
+                "id": 1, 
+                "name": "Draco", 
+                "meaning": "dragon", 
+                "stars_with_planets": 19, 
+                "fk_Moon_family": 3, 
+                "history": "lies in the far northern sky. eighth-largest Moon", 
+                "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/c3/DracoCC.jpg", 
+                "photo": 000
+            }
+
++ Response 404 (application/json)
+
+    + Header
+
+    + Body
+    
+            { 
+                "error": "Sorry. That Moon doesn't exist."
+            }
+            
+# Group Planet Resources
+## Planet Collection [/api/planet]
+A list of all Planet objects
+### List all Planets [GET]
++ Response 200 (application/json)
+
+        [{ 
+            "id": 2, 
+            "name": "Fornax", 
+            "meaning": "chemical furnace", 
+            "stars_with_planets": 7, 
+            "fk_Planet_family": 4, 
+            "history": "lies in the southern sky. is in the southern hemisphere", 
+            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/ce/Planet_Fornax.jpg", 
+            "photo": \001
+        }, { 
+            "id": 2, 
+            "name": "Fornax", 
+            "meaning": "chemical furnace", 
+            "stars_with_planets": 7, 
+            "fk_Planet_family": 4, 
+            "history": "lies in the southern sky. is in the southern hemisphere", 
+            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/ce/Planet_Fornax.jpg", 
+            "photo": \001
+        }]
+
+## Planet [/api/planet/{id}]
+A single Planet object with all its details
+
++ Parameters
+    + id (required, int, `1`) ... int `id` of the Planet to perform action with. Has example value.
+
+### Retrieve a Planet [GET]
++ Response 200 (application/json)
+
+    + Header
+
+    + Body
+
+            { 
+                "id": 1, 
+                "name": "Draco", 
+                "meaning": "dragon", 
+                "stars_with_planets": 19, 
+                "fk_Planet_family": 3, 
+                "history": "lies in the far northern sky. eighth-largest Planet", 
+                "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/c3/DracoCC.jpg", 
+                "photo": 000
+            }
+
++ Response 404 (application/json)
+
+    + Header
+
+    + Body
+    
+            { 
+                "error": "Sorry. That Planet doesn't exist."
+            }
+            
+# Group Star Resources
+## Star Collection [/api/star]
+A list of all Star objects
+### List all Stars [GET]
++ Response 200 (application/json)
+
+        [{ 
+            "id": 1, 
+            "name": "Draco", 
+            "meaning": "dragon", 
+            "stars_with_planets": 19, 
+            "fk_Star_family": 3, 
+            "history": "lies in the far northern sky. eighth-largest Star", 
+            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/c3/DracoCC.jpg", 
+            "photo": \000
+        }, { 
+            "id": 2, 
+            "name": "Fornax", 
+            "meaning": "chemical furnace", 
+            "stars_with_planets": 7, 
+            "fk_Star_family": 4, 
+            "history": "lies in the southern sky. is in the southern hemisphere", 
+            "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/ce/Star_Fornax.jpg", 
+            "photo": \001
+        }]
+
+## Star [/api/star/{id}]
+A single Star object with all its details
+
++ Parameters
+    + id (required, int, `1`) ... int `id` of the Star to perform action with. Has example value.
+
+### Retrieve a Star [GET]
++ Response 200 (application/json)
+
+    + Header
+
+    + Body
+
+            { 
+                "id": 1, 
+                "name": "Draco", 
+                "meaning": "dragon", 
+                "stars_with_planets": 19, 
+                "fk_Star_family": 3, 
+                "history": "lies in the far northern sky. eighth-largest Star", 
+                "photo_link": "http://upload.wikimedia.org/wikipedia/commons/c/c3/DracoCC.jpg", 
+                "photo": 000
+            }
+
++ Response 404 (application/json)
+
+    + Header
+
+    + Body
+    
+            { 
+                "error": "Sorry. That Star doesn't exist."
+            }
