@@ -29,4 +29,5 @@ html, body {
 .container {
 	background-color: #BFBFBF;
 	opacity: 0.9;
+	margin-bottom: 20px;
 }
