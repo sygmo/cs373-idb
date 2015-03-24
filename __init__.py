@@ -115,15 +115,31 @@ def jupiterpage():
 	
 @app.route('/europa')
 def europapage():
-	return render_template("iota-draconis.html")
+	return render_template("europa.html")
 	
 @app.route('/io')
 def iopage():
-	return render_template("wasp-1.html")
+	return render_template("io.html")
 	
 @app.route('/callistro')
 def callistropage():
-	return render_template("callistro.html")		
+	return render_template("callistro.html")	
+
+@app.route('/upsand')
+def upsandpage():
+	return render_template("upsand.html")
+
+@app.route('/upsandb')
+def upsandbpage():
+	return render_template("upsandb.html")
+
+@app.route('/mercury')
+def mercury():
+	return render_template("mercury.html")
+
+@app.route('/venus')
+def venus():
+	return render_template("venus.html")
 	
 if __name__ == "__main__":
 	with app.app_context():
