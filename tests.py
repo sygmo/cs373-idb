@@ -8,14 +8,14 @@ from difficulty import db
 
 
 class tests(TestCase):
-	engine = create_engine('postgresql://localhost/universe')
+	engine = create_engine('postgresql://postgres:cs373@localhost/universe')
 	#Creates session
 	Session = sessionmaker(bind=engine)
 	session = Session()
 	res = session.query(family).all()
 
 	def test_read_family_id(self):
-		engine = create_engine('postgresql://localhost/universe')
+		engine = create_engine('postgresql://postgres:cs373@localhost/universe')
 		#Creates session
 		Session = sessionmaker(bind=engine)
 		session = Session()
@@ -26,7 +26,7 @@ class tests(TestCase):
 
 
 	def test_read_family_name(self):
-		engine = create_engine('postgresql://localhost/universe')
+		engine = create_engine('postgresql://postgres:cs373@localhost/universe')
 		#Creates session
 		Session = sessionmaker(bind=engine)
 		session = Session()
@@ -36,7 +36,7 @@ class tests(TestCase):
 		self.assertEqual(x.name, "Ursa Major")
 
 	def test_read_id_second(self):
-		engine = create_engine('postgresql://localhost/universe')
+		engine = create_engine('postgresql://postgres:cs373@localhost/universe')
 		#Creates session
 		Session = sessionmaker(bind=engine)
 		session = Session()
@@ -46,7 +46,7 @@ class tests(TestCase):
 		self.assertEqual(x.id, 2)
 
 	def test_read_name_second(self):
-		engine = create_engine('postgresql://localhost/universe')
+		engine = create_engine('postgresql://postgres:cs373@localhost/universe')
 		#Creates session
 		Session = sessionmaker(bind=engine)
 		session = Session()
