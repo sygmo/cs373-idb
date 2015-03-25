@@ -149,4 +149,4 @@ if __name__ == "__main__":
 		for i in entries:
 			print(i['name']);"""
 
-	app.run()
+	app.run(host='0.0.0.0', port=8080)
