@@ -7,11 +7,10 @@ from sqlalchemy.orm import sessionmaker
 #Creates the application object
 app = Flask(__name__)
 
-app.config.from_object('config.BaseConfig')
+app.config.from_object('config.TestConfig')
 
 #creates the sqlalchemy object
 db = SQLAlchemy(app)
-
 
 @app.route("/")
 def difficulty() :

@@ -23,7 +23,6 @@ class constellation(db.Model):
 	photo = db.Column(LargeBinary)
 	fk_constellation_family = db.Column(Integer, ForeignKey("family.id"))
 
-
 class planet(db.Model):
 	__tablename__ = "planet"
 	id = db.Column(Integer, primary_key = True)

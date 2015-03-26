@@ -2,8 +2,12 @@ from difficulty import db
 from models import family
 
 #creates the database
+print("about to drop")
 db.drop_all()
+print("dropped")
+print("about to create")
 db.create_all()
+print("created")
 
 #insert sample data
 db.session.add(family(name = "Ursa Major"))
