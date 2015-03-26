@@ -442,7 +442,7 @@ class tests(TestCase):
         self.lock.release() 
 
     #Test that the table family is readable
-    def test_read_exoplanet(self):
+    def test_read_moon(self):
         self.lock.acquire()
         engine = create_engine('sqlite:///testdb.db')
         Session = sessionmaker(bind = engine)
@@ -461,7 +461,7 @@ class tests(TestCase):
         assert(found)
         self.lock.release()
 
-    def test_read_exoplanet_attribute(self):
+    def test_read_moon_attribute(self):
         self.lock.acquire()
         engine = create_engine('sqlite:///testdb.db')
         Session = sessionmaker(bind = engine)
@@ -479,7 +479,7 @@ class tests(TestCase):
 
     
     #Test deletion of a row in family
-    def test_delete_exoplanet_row(self):
+    def test_delete_moon_row(self):
         self.lock.acquire()
         engine = create_engine('sqlite:///testdb.db')
         Session = sessionmaker(bind = engine)
