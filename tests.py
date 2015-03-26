@@ -15,27 +15,35 @@ class tests(TestCase):
 		db.drop_all()
 		db.create_all()
 
+	#Test that the table family is writable
 	def test_write_family(self):
 		engine = create_engine('sqlite:///testdb.db')
 		Session = sessionmaker(bind = engine)
 		session = Session()
 
-		try:
-			db.session.add(family(name = "Ursa Major"))
-			res = session.query(family).all()
-			db.session.commit()			
-		except:
-			assert(False)
+		query = session.query(family).all()
+		startSize = len(query)
+
+		db.session.add(family(name = "Ursa Major"))
+		res = session.query(family).all()
+		db.session.commit()
+
+		query = session.query(family).all()
+		endSize = len(query)
+
+		self.assertEqual(startSize + 1, endSize)	
+
 		
 
-
-	
+	#Test that the table family is readable
 	def test_read_family_name(self):
 		engine = create_engine('sqlite:///testdb.db')
 		Session = sessionmaker(bind = engine)
 		session = Session()
 
-		res = session.query(family).all()
+		db.session.add(family("Zodiac"))
+
+		query = session.query(family).
 
 		print(len(res))
 		#x = res[0]
