@@ -11,6 +11,7 @@ class family(db.Model):
 	__tablename__ = "family"
 	id = db.Column(Integer, primary_key = True)
 	name = db.Column(Text, nullable = False)
+	description = db.Column(Text, nullable = True)
 
 class constellation(db.Model):
 	__tablename__ = "constellation"
@@ -78,7 +79,7 @@ class moon(db.Model):
 	photo = db.Column(LargeBinary)
 	fk_planet_moon = db.Column(Integer, ForeignKey("planet.id"))
 
-class exoPlanet(db.Model):
+class exoplanet(db.Model):
 	__tablename__ = "ExoPlanet"
 	id = db.Column(Integer, primary_key = True)
 	name = db.Column(Text, nullable = False)
