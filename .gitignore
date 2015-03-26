@@ -5,6 +5,5 @@
 # For more information see: http://git-scm.com/docs/gitignore/
 
 # ignores files that gcov generates
-__pycache__
+__pycache__/
 *.pyc
-*~
