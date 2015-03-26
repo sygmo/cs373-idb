@@ -78,7 +78,7 @@ class moon(db.Model):
 	photo = db.Column(LargeBinary)
 	fk_planet_moon = db.Column(Integer, ForeignKey("planet.id"))
 
-class ExoPlanet(db.Model):
+class exoPlanet(db.Model):
 	__tablename__ = "ExoPlanet"
 	id = db.Column(Integer, primary_key = True)
 	name = db.Column(Text, nullable = False)

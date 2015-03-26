@@ -1,8 +1,9 @@
 from unittest import main, TestCase
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker 
-from models import family
+from models import family, constellation, planet, star, moon, ExoPlanet
 from difficulty import db
+import threading
 
 
 #for this tests to work you need to have a postgres database 
@@ -15,14 +16,19 @@ class tests(TestCase):
 		db.drop_all()
 		db.create_all()
 
+		self.lock = threading.Lock()
+
+	
 	#Test that the table family is writable
 	def test_write_family(self):
+		self.lock.acquire()
 		engine = create_engine('sqlite:///testdb.db')
 		Session = sessionmaker(bind = engine)
 		session = Session()
 
 		query = session.query(family).all()
 		startSize = len(query)
+		print(startSize)
 
 		db.session.add(family(name = "Ursa Major"))
 		res = session.query(family).all()
@@ -32,36 +38,52 @@ class tests(TestCase):
 		endSize = len(query)
 
 		self.assertEqual(startSize + 1, endSize)	
-
-		
+		self.lock.release()	
 
 	#Test that the table family is readable
-	def test_read_family_name(self):
+	def test_read_family(self):
+		self.lock.acquire()
 		engine = create_engine('sqlite:///testdb.db')
 		Session = sessionmaker(bind = engine)
 		session = Session()
 
-		db.session.add(family("Zodiac"))
+		db.session.add(family(name = "Zodiac"))
+		db.session.commit()
 
-		query = session.query(family).
+		query = session.query(family).all()
+		found = False
 
-		print(len(res))
-		#x = res[0]
-		#self.assertEqual(x.name, "Ursa Major")
+		for x in query:
+			if(x.name == "Zodiac"):
+				found = True
 
+		assert(found)
+		self.lock.release()
 
-	'''
-	def test_read_id_second(self):
-		res = self.session.query(family).all()
+	
+	#Test deletion of a row in family
+	def test_delete_family_row(self):
+		self.lock.acquire()
+		engine = create_engine('sqlite:///testdb.db')
+		Session = sessionmaker(bind = engine)
+		session = Session()
 
-		x = res[1]
-		self.assertEqual(x.id, 2)
+		db.session.add(family(name = "delete"))
+		db.session.commit()
 
-	def test_read_name_second(self):
-		res = self.session.query(family).all()
+		toRemove = session.query(family).filter_by(name = "delete").first()
 
-		x = res[1]
-		self.assertEqual(x.name, "Zodiac")'''
+		assert(toRemove != None)
+
+		session.delete(toRemove);
+		session.commit()
+
+		toRemove = session.query(family).filter_by(name = "delete").first()
+
+		assert(toRemove == None)
+
+		self.lock.release()
+
 
 if __name__ == "__main__":
 	main()
