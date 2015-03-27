@@ -1,0 +1,801 @@
+commit 729c38bc9823dd782ef5a247d4937275334fdcdb
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Thu Mar 26 19:11:53 2015 -0500
+
+    adding tests
+
+commit 6acc9bb78eeb8c2fbfabbd154864b6675816cd84
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Thu Mar 26 19:06:10 2015 -0500
+
+    uploaded tech report, fixes #37
+
+commit f57acfab18aaa82ccc0770039c4e4c69149d0474
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Thu Mar 26 18:27:29 2015 -0500
+
+    added history to Vulpecula
+
+commit 88d8ce31219907ade28d57f34ba4caa78c555029
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Thu Mar 26 16:31:03 2015 -0500
+
+    corrected tests
+
+commit 7b7176cd2c2da41098aaf5406aceb5f198628243
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Mar 26 16:14:30 2015 -0500
+
+    attempt to fix splash on safari
+
+commit e13228d78590f37a898327a53bf899f3d7c4a9f1
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Mar 26 16:04:08 2015 -0500
+
+    added info on aboutus page
+
+commit 567287e87c2d0e3d7d2445755a628687b280bcfe
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Thu Mar 26 15:30:15 2015 -0500
+
+    added tests and revised model
+
+commit 1f0e8687af8d81b574e5ef6a52945a5ac9febdce
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Mar 26 13:39:05 2015 -0500
+
+    added base test cases
+
+commit 723a8c5e7786937d104b00725e0ee0f99c3168b6
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Mar 26 12:31:10 2015 -0500
+
+    the test cases use a sqlite database instead for testing
+
+commit 77895d600a6c071cd094e612eaed5e4ff0c60ae3
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Mar 26 12:28:17 2015 -0500
+
+    removed __pycache__ and updated aboutus
+
+commit c0b5490044f4355ee212b44d3e32525802140309
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Mar 26 12:10:34 2015 -0500
+
+    removed unecessary db functions in init file
+
+commit dec4231b5c1a9ebb43bc0b825a688ad0c3c9ad39
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Mar 26 01:02:14 2015 -0500
+
+    Remove venv & .pyc, added github link and gitignore
+
+commit 0aaa880887ff80db8334d88860437d67d05dd682
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Mar 26 00:42:41 2015 -0500
+
+    centered index page
+
+commit 61ec212d9a29901f3ff8c0bb1b967429041bdf34
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Mar 25 22:20:58 2015 -0500
+
+    Move files with example data to examples directory
+
+commit 4fac01c4d0f25a0eb5c6780e645ed539559aed4f
+Merge: 5e97b30 e776222
+Author: gumarus <a.avila.1@utexas.edu>
+Date:   Thu Mar 26 01:41:08 2015 +0000
+
+    merging
+
+commit 5e97b30b5290cc9fe369dfba4177f58ae6b879f8
+Author: gumarus <a.avila.1@utexas.edu>
+Date:   Thu Mar 26 01:35:38 2015 +0000
+
+    It lives with nginx and uwsgi
+
+commit e7762223b6e72e2d0016991f1605a92145089a64
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Wed Mar 25 19:35:13 2015 -0500
+
+    removed unused files in static folder, fixes #33
+
+commit ca798e2eaee0d46614b4456a358eef034921eb39
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Wed Mar 25 19:14:46 2015 -0500
+
+    units added and and spelling errors removed
+
+commit 3c62c6d1fae089a78c06dd3501f9058c2b057c5d
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Wed Mar 25 18:35:19 2015 -0500
+
+    factual error in Jupiter fixed
+
+commit 4f312c11e2e7d441498550e1097c61a0c42dabb0
+Author: gumarus <a.avila.1@utexas.edu>
+Date:   Wed Mar 25 23:30:17 2015 +0000
+
+    altered init file to our site
+
+commit 53e62fdc66a682c89e4d1a85e9c578243cf00a84
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Wed Mar 25 18:13:49 2015 -0500
+
+    altered nginx.conf
+
+commit c0ccc10b805b3b9ee1a4dfcf48c4a4844efb97de
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 21:51:19 2015 -0500
+
+    getting close
+
+commit 94fe52028e7c9b46cf94f4d1b569d7ad8bab4fc5
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 21:17:21 2015 -0500
+
+    one more try
+
+commit c7b2c494b860610fa88e37edb9a273540caae351
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 19:59:37 2015 -0500
+
+    hopefully 2
+
+commit 05e8acaf50d40978979c4bbc389a9938b3f453b3
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 19:43:41 2015 -0500
+
+    hopefully
+
+commit 0ebcedbdd89c206dffcb2abdfaa7073f41706702
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 19:40:36 2015 -0500
+
+    more nginx
+
+commit be31e0b1856d3253e0adbc80e105c3d1fbf8e273
+Author: gumarus <a.avila.1@utexas.edu>
+Date:   Wed Mar 25 00:31:33 2015 +0000
+
+    doing stuff
+
+commit 49bb33ae214c1a189eb90b3acab1009000b0515a
+Merge: b4f3bef b8aee58
+Author: gumarus <a.avila.1@utexas.edu>
+Date:   Wed Mar 25 00:27:34 2015 +0000
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit b8aee5888c4daa150d8776d5b72aa78db852b318
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 19:27:17 2015 -0500
+
+    hehe.. we are EVIL }:D
+
+commit b4f3bef1d9b13121e4e76d654200d90fd81b3785
+Merge: ac94004 78446a1
+Author: gumarus <a.avila.1@utexas.edu>
+Date:   Wed Mar 25 00:22:27 2015 +0000
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit 78446a1971c073b6b70b8bb43111be1f0a5bfce6
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 19:21:36 2015 -0500
+
+    changing ports to outside world
+
+commit ac940045aae0709684a5dfa57ee88ebf72920046
+Merge: f8f0a1f 8f4cb23
+Author: gumarus <a.avila.1@utexas.edu>
+Date:   Wed Mar 25 00:12:34 2015 +0000
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit 8f4cb23bde085c12f9f64b80e38cce4365df001d
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 19:12:24 2015 -0500
+
+    updating nginx
+
+commit f8f0a1fa3c839f17a30f066d945fc5dcc604d943
+Merge: 080914c 36ae9ab
+Author: gumarus <a.avila.1@utexas.edu>
+Date:   Wed Mar 25 00:02:01 2015 +0000
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit 36ae9abc57fbef93498901712001d0478e3eddf1
+Merge: 5742c3e 9c8fd25
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 19:01:29 2015 -0500
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit 5742c3eef7db14b70f56e5a9b00c66086a8d0f13
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 19:01:11 2015 -0500
+
+    fixing some port details
+
+commit 9c8fd25e23771b431fdf9136900439490e2f3c72
+Author: Olivia Lin <olivialin@wireless-10-147-249-234.public.utexas.edu>
+Date:   Tue Mar 24 18:58:30 2015 -0500
+
+    Added apiary link to aboutus page. fix #20 fix #17
+
+commit 080914cdb73f948bbaec70ca70d91a2ee0bb89af
+Merge: 994af58 bc89aa9
+Author: gumarus <a.avila.1@utexas.edu>
+Date:   Tue Mar 24 23:43:58 2015 +0000
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit 78c81e2d956c18a81ad04a6882866484e9a8cacd
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 18:43:25 2015 -0500
+
+    changing socket
+
+commit bc89aa9782fb9ffb1069d192fb256742036e1c27
+Author: Olivia Lin <olivialin@wireless-10-147-249-234.public.utexas.edu>
+Date:   Tue Mar 24 18:36:51 2015 -0500
+
+    Added static data for jupiter, mercury, and venus
+
+commit 994af589188f49c60de8e819cbecbda73931e19c
+Merge: 34c5bdf cfe11e0
+Author: gumarus <a.avila.1@utexas.edu>
+Date:   Tue Mar 24 23:33:46 2015 +0000
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit cfe11e08c8c97b7ae28bec301d1b0d6c636b7dd6
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 18:33:35 2015 -0500
+
+    setting up the socket
+
+commit 34c5bdf6b20b9717bfdbedaf5c919911d3d3c5d8
+Merge: 9cc9a02 4f86a98
+Author: gumarus <a.avila.1@utexas.edu>
+Date:   Tue Mar 24 23:22:47 2015 +0000
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit 4f86a9849b8f026442712d62ca68fcf06db5adef
+Merge: d3a6c4e 00374dd
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 18:22:07 2015 -0500
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit d3a6c4e7d76a31b0ceec1a67acadc19f560626a0
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 18:22:03 2015 -0500
+
+    setting up for deployment
+
+commit 00374dd3a53b5affefa6b73b103525ead020d1ba
+Merge: 19ed897 e060a17
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Tue Mar 24 18:19:48 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit 19ed897d94022fc9e4a2272718d6b4261c408d72
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Tue Mar 24 18:19:28 2015 -0500
+
+    filled in data for exoplanets, fix #22
+
+commit e060a17b105efe6616575ae463a6562fac65aa81
+Merge: eab0b5a 90df45d
+Author: Olivia Lin <olivialin@wireless-10-147-249-234.public.utexas.edu>
+Date:   Tue Mar 24 17:53:47 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit 90df45d012790d3347b691e5be180efffb02efaf
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Tue Mar 24 17:51:46 2015 -0500
+
+    fixed radius
+
+commit eab0b5a921985b343da1639225719cd5a8b3e7d4
+Author: Olivia Lin <olivialin@wireless-10-147-249-234.public.utexas.edu>
+Date:   Tue Mar 24 17:51:29 2015 -0500
+
+    Added info for callisto, europa, and io
+
+commit 9cc9a02475d4969890b7bf00c10328b466b2b43e
+Merge: 77c84f7 18fbe3b
+Author: gumarus <a.avila.1@utexas.edu>
+Date:   Tue Mar 24 22:51:28 2015 +0000
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit 18fbe3b7bfd91f8b7f76057a9396d80d1b09933f
+Merge: 76e0e41 d391153
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 17:50:52 2015 -0500
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit 76e0e41924ddf0783b6586dececf5b0dea7eb833
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 17:50:37 2015 -0500
+
+    fixed tests db source and updated models.py
+
+commit 77c84f75a7a711c60266dd6c250346a463972a23
+Author: gumarus <a.avila.1@utexas.edu>
+Date:   Tue Mar 24 22:43:59 2015 +0000
+
+    fixed postgres in database
+
+commit d3911535f9f52c35bb7a812ac70147ba1b6a2b85
+Merge: 8d03de2 088e416
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Tue Mar 24 17:42:31 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit 8d03de243faeb44ce032389163a8cc45c712ffc2
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Tue Mar 24 17:41:49 2015 -0500
+
+    created basic templates for exoplanets, minor changes to navbar
+
+commit 088e416f1297db74d9f941a15fde7225317771e1
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 17:39:30 2015 -0500
+
+    setting up the server database
+
+commit f924a2cbd5ff501822dced3b15cfe1670c4078b8
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Tue Mar 24 17:04:59 2015 -0500
+
+    added Carl Sagan
+
+commit 0c416c3332224a589d9f74478ca85c3f6c2eca08
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Tue Mar 24 16:43:34 2015 -0500
+
+    changed column name for axis on planet template, fix #23
+
+commit 598a93df0b6691508d2b774597f96923794ce9fe
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Tue Mar 24 16:34:05 2015 -0500
+
+    fixed Jupiter table columns, fix #24
+
+commit d1a194a92b035e3936274d7f9f95bf8bd7f82a0c
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Tue Mar 24 16:30:00 2015 -0500
+
+    added data for stars, fix #21
+
+commit 87233027bab3134d2a7f54a5a13e56aa00ce78f6
+Merge: ad623dd 30619be
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Tue Mar 24 16:22:14 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit ad623ddb161da8991d290dc08e2a66c55d0f3128
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Tue Mar 24 16:18:07 2015 -0500
+
+    all data added for stars, fix #21
+
+commit 30619bee0c3f10fd92c44941ea3b41b714a01655
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Tue Mar 24 16:05:09 2015 -0500
+
+    Apiary: updated planet and star
+
+commit 42ac7ef2edd917435f81fb8ddfdf1ceb05a5e913
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Tue Mar 24 15:41:49 2015 -0500
+
+    finished template for Wasp-1
+
+commit de636cdfa961b631aa2d01ef50f893d3e5e05bee
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Mar 24 10:07:31 2015 -0500
+
+    updated the sqlalchemy tables
+
+commit 3dd510f358e5f242248d2808c07fa87451fcb2da
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Mon Mar 23 22:47:08 2015 -0500
+
+    Added pages and templates for all of home family
+
+commit ec88fa222e2234d10d19919b63b8f132e8e930c0
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Mon Mar 23 22:47:13 2015 -0500
+
+    changed model to eliminate parallax and length of year
+
+commit 201c3235a741a25656b65947e101204b8f847f74
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Mon Mar 23 17:37:38 2015 -0500
+
+    Apiary: updated star, planet, moon, constellation, and exoplanet response body
+
+commit 5332d92406b7ee44d01fd1edbedf19136a932553
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Mon Mar 23 17:03:42 2015 -0500
+
+    Added dropdown for planets and removed dictionary
+
+commit c377b9a1142457144f4dc0dd6abaf626b7b8518c
+Merge: 8e53879 51c0e89
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Mon Mar 23 17:03:16 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit 51c0e896c265f8d8e743ec392eaeb5962b47d14d
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Mon Mar 23 16:55:53 2015 -0500
+
+    Apiary: added exoplanet
+
+commit 8e53879b45d78c8829f102fe039f019b3bb1c368
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Mon Mar 23 16:21:11 2015 -0500
+
+    added content for constellations
+
+commit d4dd6059faffa8503e26149b8b40a184b5c0cca7
+Merge: f10d237 f7c47f0
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Mon Mar 23 16:06:20 2015 -0500
+
+    iMerge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit f10d237130dbfdd406f803d7c075159b5e0d8f3a
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Mon Mar 23 16:06:04 2015 -0500
+
+    adding UML diagram
+
+commit f7c47f0b03889049e4ced9fd99fda3173be9b56f
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Sun Mar 22 23:44:29 2015 -0500
+
+    Apiary: added family, moon, planet, stars
+
+commit aa5be592aedd64e1c776863c52f88c0d8451a3cf
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Sun Mar 22 18:43:38 2015 -0500
+
+    Apiary: constellation calls added
+
+commit fda53ca6aaf57fc2b1cfc3fbe88fd69da7213044
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Sun Mar 22 18:31:49 2015 -0500
+
+    new sql for exoplanet
+
+commit 7637f60c843b33f22be00563e0ac2e467858a3d4
+Merge: f02497f f80afd3
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Sun Mar 22 18:26:40 2015 -0500
+
+    iMerge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit f02497faeab070c93f1422385e57c8a06f288e9a
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Sun Mar 22 18:23:06 2015 -0500
+
+    added exoplanet
+
+commit f80afd3ff60fbe420cae4b19a537a645f9a2cf31
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Sun Mar 22 18:22:30 2015 -0500
+
+    changed one constellation we are doing
+
+commit 875d76e3f0576e958b3d23022ea9f203529f4c1d
+Author: gumarus <a.avila.1@live.com>
+Date:   Sun Mar 22 18:18:15 2015 -0500
+
+    Deleted unneeded files
+
+commit 0d6bfe98537b358c054935158df2eec7138860ea
+Author: gumarus <a.avila.1@live.com>
+Date:   Sun Mar 22 18:07:24 2015 -0500
+
+    added 4 unit tests
+
+commit 8bf2051c75215a299e9c29fa084023d2f59da6f7
+Author: gumarus <a.avila.1@live.com>
+Date:   Sun Mar 22 17:29:26 2015 -0500
+
+    Database is alive! :D
+
+commit 595fb4ab5246040966d82ce7778e57196a298ffb
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Sun Mar 22 17:16:58 2015 -0500
+
+    Text files with common attributes added
+
+commit a26ebd9f2c43a928d39e317c66e2cdb85176e7eb
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Sun Mar 22 13:26:42 2015 -0500
+
+    added content to pages for draco constellation
+
+commit ef10ce63032b3156eed648e0291adb1ce36f4734
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Sat Mar 21 17:58:10 2015 -0500
+
+    Finished creating the static pages, links in tables
+
+commit e1d089ad02c85a9ba17dd0782b26b6389382e257
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Sat Mar 21 16:04:06 2015 -0500
+
+    Created static pages with tables&pages for families
+
+commit 3837d82eec343f75d7b64b5cc09d7a068ffe332f
+Author: gumarus <a.avila.1@live.com>
+Date:   Fri Mar 20 17:17:08 2015 -0500
+
+    minor changes to test
+
+commit fc57d23b1a338f91383a90259c148dcce87891d0
+Author: gumarus <a.avila.1@live.com>
+Date:   Fri Mar 20 17:02:19 2015 -0500
+
+    added some files to test backend
+
+commit 47f16911e77726ece2d4172b5ffdbc0c8a0b4ec2
+Author: sygmo <smercier91@Macinto200f3572.home>
+Date:   Fri Mar 20 16:56:21 2015 -0500
+
+    added links to basic page templates
+
+commit 184f4a3f1c15b900fe3519ce7fd953a93d73c179
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Fri Mar 20 15:02:42 2015 -0500
+
+    altered universeDB1 and universeData3 (in static file)
+
+commit a8e9919ab518b6a4ade536e351e5058fe65d4689
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Fri Mar 20 13:43:05 2015 -0500
+
+    Altered model
+
+commit 02734bf78941fe34b79a2c04426629e33d779660
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Fri Mar 20 02:19:46 2015 -0500
+
+    Added progresql data model and sql file
+
+commit 1ec492ce73866d417098fd1921e07c825a5db421
+Author: gumarus <a.avila.1@live.com>
+Date:   Fri Mar 20 01:40:51 2015 -0500
+
+    created the data model in sqlalchemy
+
+commit 410a61507a6159708b20790b22f6bd19fc267944
+Author: gumarus <a.avila.1@live.com>
+Date:   Fri Mar 20 00:45:03 2015 -0500
+
+    added navicat model file
+
+commit 952fb5b2323104618e857bd39bede2f412887c5e
+Merge: eed71cf d358bc9
+Author: gumarus <a.avila.1@live.com>
+Date:   Fri Mar 20 00:34:56 2015 -0500
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit eed71cf41ba1828038909bc5a665e437483f2162
+Author: gumarus <a.avila.1@live.com>
+Date:   Fri Mar 20 00:34:09 2015 -0500
+
+    started to convert tosqlalchemy
+
+commit d358bc9657d3af67520d42b9f848416566387012
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Mar 19 17:45:45 2015 -0500
+
+    fixed navbar to collapse
+
+commit e9c1a53ac20c086a7a9201bc37b72539d0bffaeb
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Mar 19 16:24:09 2015 -0500
+
+    finished template for about us page
+
+commit 9ad7b961c78bcac7b0daa085c2e6d4a7dc772bcd
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Mar 19 13:41:59 2015 -0500
+
+    Fixed so active page is shown
+
+commit c974cbd2fa7db45188c5832a09a48312c230bbdf
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Mar 19 12:59:16 2015 -0500
+
+    Added about us and dictionary links in navbar
+
+commit 097fd799efb6b5f8387a1bd89ddf5aae1c4a016e
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Mar 19 12:54:11 2015 -0500
+
+    Created aboutus and dictionary pages
+
+commit 196d3c4c745b906b3a6dbb8e0538fa1f53ee0890
+Author: gumarus <a.avila.1@live.com>
+Date:   Wed Mar 18 17:57:44 2015 -0500
+
+    database is working and reading
+
+commit 8517f0ac25e0de0666cada1c6a174519ff73a209
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Mon Mar 16 18:36:34 2015 -0500
+
+    put the navigation bar in its own file
+
+commit 27f4aa12b0a285daa327d6cea12d12ac01268efd
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Mon Mar 16 18:12:21 2015 -0500
+
+    Serve splash page from flask server now
+
+commit 44c5025ab3456f89d2e2c762753ae678e85fae94
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Mon Mar 16 15:19:03 2015 -0500
+
+    fixed splash page
+
+commit 96d7be0b15d36af1be628f641d7565ff92bbb6dd
+Author: sygmo <smercier91@Macinto200f3572.home>
+Date:   Mon Mar 16 13:18:03 2015 -0500
+
+    set up virual env for Flask
+
+commit dec75fcabfeaa09de490fa2b244765cf49ca1ee9
+Author: gumarus <a.avila.1@live.com>
+Date:   Mon Mar 16 11:55:49 2015 -0500
+
+    pointed flask to index
+
+commit 62d76a2743c8ea2380bb08872933f124b89b8505
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Mon Mar 16 11:34:32 2015 -0500
+
+    Fixed links at top, need to fix section padding
+
+commit a72bb3c7ef8c80f2bb5f816b82b0fb2d46e1e656
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Mon Mar 16 11:06:42 2015 -0500
+
+    Created css file and added splash image to index
+
+commit 639a883d6c20fb96877f5acb918725a1978ecbd4
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Sun Mar 15 21:24:07 2015 -0500
+
+    Navbar add in index page and chose image for splash
+
+commit e301b1da0231f8fd7c548cab2b3231bdd706c19c
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Sun Mar 15 20:22:19 2015 -0500
+
+    Removed bootstrap and jquery files that are not min
+
+commit 5b4bfa194c9fd1ff77367dfeb330d697d1308802
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Sun Mar 15 08:41:47 2015 -0500
+
+    Added jQuery files
+
+commit c5c133c1dfb6ac934bd1f4c18d44dbc2e057b083
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Sun Mar 15 08:36:56 2015 -0500
+
+    Added local files for jquery and bootstrap
+
+commit 510fd9f442af15c07bdaca9b49c028df7af4eaac
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Mar 12 17:25:02 2015 -0500
+
+    adding difficulty level 3
+
+commit 00962ed45c2547f301a5b2c71ba2270a326a1f51
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Mar 12 17:01:42 2015 -0500
+
+    Trying to add difficulty again
+
+commit 2b0e428478e769f46d8e5df29fd22a823c16bdc4
+Merge: b94f5e6 3a173c0
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Mar 12 16:58:19 2015 -0500
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit b94f5e6278de070559595ea5e0b4513442efc314
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Mar 12 16:58:02 2015 -0500
+
+    adding difficulty
+
+commit 3a173c0586659347092bfc7e3ae98cfd4fecae23
+Merge: e7e6358 192fef0
+Author: sygmo <smercier91@wireless-10-147-85-143.public.utexas.edu>
+Date:   Thu Mar 12 16:49:05 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit e7e6358ce4659c947484347d1802c38ade2d09db
+Author: sygmo <smercier91@wireless-10-147-85-143.public.utexas.edu>
+Date:   Thu Mar 12 16:47:56 2015 -0500
+
+    added sample text and navbar to bottom of page
+
+commit 192fef0065b6c0dc8081eba337ee72443c5fb113
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Mar 12 16:39:00 2015 -0500
+
+    Added the hello
+
+commit 410dbfe84a18b15a2b25f757c81282472faa2703
+Author: sygmo <smercier91@wireless-10-147-85-143.public.utexas.edu>
+Date:   Thu Mar 12 15:42:52 2015 -0500
+
+    added navigation bar to top
+
+commit 61568aa4172210944bd6bd8796de87862580ac23
+Author: sygmo <smercier91@wireless-10-147-85-143.public.utexas.edu>
+Date:   Thu Mar 12 14:57:25 2015 -0500
+
+    sample page - work in progress
+
+commit 5876944d1a153c292a60f5be68a93292a2760251
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Sat Mar 7 15:26:45 2015 -0600
+
+    Testing connection to GitHub
+
+commit 11a789cf4365d24603d3388fff0d6cc6b4e960cd
+Author: Sydney Mercier <sydney.mercier91@gmail.com>
+Date:   Sat Mar 7 15:22:15 2015 -0600
+
+    Transferring blueprint from apiary.io
+
+commit e8237c1ab9e2684cb04f85b588b6198f8147dee5
+Author: Sydney Mercier <sydney.mercier91@gmail.com>
+Date:   Sat Mar 7 15:19:28 2015 -0600
+
+    Transferring blueprint from apiary.io
+
+commit ebaa3a0fabfab207b669b0f56bd9adf5ac6e72ed
+Author: Sydney Mercier <sydney.mercier91@gmail.com>
+Date:   Sat Mar 7 15:05:54 2015 -0600
+
+    Transferring blueprint from apiary.io
+
+commit f48b00c4289f1340bac720159dabc88ffe51420b
+Author: Megan Knocke <mknocke@cs.utexas.edu>
+Date:   Sun Mar 1 16:00:18 2015 -0600
+
+    created page using bootstrap
+
+commit 152a2b2aac4eb2bcb8952fa486c38b89dd76e10e
+Author: Sydney Mercier <sydney.mercier91@gmail.com>
+Date:   Sun Mar 1 15:49:28 2015 -0600
+
+    Initial commit
