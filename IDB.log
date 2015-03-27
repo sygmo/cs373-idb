@@ -1,3 +1,28 @@
+commit a12169574d756ccdea754f3677916e825472561c
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Mar 26 19:44:43 2015 -0500
+
+    added pydoc html
+
+commit 90c2cc12010a1c2335db52639a81f2ca672b7d3f
+Merge: 82105d7 0ea707a
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Thu Mar 26 19:35:34 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit 82105d748febe199f25dfc84f2705a80d904360b
+Author: sygmo <smercier91@wireless-10-147-5-186.public.utexas.edu>
+Date:   Thu Mar 26 19:35:14 2015 -0500
+
+    added git stats to about us page, fixes #35
+
+commit 0ea707a088f153694efd819a913150b17089072d
+Author: Olivia Lin <olivialin@wireless-10-147-154-5.public.utexas.edu>
+Date:   Thu Mar 26 19:29:14 2015 -0500
+
+    Added first IDB.log
+
 commit 729c38bc9823dd782ef5a247d4937275334fdcdb
 Author: Christopher Metcalf <csmetcalf@gmail.com>
 Date:   Thu Mar 26 19:11:53 2015 -0500
