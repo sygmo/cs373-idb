@@ -16,7 +16,7 @@ public class Driver extends WriteToJson {
     	extractPlanetsUsingJsoup("http://en.wikipedia.org/wiki/Planet");
     }
     
-    
+    // USE THIS INSTEAD: http://en.wikipedia.org/wiki/List_of_gravitationally_rounded_objects_of_the_Solar_System
     public static void extractPlanetsUsingJsoup(String url)
     {
     	Document doc;
@@ -76,18 +76,82 @@ public class Driver extends WriteToJson {
             			String[] number = e.text().split("Mass ");
             			System.out.print(", mass = " + number[number.length-1]);
             		}
+            		// distance from the sun (perihelion is closest to the sun)
+            		if(e.text().contains("Perihelion"))
+            		{
+            			String[] number = e.text().split("Perihelion ");
+            			System.out.print(", distance_from_sun = " + number[number.length-1]);
+            		}
+            		if(e.text().contains("Orbital period"))
+            		{
+            			String[] number = e.text().split("Orbital period ");
+            			System.out.print(", orbital_period = " + number[number.length-1]);
+            		}
+            		// length of day = rotation period
+            		if(e.text().contains("Sidereal"))
+            		{
+            			String[] number = e.text().split("Sidereal rotation period ");
+            			System.out.print(", length_of_day = " + number[number.length-1]);
+            		}
+            		// surface temperature
+            		if(e.text().contains("Surface temp"))
+            		{
+            			String[] number = e.text().split("Surface temp. min mean max ");
+            			System.out.print(", surface_temperature = " + number[number.length-1]);
+            		}
+            		// volume
+            		if(e.text().contains("Volume"))
+            		{
+            			String[] number = e.text().split("Volume ");
+            			System.out.print(", volume = " + number[number.length-1]);
+            		}
+            		// radius 
+            		if(e.text().contains("Mean radius"))
+            		{
+            			String[] number = e.text().split("Mean radius ");
+            			System.out.print(", radius = " + number[number.length-1]);
+            		}
+            		// density
+            		if(e.text().contains("Mean density"))
+            		{
+            			String[] number = e.text().split("Mean density ");
+            			System.out.print(", density = " + number[number.length-1]);
+            		}
+            		// surface area
+            		if(e.text().contains("Surface area"))
+            		{
+            			String[] number = e.text().split("Surface area ");
+            			System.out.print(", surface_area = " + number[number.length-1]);
+            		}
+            		// semi major axis
+            		if(e.text().contains("Semi-major axis"))
+            		{
+            			String[] number = e.text().split("Semi-major axis ");
+            			System.out.print(", semi_major_axis = " + number[number.length-1]);
+            		}
+            		// gravity
+            		if(e.text().contains("Surface gravity"))
+            		{
+            			String[] number = e.text().split("Surface gravity ");
+            			System.out.print(", gravity = " + number[number.length-1]);
+            		}
+            		// composition
+            		if(e.text().contains("Composition by volume"))
+            		{
+            			String[] number = e.text().split("Composition by volume ");
+            			System.out.print(", composition = " + number[number.length-1]);
+            		}
+            		// number of moons
+            		if(e.text().contains("Known satellites"))
+            		{
+            			String[] number = e.text().split("Known satellites ");
+            			System.out.print(", moons = " + number[number.length-1]);
+            		}
             	}
             	System.out.print(", history = " + "None");
             	System.out.print(", photo_link = " + "None");
             	System.out.print(", photo = " + "None");
-            	for(Element e : n)
-            	{
-            		if(e.text().contains("Family"))
-            		{
-            			String[] number = e.text().split("Family ");
-            			System.out.print(", fk_constellation_family = " + "None\"\"\"" + number[number.length-1] + "\"\"\"");
-            		}
-            	}
+            	System.out.println(", fk_star_planet = " + "Sun");
             	System.out.println("))");
             }
     	} catch (IOException e) {
