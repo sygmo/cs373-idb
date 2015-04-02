@@ -1,11 +1,5 @@
+from starlords import app
 from flask import Flask, render_template, url_for, g, request, session, redirect, abort, flash
-import sqlite3
-import os
-
-app = Flask(__name__)
-
-
-
 
 @app.route('/')
 def indexpage():
@@ -114,7 +108,3 @@ def mercury():
 @app.route('/venus')
 def venus():
 	return render_template("venus.html")
-	
-if __name__ == "__main__":
-	app.run(host='0.0.0.0', port=8080)
-
