@@ -19,6 +19,7 @@ db.session.add(family(name = "Orion"))
 db.session.add(family(name = "Heavenly Waters"))
 db.session.add(family(name = "Bayer"))
 db.session.add(family(name = "La Caille"))
-db.session.add(family(name = "Olivia's Family"))
+db.session.add(family(name = "Home"))
+
 #commit changes
 db.session.commit()

@@ -34,12 +34,11 @@
 			  <tr>
 				<td><a href="/home">Home</a></td>
 			  </tr>
+			  {%for x in families%}
 			  <tr>
-				<td><a href="/perseus">Perseus</a></td>
+			  	<td><a href="/family/{{ x.name }}">{{ x.name }}</a></td>
 			  </tr>
-			  <tr>
-				<td><a href="/bayer">Bayer</a></td>
-			  </tr>
+			  {% endfor %}
 			</tbody>
 		  </table>
 		  </div>
