@@ -24,6 +24,7 @@ public class Driver extends WriteToJson {
             // need http protocol
             doc = Jsoup.connect(url).get();
             
+            // most planets -> eq(0)
             Elements nextTurns = doc.select("table[class=wikitable sortable] td:eq(0) a");
             ListIterator<Element> iter = nextTurns.listIterator();
             List<String> urls = new ArrayList<String>();
@@ -31,8 +32,29 @@ public class Driver extends WriteToJson {
     	    {
         		Element e = (Element) iter.next();
         		String s = e.attr("abs:href");
-        		if(!s.contains("#"))
-        		{
+        		if(e.hasAttr("title")) {
+        			urls.add(s);
+        		}
+    	    }
+            // Mercury and Uranus -> eq(1)
+            nextTurns = doc.select("table[class=wikitable sortable] td:eq(1) a");
+            iter = nextTurns.listIterator();
+            while(iter.hasNext()) 
+    	    {
+        		Element e = (Element) iter.next();
+        		String s = e.attr("abs:href");
+        		if(e.hasAttr("title")) {
+        			urls.add(s);
+        		}
+    	    }
+            // Jupiter -> eq(2)
+            nextTurns = doc.select("table[class=wikitable sortable] td:eq(2) a");
+            iter = nextTurns.listIterator();
+            while(iter.hasNext()) 
+    	    {
+        		Element e = (Element) iter.next();
+        		String s = e.attr("abs:href");
+        		if(e.hasAttr("title")) {
         			urls.add(s);
         		}
     	    }
