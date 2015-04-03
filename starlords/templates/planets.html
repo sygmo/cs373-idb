@@ -54,10 +54,10 @@
 			<tbody>
 			  {%for x in planets%}
 			  <tr>
-				<td><a href="/planets/{{ x.name }}">{{ x.name }}</a></td>
-				<td><a href="/sun">Sun</a></td>
-				<td><a href="/solarsystem">Solar System</a></td>
-				<td><a href="/home">Home</a></td>
+				<td><a href="/planets/{{ x[0].name }}">{{ x[0].name }}</a></td>
+				<td><a href="/planets/{{ x[1].name }}">{{ x[1].name }}</a></td>
+				<td><a href="/planets/{{ x[2].name }}">{{ x[2].name }}</a></td>
+				<td><a href="/planets/{{ x[3].name }}">{{ x[3].name }}</a></td>
 			  </tr>
 			  {% endfor %}
 

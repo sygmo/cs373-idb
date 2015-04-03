@@ -26,8 +26,23 @@ def starspage():
 
 @app.route('/planets')
 def planetspage():
-    query = planet.query.all()
+    query = db.session.query(planet, star, constellation, family).filter(planet.fk_star_planet == star.id)\
+                                                            .filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
+
+
+
+
     return render_template("planets.html", planets = query)
+
+
+
+
+
+
+
+
+
 
 @app.route('/moons')
 def moonspage():
