@@ -52,24 +52,15 @@
 			  </tr>
 			</thead>
 			<tbody>
+			  {%for x in planets%}
 			  <tr>
-				<td><a href="/jupiter">Jupiter</a></td>
+				<td><a href="/planets/{{ x.name }}">{{ x.name }}</a></td>
 				<td><a href="/sun">Sun</a></td>
 				<td><a href="/solarsystem">Solar System</a></td>
 				<td><a href="/home">Home</a></td>
 			  </tr>
-			  <tr>
-				<td><a href="/mercury">Mercury</a></td>
-				<td><a href="/sun">Sun</a></td>
-				<td><a href="/solarsystem">Solar System</a></td>
-				<td><a href="/home">Home</a></td>
-			  </tr>
-			  <tr>
-				<td><a href="/venus">Venus</a></td>
-				<td><a href="/sun">Sun</a></td>
-				<td><a href="/solarsystem">Solar System</a></td>
-				<td><a href="/home">Home</a></td>
-			  </tr>
+			  {% endfor %}
+
 			</tbody>
 		  </table>
 		  </div>

@@ -26,7 +26,8 @@ def starspage():
 
 @app.route('/planets')
 def planetspage():
-    return render_template("planets.html")
+    query = planet.query.all()
+    return render_template("planets.html", planets = query)
 
 @app.route('/moons')
 def moonspage():
@@ -43,19 +44,20 @@ def exoplanetspage():
 
 
 
-@app.route('/family/<family>')
+@app.route('/families/<family>')
 def familypage(family):
     return "Received request for faimily: " + family
 
+@app.route('/home')
+def homepage():
+    return render_template("home.html")
 """    
 
 @app.route('/bayer')
 def bayerpage():
     return render_template("bayer.html")    
 
-@app.route('/home')
-def homepage():
-    return render_template("home.html")
+
     
 @app.route('/perseus')
 def perseuspage():

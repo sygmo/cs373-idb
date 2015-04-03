@@ -21,8 +21,12 @@ db.session.add(family(name = "Bayer"))
 db.session.add(family(name = "La Caille"))
 db.session.add(family(name = "Olivia's Family"))
 
+#stars
 db.session.add(star(name = "Sun"))
 print("added")
+
+#planets
+db.session.add(planet(name = "Jupiter"))
 
 print(db.session.query(star).filter_by(name = "Sun").first().name)
 #commit changes
