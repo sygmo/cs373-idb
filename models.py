@@ -4,14 +4,14 @@ from sqlalchemy import Column, ForeignKey, Integer, String, Text, Float, LargeBi
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
-from difficulty import db
+from starlords.views import db
  
 
 class family(db.Model):
 	__tablename__ = "family"
 	id = db.Column(Integer, primary_key = True)
 	name = db.Column(Text, nullable = False)
-	description = db.Column(Text, nullable = True)
+	description = db.Column(Text)
 
 class constellation(db.Model):
 	__tablename__ = "constellation"

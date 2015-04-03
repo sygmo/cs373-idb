@@ -1,4 +1,4 @@
-from difficulty import db
+from starlords.views import db
 from models import family
 
 #creates the database
@@ -20,5 +20,6 @@ db.session.add(family(name = "Heavenly Waters"))
 db.session.add(family(name = "Bayer"))
 db.session.add(family(name = "La Caille"))
 db.session.add(family(name = "Olivia's Family"))
+print()
 #commit changes
 db.session.commit()

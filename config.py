@@ -6,4 +6,4 @@ class BaseConfig(object):
 
 class TestConfig(object):
 	DEBUG = False
-	SQLALCHEMY_DATABASE_URI = 'sqlite:///testdb.db'
+	SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/testdb'

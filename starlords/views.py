@@ -1,10 +1,11 @@
 from starlords import app
 from flask import Flask, render_template, url_for, g, request, session, redirect, abort, flash
-from models import *
+
 from flask.ext.sqlalchemy import SQLAlchemy
 
 app.config.from_object('config.TestConfig')
 db = SQLAlchemy(app)
+from models import *
 
 @app.route('/')
 def indexpage():
@@ -14,7 +15,6 @@ def indexpage():
 def familiespage():
     query = family.query.all()
     return render_template("families.html", families = query)
-
 
 
     
