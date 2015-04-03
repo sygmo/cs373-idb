@@ -15,9 +15,7 @@ def indexpage():
 def familiespage():
     query = family.query.all()
     return render_template("families.html", families = query)
-
-
-    
+  
 @app.route('/constellations')
 def constellationspage():
     return render_template("constellations.html")
@@ -41,6 +39,15 @@ def aboutuspage():
 @app.route('/exoplanets')
 def exoplanetspage():
     return render_template("exoplanets.html")
+
+
+
+
+@app.route('/family/<family>')
+def familypage(family):
+    return "Received request for faimily: " + family
+
+"""    
 
 @app.route('/bayer')
 def bayerpage():
@@ -117,3 +124,4 @@ def mercury():
 @app.route('/venus')
 def venus():
     return render_template("venus.html")
+"""

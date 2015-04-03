@@ -1,5 +1,5 @@
 from starlords.views import db
-from models import family
+from models import family, constellation, planet, star, moon, exoplanet
 
 #creates the database
 print("about to drop")
@@ -20,6 +20,10 @@ db.session.add(family(name = "Heavenly Waters"))
 db.session.add(family(name = "Bayer"))
 db.session.add(family(name = "La Caille"))
 db.session.add(family(name = "Olivia's Family"))
-print()
+
+db.session.add(star(name = "Sun"))
+print("added")
+
+print(db.session.query(star).filter_by(name = "Sun").first().name)
 #commit changes
 db.session.commit()
