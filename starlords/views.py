@@ -85,14 +85,14 @@ def homepage():
 def starPage(star):
     query = db.session.query(star, constellation, family).filter(star.name ==star).filter(star.fk_constellation_star == constellation.id)\
                                                             .filter(constellation.fk_constellation_family == family.id).all()
-    return render_template("star.html")
+    return render_template("star.html", stars = query)
 
 @app.route('/planets/<planets>')
 def planetPage(planet):
     query = db.session.query(planet, star, constellation, family).filter(planet.name == planet).filter(planet.fk_star_planet == star.id)\
                                                             .filter(star.fk_constellation_star == constellation.id)\
                                                             .filter(constellation.fk_constellation_family == family.id).all()
-    return render_template("star.html")
+    return render_template("planet.html", planets = query)
 
 """    
 
