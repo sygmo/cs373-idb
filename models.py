@@ -21,7 +21,7 @@ class constellation(db.Model):
 	meaning = db.Column(Text)
 	history = db.Column(Text)
 	photo_link = db.Column(Text)
-	photo = db.Column(LargeBinary)
+	photo = db.Column(Text)
 	fk_constellation_family = db.Column(Integer, ForeignKey("family.id"))
 
 class planet(db.Model):
@@ -29,7 +29,6 @@ class planet(db.Model):
 	id = db.Column(Integer, primary_key = True)
 	name = db.Column(Text, nullable = False)
 	distance_from_sun = db.Column(Float)
-	composition = db.Column(Text)
 	orbital_period = db.Column(Float)
 	volume = db.Column(Float)
 	mass = db.Column(Float)
@@ -37,15 +36,13 @@ class planet(db.Model):
 	radius = db.Column(Float)
 	surface_area = db.Column(Float)
 	semi_major_axis = db.Column(Float)
-	rings = db.Column(Integer)
 	gravity = db.Column(Float)
 	length_of_day = db.Column(Float)
 	surface_temperature = db.Column(Float)
-	atmosphere = db.Column(Text)
 	number_of_moons = db.Column(Integer)
 	history = db.Column(Text)
 	photo_link = db.Column(Text)
-	photo = db.Column(LargeBinary)
+	photo = db.Column(Text)
 	fk_star_planet = db.Column(Integer, ForeignKey("star.id"))
 
 class star(db.Model):
@@ -61,7 +58,7 @@ class star(db.Model):
 	planetary_systems = db.Column(Integer)	
 	photo_link = db.Column(Text)
 	history = db.Column(Text)
-	photo = db.Column(LargeBinary)
+	photo = db.Column(Text)
 	fk_constellation_star = db.Column(Integer, ForeignKey("constellation.id"))
 
 class moon(db.Model):
@@ -76,7 +73,7 @@ class moon(db.Model):
 	surface_gravity = db.Column(Float)
 	history = db.Column(Text)
 	photo_link = db.Column(Text)
-	photo = db.Column(LargeBinary)
+	photo = db.Column(Text)
 	fk_planet_moon = db.Column(Integer, ForeignKey("planet.id"))
 
 class exoplanet(db.Model):
@@ -89,7 +86,7 @@ class exoplanet(db.Model):
 	discovery_method = db.Column(Text)
 	history = db.Column(Text)
 	photo_link = db.Column(Text)
-	photo = db.Column(LargeBinary)
+	photo = db.Column(Text)
 	fk_star_planet = db.Column(Integer, ForeignKey("star.id"))
 
 	
