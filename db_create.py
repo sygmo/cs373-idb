@@ -28,18 +28,19 @@ db.session.add(family(name = "Home", description="This is the family composed of
 db.session.commit()
 
 #insert constellation
-db.session.add(constellation(name = "Solar System", fk_constellation_family = 9))
-db.session.add(constellation(name = "Andromeda", fk_constellation_family = 3))
+db.session.add(constellation(name = "Solar System", stars_with_planets = 1, meaning = "System of the Sun", history = "It's where we've lived all our lives.", photo_link = "http://solarsystem.nasa.gov/multimedia/display.cfm?Category=Planets&IM_ID=10164", photo = "images/solarsystem.jpg", fk_constellation_family = 9))
+db.session.add(constellation(name = "Andromeda", stars_with_planets = 12, meaning = "Andromeda, the Chained Woman", history = "Andromeda is one of the original constellations listed by Ptolemy and still remains a constellation as one of the 88 modern constellations.", photo_link = "http://commons.wikimedia.org/wiki/File:AndromedaCC.jpg", photo = "images/andromeda.jpg", fk_constellation_family = 3))
 db.session.commit()
 
 #stars
-db.session.add(star(name = "Sun", fk_constellation_star = 1))
-db.session.add(star(name = "WASP-1b", fk_constellation_star = 2))
+db.session.add(star(name = "Sun", mass = 1, radius = 1, spectral_type = "G27", temperature = 5778, luminosity = 1, stellar_distance = 0.0000158, fk_constellation_star = 1, history = "The Sun is the center of our Solar System.", photo_link = "http://commons.wikimedia.org/wiki/File:The_Sun_in_extreme_ultraviolet.jpg", photo = "images/sun.jpg"))
+db.session.add(star(name = "WASP-1", mass = 1.24, radius = 1.382, spectral_type = "F7V", temperature = 6200, luminosity = 2.4, stellar_distance = 1239, planentary_systems = 1, fk_constellation_star = 2, history = "WASP-1 is a metal-rich magnitude 12 star.", photo_link = "http://upload.wikimedia.org/wikipedia/commons/e/ed/WASP-1.jpg", photo = "images/wasp-1.jpg"))
 db.session.commit()
 print("added")
 
 #exoplanets
-db.session.add(exoplanet(name = "WASP-1b", fk_star_planet = 2))
+db.session.add(exoplanet(name = "WASP-1b", discovered = "2006", orbital_period = 2.5199464, semi_major_axis = 0.0382, discovery_method = "Discovery method Transit", fk_star_planet = 2, history = "In recognition of the regional support given to the project on La Palma, the discoverers gave the planet the alternative designation Garafia-1.", photo_link = "http://upload.wikimedia.org/wikipedia/commons/thumb/3/36/WASP-1b.jpg/300px-WASP-1b.jpg", photo = "images/wasp-1b.jpg"))
+
 
 #planets
 db.session.add(planet(name = "Mercury", distance_from_sun = 0.307, semi_major_axis = 0.387, orbital_period = 0.2408418001989376, radius = 2439.7, surface_area = 0.147, volume = 0.056, mass = 0.055, density = 5.427, gravity = 3.7, length_of_day = 58.646, surface_temperature = 340, moons = 0, history = "Mercury is named after the messenger to the Gods. Mercury has almost no atmosphere to retain heat.", photo_link = "http://www.nasa.gov/mission_pages/messenger/multimedia/messenger_orbit_image20111129_1.html", photo = "images/mercury.jpg", fk_star_planet = 1))
