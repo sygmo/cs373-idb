@@ -15,16 +15,35 @@ import org.jsoup.select.Elements;
 public class Driver extends WriteToJson {
 
     public static void main(String[] args) {
-        //extractConstellationsUsingJsoup("http://en.wikipedia.org/wiki/88_modern_constellations","wikitable");
-        //Map<String, String> exoPlanetLinks = extractStarsUsingJsoup("http://en.wikipedia.org/wiki/List_of_exoplanetary_host_stars");
-        //extractExoplanetsUsingJsoup(exoPlanetLinks);
-    	extractPlanetsUsingJsoup("http://en.wikipedia.org/wiki/Planet");
+        extractConstellationsUsingJsoup("http://en.wikipedia.org/wiki/88_modern_constellations","wikitable");
+        Map<String, String> exoPlanetLinks = extractStarsUsingJsoup("http://en.wikipedia.org/wiki/List_of_exoplanetary_host_stars");
+        extractExoplanetsUsingJsoup(exoPlanetLinks);
+    	Map<String, String> moons = extractPlanetsUsingJsoup("http://en.wikipedia.org/wiki/Planet");
+    	extractMoonsUsingJsoup(moons);
+    }
+    
+    public static void extractMoonsUsingJsoup(Map<String, String> moons)
+    {
+    	/*
+    	 * name = db.Column(Text, nullable = False)
+	radius = db.Column(Float)
+	volume = db.Column(Float)
+	mass = db.Column(Float)
+	distance_from_planet = db.Column(Float)
+	orbital_period = db.Column(Float)
+	surface_gravity = db.Column(Float)
+	history = db.Column(Text)
+	photo_link = db.Column(Text)
+	photo = db.Column(LargeBinary)
+	fk_planet_moon = db.Column(Integer, ForeignKey("planet.id"))
+    	 */
     }
     
     // USE THIS INSTEAD: http://en.wikipedia.org/wiki/List_of_gravitationally_rounded_objects_of_the_Solar_System
-    public static void extractPlanetsUsingJsoup(String url)
+    public static Map<String, String> extractPlanetsUsingJsoup(String url)
     {
     	Document doc;
+        Map<String,String> moonPlanet = new HashMap<String,String>();
     	try {
             // need http protocol
             doc = Jsoup.connect(url).get();
@@ -373,14 +392,27 @@ public class Driver extends WriteToJson {
             		if(e.text().contains("Known satellites"))
             		{
             			String[] number = e.text().split("Known satellites ");
+            			if(number[number.length-1].contains(" "))
+            			{
+            				number[number.length-1] = number[number.length-1].substring(0, number[number.length-1].indexOf(' '));
+            			}
             			py_planets.append(", moons = " + number[number.length-1]);
             			moons++;
+            			moonPlanet.put("http://en.wikipedia.org/wiki/Moons_of_"+name, name);
             		}
             	}
 
         		if(moons == 0)
         		{
-        			py_planets.append(", moons = " + 0);
+        			if(name.equals("Earth"))
+        			{
+        				moonPlanet.put("http://en.wikipedia.org/wiki/Moon", "Earth");
+        				py_planets.append(", moons = " + 1);
+        			}
+        			else
+        			{
+        				py_planets.append(", moons = " + 0);
+        			}
         		}
             	py_planets.append(", history = " + "None");
             	py_planets.append(", photo_link = " + "None");
@@ -392,6 +424,7 @@ public class Driver extends WriteToJson {
     	} catch (IOException e) {
                 e.printStackTrace();
                 }
+    	return moonPlanet;
     }
     
     public static void extractExoplanetsUsingJsoup(Map<String,String> exoPlanetStar)
