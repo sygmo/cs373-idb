@@ -52,7 +52,10 @@ def planetspage():
 
 @app.route('/moons')
 def moonspage():
-    query = db.session.query(moon, planet).filter(moon.fk_planet_moon == planet.id).all()
+    query = db.session.query(moon, planet, star, constellation, family).filter(moon.fk_planet_moon == planet.id)\
+                                                            .filter(planet.fk_star_planet == star.id)\
+                                                            .filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
     return render_template("moons.html", moons = query)
     
 @app.route('/aboutus')
@@ -80,6 +83,8 @@ def homepage():
 
 @app.route('/stars/<stars>')
 def starPage(star):
+    query = db.session.query(star, constellation, family).filter(star.name ==star).filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
     return render_template("star.html")
 
 

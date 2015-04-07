@@ -39,7 +39,7 @@ class planet(db.Model):
 	gravity = db.Column(Float)
 	length_of_day = db.Column(Float)
 	surface_temperature = db.Column(Float)
-	number_of_moons = db.Column(Integer)
+	moons = db.Column(Integer)
 	history = db.Column(Text)
 	photo_link = db.Column(Text)
 	photo = db.Column(Text)

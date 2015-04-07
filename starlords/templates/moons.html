@@ -34,27 +34,15 @@
 			  </tr>
 			</thead>
 			<tbody>
+			  {%for x in moons%}
 			  <tr>
-				<td><a href="callistro">Callisto</a></td>
-				<td><a href="/jupiter">Jupiter</a></td>
-				<td><a href="/sun">Sun</a></td>
-				<td><a href="/solarsystem">Solar System</a></td>
-				<td><a href="/home">Home</a></td>
+				<td><a href="/moons/{{ x[0].name }}">{{ x[0].name }}</a></td>
+				<td><a href="/planets/{{ x[1].name }}">{{ x[1].name }}</a></td>
+				<td><a href="/stars/{{ x[2].name }}">{{ x[2].name }}</a></td>
+				<td><a href="/constellations/{{ x[3].name }}">{{ x[3].name }}</a></td>
+				<td><a href="/families/{{ x[4].name }}">{{ x[4].name }}</a></td>
 			  </tr>
-			  <tr>
-				<td><a href="/europa">Europa</a></td>
-				<td><a href="/jupiter">Jupiter</a></td>
-				<td><a href="/sun">Sun</a></td>
-				<td><a href="/solarsystem">Solar System</a></td>
-				<td><a href="/home">Home</a></td>
-			  </tr>
-			  <tr>
-				<td><a href="/io">Io</a></td>
-				<td><a href="/jupiter">Jupiter</a></td>
-				<td><a href="/sun">Sun</a></td>
-				<td><a href="/solarsystem">Solar System</a></td>
-				<td><a href="/home">Home</a></td>
-			  </tr>
+			  {% endfor %}
 			</tbody>
 		  </table>
 		  </div>

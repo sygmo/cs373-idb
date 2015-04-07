@@ -52,24 +52,14 @@
 			  </tr>
 			</thead>
 			<tbody>
+			  {%for x in exoplanets%}
 			  <tr>
-				<td><a href="/hd189733b">HD 189733 b</a></td>
-				<td><a href="/hd189733">HD 189733</a></td>
-				<td><a href="/vulpecula">Vulpecula</a></td>
-				<td><a href="/bayer">Bayer</a></td>
+				<td><a href="/exoplanets/{{ x[0].name }}">{{ x[0].name }}</a></td>
+				<td><a href="/stars/{{ x[1].name }}">{{ x[1].name }}</a></td>
+				<td><a href="/constellations/{{ x[2].name }}">{{ x[2].name }}</a></td>
+				<td><a href="/families/{{ x[3].name }}">{{ x[3].name }}</a></td>
 			  </tr>
-			  <tr>
-				<td><a href="/upsandb">Upsilon Andromedae b</a></td>
-				<td><a href="/upsand">Upsilon Andromedae</a></td>
-				<td><a href="/andromeda">Andromeda</a></td>
-				<td><a href="/perseus">Perseus</a></td>
-			  </tr>
-			  <tr>
-				<td><a href="/wasp-1b">WASP-1b</a></td>
-				<td><a href="/wasp-1">WASP-1</a></td>
-				<td><a href="/andromeda">Andromeda</a></td>
-				<td><a href="/perseus">Perseus</a></td>
-			  </tr>
+			  {% endfor %}
 			</tbody>
 		  </table>
 		  </div>
