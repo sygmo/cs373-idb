@@ -18,14 +18,15 @@ def familiespage():
   
 @app.route('/constellations')
 def constellationspage():
-    return render_template("constellations.html")
+    query = db.session.query(constellation, family).filter(constellation.fk_constellation_family == family.id).all()
+    return render_template("constellations.html", constellations = query)
 
 @app.route('/stars')
 def starspage():
     query = db.session.query(star, constellation, family).filter(star.fk_constellation_star == constellation.id)\
                                                             .filter(constellation.fk_constellation_family == family.id).all()
 
-    return render_template("stars.html", planets = query)
+    return render_template("stars.html", stars = query)
 
 @app.route('/planets')
 def planetspage():

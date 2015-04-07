@@ -55,9 +55,14 @@ for x in query:
 
 query1 = db.session.query(star, constellation, family).filter(star.fk_constellation_star == constellation.id)\
 															.filter(constellation.fk_constellation_family == family.id).all()
-
 for x in query1:
 	print("Star: " + x[0].name + ", constellation: " + x[1].name + ", family: " + x[2].name)
+
+query2 = db.session.query(constellation, family).filter(constellation.fk_constellation_family == family.id).all()
+
+for x in query2:
+	print("constellation: " + x[0].name + ", family: " + x[1].name)
+
 
 print(db.session.query(star).filter_by(name = "Sun").first().name)
 
