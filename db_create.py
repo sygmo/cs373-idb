@@ -16,25 +16,30 @@ print("created")
 
 #insert sample data
 #families
-db.session.add(family(name = "Ursa Major"))
-db.session.add(family(name = "Zodiac"))
-db.session.add(family(name = "Perseus"))
-db.session.add(family(name = "Hercules"))
-db.session.add(family(name = "Orion"))
-db.session.add(family(name = "Heavenly Waters"))
-db.session.add(family(name = "Bayer"))
-db.session.add(family(name = "La Caille"))
-db.session.add(family(name = "Home"))
+db.session.add(family(name = "Ursa Major", description="This family is composed of 10 constellations and is known for the Big Dipper."))
+db.session.add(family(name = "Zodiac", description="This family is composed of 12 constellations that have zodiac signs."))
+db.session.add(family(name = "Perseus", description="This family is composed of 9 constellations. Six of the constellations are named for figures in the Perseus myth."))
+db.session.add(family(name = "Hercules", description="This family is composed of 19 constellations. It is the largest constellation family."))
+db.session.add(family(name = "Orion", description="This family is composed of 5 constellations. It represents Orion and his dogs."))
+db.session.add(family(name = "Heavenly Waters", description="The constellations in this family are associated with lakes, rivers, sea creatures, and ships."))
+db.session.add(family(name = "Bayer", description="This family is composed of 11 constellations. The constellations are all based off of animals."))
+db.session.add(family(name = "La Caille", description="This family is composed of 13 constellations. The constellations were introduced by Nicolas Louis de Lacaille"))
+db.session.add(family(name = "Home", description="This is the family composed of our Sun and Solar System"))
 db.session.commit()
 
 #insert constellation
 db.session.add(constellation(name = "Solar System", fk_constellation_family = 9))
+db.session.add(constellation(name = "Andromeda", fk_constellation_family = 3))
 db.session.commit()
 
 #stars
 db.session.add(star(name = "Sun", fk_constellation_star = 1))
+db.session.add(star(name = "WASP-1b", fk_constellation_star = 2))
 db.session.commit()
 print("added")
+
+#exoplanets
+db.session.add(exoplanet(name = "WASP-1b", fk_star_planet = 2))
 
 #planets
 db.session.add(planet(name = "Mercury", distance_from_sun = 0.307, semi_major_axis = 0.387, orbital_period = 0.2408418001989376, radius = 2439.7, surface_area = 0.147, volume = 0.056, mass = 0.055, density = 5.427, gravity = 3.7, length_of_day = 58.646, surface_temperature = 340, moons = 0, history = "Mercury is named after the messenger to the Gods. Mercury has almost no atmosphere to retain heat. It is in the <a href=\"/home\">Home</a> family.", photo_link = "http://www.nasa.gov/mission_pages/messenger/multimedia/messenger_orbit_image20111129_1.html", photo = "images/mercury.jpg", fk_star_planet = 1))
@@ -46,6 +51,8 @@ db.session.add(planet(name = "Saturn", distance_from_sun = 9.04807635, semi_majo
 db.session.add(planet(name = "Uranus", distance_from_sun = 18.283135, semi_major_axis = 19.189253, orbital_period = 84.016846, moons = 27, radius = 25362, surface_area = 15.91, volume = 63.086, mass = 14.536, density = 1.27, gravity = 8.69, length_of_day = 0.71833, surface_temperature = 76, history = "Uranus is different than the other planets because its axis of rotation is tilted.  It is in the <a href=\"/home\">Home</a> family.", photo_link = "http://commons.wikimedia.org/wiki/File:Uranus2.jpg", photo = "images/uranus.jpg", fk_star_planet = 1))
 db.session.add(planet(name = "Neptune", distance_from_sun = 29.809946, semi_major_axis = 30.070900, orbital_period = 164.8, moons = 14, radius = 24622, surface_area = 14.98, volume = 57.74, mass = 17.147, density = 1.638, gravity = 11.15, length_of_day = 0.6713, surface_temperature = 72, history = "Neptune is the farthest major planet from the sun in our solar system. It is in the <a href=\"/home\">Home</a> family.", photo_link = "http://commons.wikimedia.org/wiki/File:Neptune_Full.jpg", photo = "images/neptune.jpg", fk_star_planet = 1))
 
+#moons
+db.session.add(moon(name = "Io", fk_planet_moon = 5))
 db.session.commit()
 
 
