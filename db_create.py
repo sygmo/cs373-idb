@@ -50,6 +50,7 @@ db.session.add(planet(name = "Jupiter", distance_from_sun = 4.950429, semi_major
 db.session.add(planet(name = "Saturn", distance_from_sun = 9.04807635, semi_major_axis = 9.5820172, orbital_period = 29.4571, moons = 62, radius = 58232, surface_area = 83.703, volume = 763.59, mass = 95.152, density = 0.687, gravity = 10.44, length_of_day = 10.55, surface_temperature = 134, history =  "Saturn is known for its many rings. It is in the <a href=\"/home\">Home</a> family.", photo_link = "http://commons.wikimedia.org/wiki/File:Saturn_Equinox_09212014.jpg", photo = "images/saturn.jpg", fk_star_planet = 1))
 db.session.add(planet(name = "Uranus", distance_from_sun = 18.283135, semi_major_axis = 19.189253, orbital_period = 84.016846, moons = 27, radius = 25362, surface_area = 15.91, volume = 63.086, mass = 14.536, density = 1.27, gravity = 8.69, length_of_day = 0.71833, surface_temperature = 76, history = "Uranus is different than the other planets because its axis of rotation is tilted.  It is in the <a href=\"/home\">Home</a> family.", photo_link = "http://commons.wikimedia.org/wiki/File:Uranus2.jpg", photo = "images/uranus.jpg", fk_star_planet = 1))
 db.session.add(planet(name = "Neptune", distance_from_sun = 29.809946, semi_major_axis = 30.070900, orbital_period = 164.8, moons = 14, radius = 24622, surface_area = 14.98, volume = 57.74, mass = 17.147, density = 1.638, gravity = 11.15, length_of_day = 0.6713, surface_temperature = 72, history = "Neptune is the farthest major planet from the sun in our solar system. It is in the <a href=\"/home\">Home</a> family.", photo_link = "http://commons.wikimedia.org/wiki/File:Neptune_Full.jpg", photo = "images/neptune.jpg", fk_star_planet = 1))
+db.session.commit()
 
 #moons
 db.session.add(moon(name = "Io", fk_planet_moon = 5))
@@ -74,6 +75,11 @@ query2 = db.session.query(constellation, family).filter(constellation.fk_constel
 
 for x in query2:
 	print("constellation: " + x[0].name + ", family: " + x[1].name)
+
+query3 = db.session.query(star, constellation, family).filter(star.name == "Sun").filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
+for x in query3:
+	print("star: " + x[0].name + ", constellation: " + x[1].name + ", family: " + x[2].name)
 
 
 print(db.session.query(star).filter_by(name = "Sun").first().name)
