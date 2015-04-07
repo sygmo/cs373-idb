@@ -52,7 +52,8 @@ def planetspage():
 
 @app.route('/moons')
 def moonspage():
-    return render_template("moons.html")
+    query = db.session.query(moon, planet).filter(moon.fk_planet_moon == planet.id).all()
+    return render_template("moons.html", moons = query)
     
 @app.route('/aboutus')
 def aboutuspage():
@@ -60,7 +61,11 @@ def aboutuspage():
     
 @app.route('/exoplanets')
 def exoplanetspage():
-    return render_template("exoplanets.html")
+    query = db.session.query(exoplanet, star, constellation, family).filter(exoplanet.fk_star_planet == star.id)\
+                                                            .filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
+
+    return render_template("exoplanets.html", exoplanets = query)
 
 
 
@@ -72,6 +77,12 @@ def familypage(family):
 @app.route('/home')
 def homepage():
     return render_template("home.html")
+
+@app.route('/stars/<stars>')
+def starPage(star):
+    return render_template("star.html")
+
+
 """    
 
 @app.route('/bayer')
