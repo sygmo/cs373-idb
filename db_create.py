@@ -24,7 +24,7 @@ db.session.add(family(name = "Orion"))
 db.session.add(family(name = "Heavenly Waters"))
 db.session.add(family(name = "Bayer"))
 db.session.add(family(name = "La Caille"))
-db.session.add(family(name = "home"))
+db.session.add(family(name = "Home"))
 db.session.commit()
 
 #insert constellation
@@ -39,7 +39,7 @@ print("added")
 #planets
 db.session.add(planet(name = "Jupiter", fk_star_planet = 1))
 db.session.add(planet(name = "Earth", fk_star_planet = 1))
-db.session.add(planet(name = "mars"))
+db.session.add(planet(name = "Mars"))
 
 db.session.commit()
 
@@ -53,9 +53,11 @@ query = db.session.query(planet, star, constellation, family).filter(planet.fk_s
 for x in query:
 	print("planet: " + x[0].name + ", Star: " + x[1].name + ", constellation: " + x[2].name + ", family: " + x[3].name)
 
+query1 = db.session.query(star, constellation, family).filter(star.fk_constellation_star == constellation.id)\
+															.filter(constellation.fk_constellation_family == family.id).all()
 
-
-
+for x in query1:
+	print("Star: " + x[0].name + ", constellation: " + x[1].name + ", family: " + x[2].name)
 
 print(db.session.query(star).filter_by(name = "Sun").first().name)
 

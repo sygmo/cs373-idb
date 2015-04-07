@@ -30,7 +30,7 @@ def planetspage():
                                                             .filter(star.fk_constellation_star == constellation.id)\
                                                             .filter(constellation.fk_constellation_family == family.id).all()
 
-
+    print(query)
 
 
     return render_template("planets.html", planets = query)
