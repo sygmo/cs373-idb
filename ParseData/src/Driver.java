@@ -78,8 +78,10 @@ public class Driver extends WriteToJson {
             	n = doc.select("table.infobox tr");
             	doc.select("span[style*=display:none]").remove();
             	int has_mass = 0;
+            	int moons = 0;
             	for(Element e : n)
             	{
+            		//in AU
             		if(e.text().contains("Mass"))
             		{
             			if(!name.equals("Earth"))
@@ -111,7 +113,7 @@ public class Driver extends WriteToJson {
             				py_planets.append(", mass = " + 1);
             			}
             		}
-            		// distance from the sun (perihelion is closest to the sun)
+            		// distance from the sun (perihelion is closest to the sun) in AU
             		if(e.text().contains("Perihelion"))
             		{
             			String changer = e.text();
@@ -134,6 +136,7 @@ public class Driver extends WriteToJson {
             				}
             			}
             		}
+            		// in Earth Years
             		if(e.text().contains("Orbital period"))
             		{
             			String changer = e.text();
@@ -175,7 +178,7 @@ public class Driver extends WriteToJson {
             				}
             			}
             		}
-            		// surface temperature
+            		// surface temperature (in K)
             		if(e.text().contains("Surface temp. min mean max "))
             		{
             			String temp = "";
@@ -213,55 +216,172 @@ public class Driver extends WriteToJson {
             			}
             			py_planets.append(", surface_temperature = " + temp);
             		}
-            		// volume
+            		// volume (in AU)
             		if(e.text().contains("Volume"))
             		{
-            			String[] number = e.text().split("Volume ");
-            			py_planets.append(", volume = " + number[number.length-1]);
+            			if(!name.equals("Earth"))
+            			{
+            				String[] spl = e.text().split("km3");
+            				String earths = spl[spl.length-1];
+            				while(earths.charAt(0) == '[')
+            				{
+            					earths = earths.substring(3);
+            				}
+            				if(earths.charAt(0) == ' ')
+            				{
+            					earths = earths.substring(1);
+            				}
+            				int index = earths.length();
+            				for(int i = 0; i < earths.length(); i++)
+            				{
+            					if(!(earths.charAt(i)+"").matches("[\\d\\.]"))
+            					{
+            						index = i;
+            						i = earths.length();
+            					}
+            				}
+            				earths = earths.substring(0, index);
+            				py_planets.append(", volume = " + earths);
+            			}
+            			else
+            			{
+            				py_planets.append(", volume = " + 1);
+            			}
             		}
-            		// radius 
+            		// radius in km
             		if(e.text().contains("Mean radius"))
             		{
-            			String[] number = e.text().split("Mean radius ");
-            			py_planets.append(", radius = " + number[number.length-1]);
+            			String changer = e.text();
+            			String diff = changer.replaceAll("[^0-9\\.,]","A");
+            			diff = diff.replaceAll("[,]","");
+            			String[] number = diff.split("A");
+            			for(int i = 0; i < number.length; i++)
+            			{
+            				if(number[i].length() > 0)
+            				{
+            					py_planets.append(", radius = " + number[i]);
+            					i = number.length;
+            				}
+            			}
             		}
-            		// density
+            		// density in g/cm^3
             		if(e.text().contains("Mean density"))
             		{
-            			String[] number = e.text().split("Mean density ");
-            			py_planets.append(", density = " + number[number.length-1]);
+            			String changer = e.text();
+            			String diff = changer.replaceAll("[^0-9\\.,]","A");
+            			diff = diff.replaceAll("[,]","");
+            			String[] number = diff.split("A");
+            			for(int i = 0; i < number.length; i++)
+            			{
+            				if(number[i].length() > 0)
+            				{
+            					py_planets.append(", density = " + number[i]);
+            					i = number.length;
+            				}
+            			}
             		}
             		// surface area
             		if(e.text().contains("Surface area"))
             		{
-            			String[] number = e.text().split("Surface area ");
-            			py_planets.append(", surface_area = " + number[number.length-1]);
+            			if(!name.equals("Earth"))
+            			{
+            				String[] spl = e.text().split("km2");
+            				String earths = spl[spl.length-1];
+            				while(earths.charAt(0) == '[')
+            				{
+            					earths = earths.substring(3);
+            				}
+            				if(earths.charAt(0) == ' ')
+            				{
+            					earths = earths.substring(1);
+            				}
+            				int index = earths.length();
+            				for(int i = 0; i < earths.length(); i++)
+            				{
+            					if(!(earths.charAt(i)+"").matches("[\\d\\.]"))
+            					{
+            						index = i;
+            						i = earths.length();
+            					}
+            				}
+            				earths = earths.substring(0, index);
+            				py_planets.append(", surface_area = " + earths);
+            			}
+            			else
+            			{
+            				py_planets.append(", surface_area = " + 1);
+            			}
             		}
-            		// semi major axis
+            		// semi major axis in AU
             		if(e.text().contains("Semi-major axis"))
             		{
-            			String[] number = e.text().split("Semi-major axis ");
-            			py_planets.append(", semi_major_axis = " + number[number.length-1]);
+            			if(!name.equals("Earth"))
+            			{
+	            			String changer = e.text();
+	            			String diff = changer.replaceAll("[^0-9\\.,]","A");
+	            			diff = diff.replaceAll("[,]","");
+	            			String[] number = diff.split("A");
+	            			for(int i = 0; i < number.length; i++)
+	            			{
+	            				if(number[i].length() > 0)
+	            				{
+	            					py_planets.append(", semi_major_axis = " + number[i]);	            					i = number.length;
+	            				}
+	            			}
+            			}
+            			else
+            			{
+        					py_planets.append(", semi_major_axis = " + 1);
+            			}
             		}
-            		// gravity
+            		// gravity in m/s^2
             		if(e.text().contains("Surface gravity"))
             		{
-            			String[] number = e.text().split("Surface gravity ");
-            			py_planets.append(", gravity = " + number[number.length-1]);
+            			String changer = e.text();
+            			String diff = changer.replaceAll("[^0-9\\.,]","A");
+            			diff = diff.replaceAll("[,]","");
+            			String[] number = diff.split("A");
+            			for(int i = 0; i < number.length; i++)
+            			{
+            				if(number[i].length() > 0)
+            				{
+            					py_planets.append(", gravity = " + number[i]);
+            					i = number.length;
+            				}
+            			}
             		}
             		// composition
-            		if(e.text().contains("Composition by volume"))
+            		/*if(e.text().contains("Composition by volume"))
             		{
-            			String[] number = e.text().split("Composition by volume ");
-            			py_planets.append(", composition = " + number[number.length-1]);
-            		}
+            			String comp = e.text().substring("Composition by volume ".length());
+            			String[] number = e.text().split(" ");
+            			py_planets.append(", composition = \"");
+            			py_planets.append(number[1]);
+            			System.out.print(number[1]);
+            			for(int i = 2; i < number.length; i++)
+            			{
+            				if(!number[i].contains("[0-9]") && !number[i].contains("trace"));
+            				{
+            					py_planets.append(", " + number[i]);
+            					System.out.print(", " + number[i]);
+            				}
+            			}
+            			System.out.println("");
+            			py_planets.append("\"");
+            		}*/
             		// number of moons
             		if(e.text().contains("Known satellites"))
             		{
             			String[] number = e.text().split("Known satellites ");
             			py_planets.append(", moons = " + number[number.length-1]);
+            			moons++;
             		}
             	}
+
+        		if(moons == 0)
+        		{
+        			py_planets.append(", moons = " + 0);
+        		}
             	py_planets.append(", history = " + "None");
             	py_planets.append(", photo_link = " + "None");
             	py_planets.append(", photo = " + "None");
