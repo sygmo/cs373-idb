@@ -38,18 +38,13 @@
 			  </tr>
 			</thead>
 			<tbody>
+			  {%for x in constellations%}
 			  <tr>
-				<td><a href="/andromeda">Andromeda</a></td>
-				<td><a href="/perseus">Perseus</a></td>
+				<td><a href="/constellations/{{ x[0].name }}">{{ x[0].name }}</a></td>
+				<td><a href="/constellations/{{ x[1].name }}">{{ x[1].name }}</a></td>
+			
 			  </tr>
-			  <tr>
-				<td><a href="/vulpecula">Vulpecula</a></td>
-				<td><a href="/bayer">Bayer</a></td>
-			  </tr>
-			  <tr>
-				<td><a href="/solarsystem">Solar System</a></td>
-				<td><a href="/home">Home</a></td>
-			  </tr>
+			  {% endfor %}
 			</tbody>
 		  </table>
 		  </div>
