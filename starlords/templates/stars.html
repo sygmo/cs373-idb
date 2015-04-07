@@ -32,26 +32,14 @@
 			  </tr>
 			</thead>
 			<tbody>
-			  <tr>
-				<td><a href="/hd189733">HD 189733</a></td>
-				<td><a href="/vulpecula">Vulpecula</a></td>
-				<td><a href="/bayer">Bayer</a></td>
-			  </tr>
-			  <tr>
-				<td><a href="/sun">Sun</a></td>
-				<td><a href="/solarsystem">Solar System</a></td>
-				<td><a href="/home">Home</a></td>
-			  </tr>
-			  <tr>
-				<td><a href="/upsand">Upsilon Andromedae</a></td>
-				<td><a href="/andromeda">Andromeda</a></td>
-				<td><a href="/perseus">Perseus</a></td>
-			  </tr>
-			  <tr>
-				<td><a href="/wasp-1">WASP-1</a></td>
-				<td><a href="/andromeda">Andromeda</a></td>
-				<td><a href="/perseus">Perseus</a></td>
-			  </tr>
+				{% for x in stars %}
+				<tr>
+					<td><a href="/stars/{{ x[0].name }}">{{ x[0].name}} </a></td>
+					<td><a href="/stars/{{ x[1].name }}">{{ x[1].name}} </a></td>
+					<td><a href="/stars/{{ x[2].name }}">{{ x[2].name}} </a></td>
+				</tr>
+				{% endfor %}
+
 			</tbody>
 		  </table>
 		  </div>
