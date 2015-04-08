@@ -3,9 +3,7 @@ import sys
 from sqlalchemy import Column, ForeignKey, Integer, String, Text, Float, LargeBinary, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-
-from starlords.views import db
- 
+from __init__ import db
 
 class family(db.Model):
 	__tablename__ = "family"
