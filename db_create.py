@@ -1,6 +1,13 @@
 #coding: utf8
-from starlords.views import db
+
 from models import family, constellation, planet, star, moon, exoplanet
+from flask import Flask, render_template, url_for, g, request, session, redirect, abort, flash
+from flask.ext.sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+
+app.config.from_object('config.TestConfig')
+db = SQLAlchemy(app)
 
 #creates the database
 print("about to drop")
@@ -11,9 +18,12 @@ db.create_all()
 print("created")
 
 
+
+
+#if __name__ == "__main__":
+#app.run()
 #NOTE:
 #if you don't see all the data being displayed check your foreign keys
-
 
 #insert sample data
 #families
@@ -532,7 +542,7 @@ db.session.commit()
 
 
 
-
+print("Running queries.....")
 
 query = db.session.query(planet, star, constellation, family).filter(planet.fk_star_planet == star.id)\
 															.filter(star.fk_constellation_star == constellation.id)\
@@ -563,6 +573,11 @@ print("planet: " + query4[0].name + ", star: " + x[1].name + ", constellation: "
 
 
 
+
+
+
+
+print("Done............")
 
 #commit changes
 #db.session.commit()
