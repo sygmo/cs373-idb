@@ -57,10 +57,10 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td>{{ volume }}</td>
-				<td>{{ mass }} kg</td>
-				<td>{{ density }} g/cm</td>
-				<td>{{ surface_area }} km^2</td>
+				<td>{{ volume }} Earths</td>
+				<td>{{ mass }} Earths</td>
+				<td>{{ density }} g/cm^3</td>
+				<td>{{ surface_area }} Earths</td>
 			  </tr>
 			</tbody>
 		  </table>
@@ -128,7 +128,17 @@
 			</div>
 			<hr />
 			<div class="row">
+			{% if moons == 0 %}
 				<p>No moons</p>
+			{% endif %}
+			{% if moons > 0 %}
+				{% for x in all_moons %}
+					<div class="col-lg-4 col-sm-6 text-center offset 0">
+						<img class="img-responsive img-center" src="../static/{{ x[0].photo }}" alt="{{ x[0].name }}">
+						<h3><a href="/moons/{{ x[0].name }}">{{ x[0].name }}</a></h3>
+					</div>
+				{% endfor %}
+			{% endif %}
 			</div>
 		</div>
 	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

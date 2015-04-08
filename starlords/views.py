@@ -109,9 +109,13 @@ def planetPage(planetVar):
                                                             .filter(constellation.fk_constellation_family == family.id).first()
 
     if(query != None):
+        query_moons = db.session.query(moon, planet, star, constellation, family).filter(planet.name == planetVar).filter(moon.fk_planet_moon == query[0].id).filter(planet.fk_star_planet == star.id)\
+                                                            .filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
         return render_template(
             "planet.html",
             planet = query,
+            planetId = query[0].id,
             name = query[0].name,
             planet_photo = query[0].photo,
             distance_from_sun = query[0].distance_from_sun,
@@ -130,7 +134,8 @@ def planetPage(planetVar):
             constellation_name = query[2].name,
             constellation_photo = query[2].photo,
             star_name = query[1].name,
-            star_photo = query[1].photo
+            star_photo = query[1].photo,
+            all_moons = query_moons
             )
     else:
         return "Invalid planet: " + planetVar
