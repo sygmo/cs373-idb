@@ -29,7 +29,7 @@
 			<div class="row">
 				
 		  <div class="table-responsive col-lg-4 col-sm-6 text-center offset 0">
-			<img class="img-responsive img-center" src="{{ url_for('static', filename='images/io.jpg') }}" alt="Io">
+			<img class="img-responsive img-center" src="../static/{{ moon_photo }}" alt="{{ name }}">
 		  </div>
 				<div class="table-responsive col-lg-8 col-sm-6 offset 0">
                     <table class="table table-hover">
@@ -48,12 +48,12 @@
                             <td>{{ mass }} Earths</td>
                             <td>{{ orbital_period }} days</td>
 							<td>{{ surface_gravity }} m/s^2</td>
-                            <td><a href="{{ photo_link }}">here</a></td>
+                            <td><a href="{{ moon_photo_link }}">here</a></td>
                         </tr>
                         </tbody>
                     </table>
                     <b>History</b>
-                    <p>With over 400 active volcanoes, Io is the most geologically active object in the Solar System. It is in the <a href="/home">Home</a> family.</p>
+                    <p>{{ history }}</p>
                 </div>
             </div>
            <hr />
@@ -63,8 +63,8 @@
 			<hr />
 			<div class="row">
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
-					<img class="img-responsive img-center" src="{{ url_for('static', filename='images/solarsystem.jpg') }}" alt="Solar System">
-					<h3><a href="/solarsystem">Solar System</a></h3>
+					<img class="img-responsive img-center" src="../static/{{ constellation_photo }}" alt="{{ constellation_name }}">
+					<h3><a href="/constellations/{{ constellation_name }}">{{ constellation_name }}</a></h3>
 				</div>
 			</div>
 			<hr />
@@ -74,8 +74,8 @@
 			<hr />
 			<div class="row">
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
-					<img class="img-responsive img-center" src="{{ url_for('static', filename='images/sun.jpg') }}" alt="Sun">
-					<h3><a href="/sun">Sun</a></h3>
+					<img class="img-responsive img-center" src="../static/{{ star_photo }}" alt="{{ star_name }}">
+					<h3><a href="/stars/{{ star_name }}">{{ star_name }}</a></h3>
 				</div>
 			</div>
 			<hr />
@@ -85,8 +85,8 @@
 			<hr />
 			<div class="row">
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
-					<img class="img-responsive img-center" src="{{ url_for('static', filename='images/jupiter.jpg') }}" alt="Jupiter">
-					<h3><a href="/jupiter">Jupiter</a></h3>
+					<img class="img-responsive img-center" src="../static/{{ planet_photo }}" alt="{{ planet_name }}">
+					<h3><a href="/planets/{{ planet_name }}">{{ planet_name }}</a></h3>
 				</div>
 			</div>
 		</div>

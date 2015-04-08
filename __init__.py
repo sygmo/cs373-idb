@@ -149,13 +149,13 @@ def constellationPage(consVar):
 #renders a moon page
 @app.route('/moons/<moonVar>')
 def moonPage(moonVar):
-    query_moons = db.session.query(moon, planet, star, constellation, family).filter(moon.name == moonVar).filter(moon.fk_planet_moon == planet.id).filter(planet.fk_star_planet == star.id)\
+    query = db.session.query(moon, planet, star, constellation, family).filter(moon.name == moonVar).filter(moon.fk_planet_moon == planet.id).filter(planet.fk_star_planet == star.id)\
                                                             .filter(star.fk_constellation_star == constellation.id)\
-                                                            .filter(constellation.fk_constellation_family == family.id).all()
+                                                            .filter(constellation.fk_constellation_family == family.id).first()
     if(query != None):
         return render_template(
             "moon.html",
-            planet = query,
+            moon = query,
             name = query[0].name,
             moon_photo = query[0].photo,
             radius = query[0].radius,
