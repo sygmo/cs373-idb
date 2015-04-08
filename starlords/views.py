@@ -148,7 +148,30 @@ def constellationPage(consVar):
 #renders a moon page
 @app.route('/moons/<moonVar>')
 def moonPage(moonVar):
-    return "Received request for moon: " + moonVar
+    query_moons = db.session.query(moon, planet, star, constellation, family).filter(moon.name == moonVar).filter(moon.fk_planet_moon == planet.id).filter(planet.fk_star_planet == star.id)\
+                                                            .filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
+    if(query != None):
+        return render_template(
+            "moon.html",
+            planet = query,
+            name = query[0].name,
+            moon_photo = query[0].photo,
+            radius = query[0].radius,
+            mass = query[0].mass,
+            orbital_period = query[0].orbital_period,
+            surface_gravity = query[0].surface_gravity,
+            moon_photo_link = query[0].photo_link,
+            history = query[0].history,
+            constellation_name = query[3].name,
+            constellation_photo = query[3].photo,
+            star_name = query[2].name,
+            star_photo = query[2].photo,
+            planet_name = query[1].name,
+            planet_photo = query[1].photo
+            )
+    else:
+        return "Invalid planet: " + planetVar
 
 
 
