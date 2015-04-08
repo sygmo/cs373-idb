@@ -103,17 +103,21 @@ def familypage(familyVar):
                                                             .filter(constellation.fk_constellation_family == family.id).all()
         query_stars = db.session.query(star, constellation, family).filter(family.name == familyVar).filter(star.fk_constellation_star == constellation.id)\
                                                             .filter(constellation.fk_constellation_family == family.id).all()
+        query_exoplanets = db.session.query(exoplanet, star, constellation, family).filter(family.name == familyVar).filter(exoplanet.fk_star_planet == star.id)\
+                                                            .filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
         query_constellations = db.session.query(constellation, family).filter(family.name == familyVar).filter(constellation.fk_constellation_family == family.id).all()
         return render_template(
             "family.html",
-			family = query,
-			name = query.name,
-			description = query.description,
-			all_moons = query_moons,
-			all_planets = query_planets,
-			all_stars = query_stars,
-			all_constellations = query_constellations
-			)
+            family = query,
+            name = query.name,
+            description = query.description,
+            all_moons = query_moons,
+            all_planets = query_planets,
+            all_stars = query_stars,
+            all_exoplanets = query_exoplanets,
+            all_constellations = query_constellations
+            )
     else:
         return "Invalid family: " + familyVar
 
