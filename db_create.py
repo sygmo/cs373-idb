@@ -1,3 +1,4 @@
+#coding: utf8
 from starlords.views import db
 from models import family, constellation, planet, star, moon, exoplanet
 
