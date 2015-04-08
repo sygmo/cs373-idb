@@ -7,49 +7,56 @@ app.config.from_object('config.TestConfig')
 db = SQLAlchemy(app)
 from models import *
 
+########################################################
+#                Root and information
+########################################################
+
 @app.route('/')
 def indexpage():
     return render_template("index.html")
 
+@app.route('/aboutus')
+def aboutuspage():
+    return render_template("aboutus.html") 
+
+
+
+
+
+
+########################################################
+#               Lists of categories
+########################################################
+
+#Lists all the families in our database
 @app.route('/families')
 def familiespage():
     query = family.query.all()
     return render_template("families.html", families = query)
-  
+
+#Lists all the constellations in our database
 @app.route('/constellations')
 def constellationspage():
     query = db.session.query(constellation, family).filter(constellation.fk_constellation_family == family.id).all()
     return render_template("constellations.html", constellations = query)
 
+#Lists all the stars in our database
 @app.route('/stars')
 def starspage():
     query = db.session.query(star, constellation, family).filter(star.fk_constellation_star == constellation.id)\
-                                                            .filter(constellation.fk_constellation_family == family.id).all()
-
-
-
+                                                         .filter(constellation.fk_constellation_family == family.id).all()
     return render_template("stars.html", stars = query)
 
+#Lists all the planets in our database
 @app.route('/planets')
 def planetspage():
     query = db.session.query(planet, star, constellation, family).filter(planet.fk_star_planet == star.id)\
                                                             .filter(star.fk_constellation_star == constellation.id)\
                                                             .filter(constellation.fk_constellation_family == family.id).all()
-
     print(query)
-
-
     return render_template("planets.html", planets = query)
 
-
-
-
-
-
-
-
-
-
+#Lists all the moons in our database
 @app.route('/moons')
 def moonspage():
     query = db.session.query(moon, planet, star, constellation, family).filter(moon.fk_planet_moon == planet.id)\
@@ -57,10 +64,6 @@ def moonspage():
                                                             .filter(star.fk_constellation_star == constellation.id)\
                                                             .filter(constellation.fk_constellation_family == family.id).all()
     return render_template("moons.html", moons = query)
-    
-@app.route('/aboutus')
-def aboutuspage():
-    return render_template("aboutus.html")
     
 @app.route('/exoplanets')
 def exoplanetspage():
@@ -73,33 +76,60 @@ def exoplanetspage():
 
 
 
-@app.route('/families/<family>')
-def familypage(family):
-    return "Received request for faimily: " + family
 
-@app.route('/home')
-def homepage():
-    return render_template("home.html")
 
-@app.route('/stars/<stars>')
-def starPage(star):
-    query = db.session.query(star, constellation, family).filter(star.name ==star).filter(star.fk_constellation_star == constellation.id)\
+########################################################
+#               Dynamic page per object
+########################################################
+
+#renders an exoplanet page
+@app.route('/exoplanets/<exoplanetVar>')
+def exoplanetPage(exoplanetVar):
+    return "Received request for exoplanet: " + exoplanetVar
+
+#renders a family page
+@app.route('/families/<familyVar>')
+def familypage(familyVar):
+    return "Received request for family: " + familyVar
+
+#renders a star page
+@app.route('/stars/<starVar>')
+def starPage(starVar):
+    query = db.session.query(star, constellation, family).filter(star.name ==starVar).filter(star.fk_constellation_star == constellation.id)\
                                                             .filter(constellation.fk_constellation_family == family.id).all()
     return render_template("star.html", stars = query)
 
+#renders a planet page
 @app.route('/planets/<planetVar>')
 def planetPage(planetVar):
-
     query = db.session.query(planet, star, constellation, family).filter(planet.name == planetVar).filter(planet.fk_star_planet == star.id)\
                                                             .filter(star.fk_constellation_star == constellation.id)\
                                                             .filter(constellation.fk_constellation_family == family.id).first()
-
     if(query != None):
         return render_template("planet.html", planet = query)
     else:
         return "Invalid planet: " + planetVar
 
+#renders a constellation page
+@app.route('/constellations/<consVar>')
+def constellationPage(consVar):
+    return "Received request for constellation: " + consVar
+
+#renders a moon page
+@app.route('/moons/<moonVar>')
+def moonPage(moonVar):
+    return "Received request for moon: " + moonVar
+
+
+
+
+
+
 """    
+@app.route('/home')
+def homepage():
+    return render_template("home.html")
+
 
 @app.route('/bayer')
 def bayerpage():
