@@ -24,12 +24,12 @@
 	   <div class="container">
 			
 			<div class="col-lg-12">
-				<h1 class="page-header">{{ planet[0].name }}</h1>
+				<h1 class="page-header">{{ name }}</h1>
 			</div>
 			<div class="row">
 				
 		  <div class="table-responsive col-lg-4 col-sm-6 text-center offset 0">
-			<img class="img-responsive img-center" src="../static/{{planet[0].photo}}" alt="{{planet[0].name}}">
+			<img class="img-responsive img-center" src="../static/{{ planet_photo }}" alt="{{ name }}">
 		  </div>
 				<div class="table-responsive col-lg-8 col-sm-6 offset 0">          
 		  <table class="table table-hover">
@@ -41,8 +41,8 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td>{{planet[0].distance_from_sun}} Km</td>
-				<td>{{planet[0].orbital_period}} days</td>
+				<td>{{ distance_from_sun }} Km</td>
+				<td>{{ orbital_period }} days</td>
 			  </tr>
 			</tbody>
 		  </table>
@@ -57,10 +57,10 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td>{{planet[0].volume}}</td>
-				<td>{{planet[0].mass}} kg</td>
-				<td>{{planet[0].density}} g/cm</td>
-				<td>{{planet[0].surface_area}} km^2</td>
+				<td>{{ volume }}</td>
+				<td>{{ mass }} kg</td>
+				<td>{{ density }} g/cm</td>
+				<td>{{ surface_area }} km^2</td>
 			  </tr>
 			</tbody>
 		  </table>
@@ -74,9 +74,9 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td>{{planet[0].semi_major_axis}} AU</td>
-				<td>{{planet[0].gravity}} m/s^2</td>
-				<td>{{planet[0].length_of_day}} days</td>
+				<td>{{ semi_major_axis }} AU</td>
+				<td>{{ gravity }} m/s^2</td>
+				<td>{{ length_of_day }} days</td>
 			  </tr>
 			</tbody>
 		  </table>
@@ -90,14 +90,14 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td>{{planet[0].surface_temperature}} K</td>
-				<td>{{planet[0].moons}}</td>
-				<td><a href="{{planet[0].photo_link}}">here</a></td>
+				<td>{{ surface_temperature }} K</td>
+				<td>{{ moons }}</td>
+				<td><a href="{{ planet_photo_link }}">here</a></td>
 			  </tr>
 			</tbody>
 		  </table>
 		  <b>History</b>
-		  <p>{{planet[0].history}}</p>
+		  <p>{{ history }}</p>
 		  </div>
 		  </div>
 		  <hr />
@@ -107,8 +107,8 @@
 			<hr />
 			<div class="row">
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
-					<img class="img-responsive img-center" src="../static/{{planet[2].photo}}" alt="{{planet[2].name}}">
-					<h3><a href="/constellations/{{planet[2].name}}">Solar System</a></h3>
+					<img class="img-responsive img-center" src="../static/{{ constellation_photo }}" alt="{{ constellation_name }}">
+					<h3><a href="/constellations/{{ constellation_name }}">{{ constellation_name }}</a></h3>
 				</div>
 			</div>
 			<hr />
@@ -118,8 +118,8 @@
 			<hr />
 			<div class="row">
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
-					<img class="img-responsive img-center" src="../static/{{planet[1].photo}}" alt="{{planet[1].name}}">
-					<h3><a href="/stars/{{planet[1].name}}">Sun</a></h3>
+					<img class="img-responsive img-center" src="../static/{{ star_photo }}" alt="{{ star_name }}">
+					<h3><a href="/stars/{{ star_name }}">{{ star_name }}</a></h3>
 				</div>
 			</div>
 			<hr />

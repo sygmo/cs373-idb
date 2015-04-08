@@ -64,7 +64,8 @@ def moonspage():
                                                             .filter(star.fk_constellation_star == constellation.id)\
                                                             .filter(constellation.fk_constellation_family == family.id).all()
     return render_template("moons.html", moons = query)
-    
+
+#Lists all the exoplanets in our database
 @app.route('/exoplanets')
 def exoplanetspage():
     query = db.session.query(exoplanet, star, constellation, family).filter(exoplanet.fk_star_planet == star.id)\
@@ -90,7 +91,8 @@ def exoplanetPage(exoplanetVar):
 #renders a family page
 @app.route('/families/<familyVar>')
 def familypage(familyVar):
-    return "Received request for family: " + familyVar
+    
+    return render_template("bayer.html")
 
 #renders a star page
 @app.route('/stars/<starVar>')
@@ -105,8 +107,31 @@ def planetPage(planetVar):
     query = db.session.query(planet, star, constellation, family).filter(planet.name == planetVar).filter(planet.fk_star_planet == star.id)\
                                                             .filter(star.fk_constellation_star == constellation.id)\
                                                             .filter(constellation.fk_constellation_family == family.id).first()
+
     if(query != None):
-        return render_template("planet.html", planet = query)
+        return render_template(
+            "planet.html",
+            planet = query,
+            name = query[0].name,
+            planet_photo = query[0].photo,
+            distance_from_sun = query[0].distance_from_sun,
+            orbital_period = query[0].orbital_period,
+            volume = query[0].volume,
+            mass = query[0].mass,
+            density = query[0].density,
+            surface_area = query[0].surface_area,
+            semi_major_axis = query[0].semi_major_axis,
+            gravity = query[0].gravity,
+            length_of_day = query[0].length_of_day,
+            surface_temperature = query[0].surface_temperature,
+            moons = query[0].moons,
+            planet_photo_link = query[0].photo_link,
+            history = query[0].history,
+            constellation_name = query[2].name,
+            constellation_photo = query[2].photo,
+            star_name = query[1].name,
+            star_photo = query[1].photo
+            )
     else:
         return "Invalid planet: " + planetVar
 
