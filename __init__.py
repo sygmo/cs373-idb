@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, g, request, session, redirect, abort, flash
 from flask.ext.sqlalchemy import SQLAlchemy
 from models import *
-
+from flask.ext.restless import APIManager
 
 app = Flask(__name__)
 
@@ -284,4 +284,11 @@ def venus():
 
 
 if __name__ == "__main__":
+    api_manager = APIManager(app, flask_sqlalchemy_db=db)
+    api_manager.create_api(family, methods=['GET'])
+    api_manager.create_api(constellation, methods=['GET'])
+    api_manager.create_api(planet, methods=['GET'])
+    api_manager.create_api(star, methods=['GET'])
+    api_manager.create_api(moon, methods=['GET'])
+    api_manager.create_api(exoplanet, methods=['GET'])
     app.run(host='0.0.0.0', port=8080)
