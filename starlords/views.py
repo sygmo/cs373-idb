@@ -87,15 +87,17 @@ def starPage(star):
                                                             .filter(constellation.fk_constellation_family == family.id).all()
     return render_template("star.html", stars = query)
 
-@app.route('/planets/<planet>')
-def planetPage(planet):
-    print (planet)
+@app.route('/planets/<planetVar>')
+def planetPage(planetVar):
 
-    query = db.session.query(planet, star, constellation, family).filter(planet.name == planet).filter(planet.fk_star_planet == star.id)\
+    query = db.session.query(planet, star, constellation, family).filter(planet.name == planetVar).filter(planet.fk_star_planet == star.id)\
                                                             .filter(star.fk_constellation_star == constellation.id)\
-                                                            .filter(constellation.fk_constellation_family == family.id).all()
+                                                            .filter(constellation.fk_constellation_family == family.id).first()
 
-    return render_template("planet.html", **query)
+    if(query != None):
+        return render_template("planet.html", planet = query)
+    else:
+        return "Invalid planet: " + planetVar
 
 """    
 

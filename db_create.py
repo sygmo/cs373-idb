@@ -34,9 +34,8 @@ db.session.commit()
 
 #stars
 db.session.add(star(name = "Sun", mass = 1, radius = 1, spectral_type = "G27", temperature = 5778, luminosity = 1, stellar_distance = 0.0000158, fk_constellation_star = 1, history = "The Sun is the center of our Solar System.", photo_link = "http://commons.wikimedia.org/wiki/File:The_Sun_in_extreme_ultraviolet.jpg", photo = "images/sun.jpg"))
-db.session.add(star(name = "WASP-1", mass = 1.24, radius = 1.382, spectral_type = "F7V", temperature = 6200, luminosity = 2.4, stellar_distance = 1239, planentary_systems = 1, fk_constellation_star = 2, history = "WASP-1 is a metal-rich magnitude 12 star.", photo_link = "http://upload.wikimedia.org/wikipedia/commons/e/ed/WASP-1.jpg", photo = "images/wasp-1.jpg"))
+db.session.add(star(name = "WASP-1", mass = 1.24, radius = 1.382, spectral_type = "F7V", temperature = 6200, luminosity = 2.4, stellar_distance = 1239, fk_constellation_star = 2, history = "WASP-1 is a metal-rich magnitude 12 star.", photo_link = "http://upload.wikimedia.org/wikipedia/commons/e/ed/WASP-1.jpg", photo = "images/wasp-1.jpg"))
 db.session.commit()
-print("added")
 
 #exoplanets
 db.session.add(exoplanet(name = "WASP-1b", discovered = "2006", orbital_period = 2.5199464, semi_major_axis = 0.0382, discovery_method = "Discovery method Transit", fk_star_planet = 2, history = "In recognition of the regional support given to the project on La Palma, the discoverers gave the planet the alternative designation Garafia-1.", photo_link = "http://upload.wikimedia.org/wikipedia/commons/thumb/3/36/WASP-1b.jpg/300px-WASP-1b.jpg", photo = "images/wasp-1b.jpg"))
@@ -65,7 +64,7 @@ db.session.add(moon(name = "Enceladus", radius = 0.1451, mass = 0.000018, orbita
 db.session.add(moon(name = "Tethys", radius = 0.083, mass = 0.000103, orbital_period = 1.887802, surface_gravity = 0.147, history = "It was discovered in 1684 by G. D. Cassini.", photo_link = "http://en.wikipedia.org/wiki/File:PIA07738_Tethys_mosaic_contrast-enhanced.jpg", photo = "images/tethys.jpg", fk_planet_moon = 6))
 db.session.add(moon(name = "Dione", radius = 0.088, mass = 0.000328, orbital_period = 2.73691, surface_gravity = 0.233, history = "It was discovered in 1684 by G. D. Cassini.", photo_link = "http://en.wikipedia.org/wiki/File:Dione3_cassini_big.jpg", photo = "images/dione.jpg", fk_planet_moon = 6))
 db.session.add(moon(name = "Rhea", radius = 0.1, mass = 0.00039, orbital_period = 4.518212, surface_gravity = 0.265, history = "It is the second largest moon of Saturn.", photo_link = "http://en.wikipedia.org/wiki/File:PIA07763_Rhea_full_globe5.jpg", photo = "images/rhea.jpg", fk_planet_moon = 6))
-db.session.add(moon(name = "Titan", radius = 0.404, mass = 0.0225, orbital_period = 15.945, surface_gravity = 1.352, history = "It is the largest moon of Saturn., photo_link = "http://en.wikipedia.org/wiki/File:Titan_in_natural_color_Cassini.jpg", photo = "images/titan.jpg", fk_planet_moon = 6))
+db.session.add(moon(name = "Titan", radius = 0.404, mass = 0.0225, orbital_period = 15.945, surface_gravity = 1.352, history = "It is the largest moon of Saturn.", photo_link = "http://en.wikipedia.org/wiki/File:Titan_in_natural_color_Cassini.jpg", photo = "images/titan.jpg", fk_planet_moon = 6))
 db.session.add(moon(name = "Miranda", radius = 0.03697, mass = 0.00001103, orbital_period = 1.413479, surface_gravity = 0.079, history = "The smallest of Uranus's five round satellites.", photo_link = "http://en.wikipedia.org/wiki/File:Miranda.jpg", photo = "images/miranda.jpg", fk_planet_moon = 7))
 db.session.add(moon(name = "Ariel", radius = 0.0908, mass = 0.000226, orbital_period = 2.520, surface_gravity = 0.27, history = "It is the fourth-largest moon of Uranus.", photo_link = "http://en.wikipedia.org/wiki/File:Ariel_(moon).jpg", photo = "images/ariel.jpg", fk_planet_moon = 7))
 db.session.add(moon(name = "Triton", radius = 0.2122, mass = 0.00359, orbital_period = -5.876854, surface_gravity = 0.779, history = "It is Neptune's largest moon and was discovered in 1846.", photo_link = "http://en.wikipedia.org/wiki/File:Triton_moon_mosaic_Voyager_2_(large).jpg", photo = "images/triton.jpg", fk_planet_moon = 8))
@@ -97,11 +96,13 @@ for x in query3:
 	print("star: " + x[0].name + ", constellation: " + x[1].name + ", family: " + x[2].name)
 
 
-print(db.session.query(star).filter_by(name = "Sun").first().name)
-
+query4 = db.session.query(planet, star, constellation, family).filter(planet.name == "Jupiter").filter(planet.fk_star_planet == star.id)\
+															.filter(star.fk_constellation_star == constellation.id)\
+															.filter(constellation.fk_constellation_family == family.id).first()
+print("planet: " + query4[0].name + ", star: " + x[1].name + ", constellation: " + query4[2].name + ", family: " + query4[3].name)
 
 
 
 
 #commit changes
-db.session.commit()
+#db.session.commit()
