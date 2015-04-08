@@ -13,6 +13,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class Driver extends WriteToJson {
+	static Map<String, Integer> constellation_keys = new HashMap<String, Integer>();
+	static Map<String, Integer> star_keys = new HashMap<String, Integer>();
 
     public static void main(String[] args) {
         extractConstellationsUsingJsoup("http://en.wikipedia.org/wiki/88_modern_constellations","wikitable");
@@ -37,6 +39,7 @@ public class Driver extends WriteToJson {
 	photo = db.Column(LargeBinary)
 	fk_planet_moon = db.Column(Integer, ForeignKey("planet.id"))
     	 */
+    	
     }
     
     // USE THIS INSTEAD: http://en.wikipedia.org/wiki/List_of_gravitationally_rounded_objects_of_the_Solar_System
@@ -369,25 +372,6 @@ public class Driver extends WriteToJson {
             				}
             			}
             		}
-            		// composition
-            		/*if(e.text().contains("Composition by volume"))
-            		{
-            			String comp = e.text().substring("Composition by volume ".length());
-            			String[] number = e.text().split(" ");
-            			py_planets.append(", composition = \"");
-            			py_planets.append(number[1]);
-            			System.out.print(number[1]);
-            			for(int i = 2; i < number.length; i++)
-            			{
-            				if(!number[i].contains("[0-9]") && !number[i].contains("trace"));
-            				{
-            					py_planets.append(", " + number[i]);
-            					System.out.print(", " + number[i]);
-            				}
-            			}
-            			System.out.println("");
-            			py_planets.append("\"");
-            		}*/
             		// number of moons
             		if(e.text().contains("Known satellites"))
             		{
@@ -548,7 +532,16 @@ public class Driver extends WriteToJson {
             		}
             	}
             	// fk_star_planet
-            	py_exoplanets.append(", fk_star_planet = " + "None\"\"\"" + pair.getValue() + "\"\"\"");
+            	int key = -1;
+            	if(star_keys.containsKey(pair.getValue()))
+            	{
+            		key = star_keys.get(pair.getValue());
+            	}
+            	else
+            	{
+            		System.out.println("FIND THE KEY FOR " + pair.getValue());
+            	}
+            	py_exoplanets.append(", fk_star_planet = " + key);
             	// history
             	py_exoplanets.append(", history = " + "None");
     	    	// photo_link
@@ -584,6 +577,8 @@ public class Driver extends WriteToJson {
         			urls.add(s);
         		}
     	    }
+
+        	int key = 2;
     		for(String star : urls)
     		{
         		StringBuilder py_stars = new StringBuilder();
@@ -597,6 +592,7 @@ public class Driver extends WriteToJson {
             	{
             		star_name = e.text();
             		py_stars.append("name = \"" + star_name + "\"");
+            		star_keys.put(star_name, key);
             	}
     	    	// mass
             	n = doc.select("table.infobox tr");
@@ -757,7 +753,8 @@ public class Driver extends WriteToJson {
             	{
             		save_star = false;
             	}
-    	    	// planentary_systems
+    	    	// planetary_systems
+            	Map<String, String> temp = new HashMap<String, String>();
             	int count_planet = 0;
             	Elements planets = doc.select("table.wikitable td:eq(0)");
             	iter = planets.listIterator();
@@ -774,17 +771,31 @@ public class Driver extends WriteToJson {
             		String s = e.attr("abs:href");
                 	if(!s.contains("redlink"))
             		{
-	            		exoPlanetStar.put(s, star_name);
+	            		temp.put(s, star_name);
             		}
         	    }
-                py_stars.append(", planentary_systems = " + count_planet);
+                py_stars.append(", planetary_systems = " + count_planet);
     	    	// fk_constellation_star
                 for(Element e : n)
             	{
             		if(e.text().contains("Constellation"))
             		{
             			String[] number = e.text().split("Constellation ");
-            			py_stars.append(", fk_constellation_star = " + "None\"\"\"" + number[number.length-1] + "\"\"\"");
+            			int constellation_key = -1;
+            			if(number[number.length - 1].contains("["))
+            			{
+            				number[number.length - 1] = number[number.length - 1].substring(0, number[number.length - 1].indexOf('['));
+            			}
+            			if(constellation_keys.containsKey(number[number.length - 1]))
+            			{
+            				constellation_key = constellation_keys.get(number[number.length - 1]);
+            				py_stars.append(", fk_constellation_star = " + constellation_key);
+            			}
+            			else
+            			{
+            				py_stars.append(", fk_constellation_star = " + constellation_key);
+            				System.out.println("FIND THE KEY FOR" + number[number.length -1]);
+            			}
             		}
             	}
     	    	// history
@@ -795,6 +806,8 @@ public class Driver extends WriteToJson {
             	py_stars.append(", photo = " + "None))");
             	if(save_star)
             	{
+            		exoPlanetStar.putAll(temp);
+            		key++;
             		System.out.println(py_stars.toString());
             	}
     		}
@@ -823,6 +836,8 @@ public class Driver extends WriteToJson {
         			urls.add(s);
         		}
     	    }
+
+        	int count = 2;
             for(String constellation : urls)
             {
             	System.out.print("db.session.add(constellation(");
@@ -831,6 +846,8 @@ public class Driver extends WriteToJson {
             	for(Element e : n)
             	{
             		System.out.print("name = \"" + e.text() + "\"");
+            		constellation_keys.put(e.text(), count);
+            		count++;
             	}
             	n = doc.select("table.infobox tr");
             	for(Element e : n)
@@ -861,7 +878,16 @@ public class Driver extends WriteToJson {
             		if(e.text().contains("Family"))
             		{
             			String[] number = e.text().split("Family ");
-            			System.out.print(", fk_constellation_family = " + "None\"\"\"" + number[number.length-1] + "\"\"\"");
+            			String[] arr = {"NOT GOING TO MATCH","Ursa Major", "Zodiac", "Perseus", "Hercules", "Orion", "Heavenly Waters", "Bayer", "La Caille"};
+            			int index = -1;
+            			for(int i = 1; i < arr.length; i++)
+            			{
+            				if(number[number.length-1].contains(arr[i]))
+            				{
+            					index = i;
+            				}
+            			}
+            			System.out.print(", fk_constellation_family = " + index);
             		}
             	}
             	System.out.println("))");
