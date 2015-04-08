@@ -87,13 +87,35 @@ def exoplanetspage():
 #renders an exoplanet page
 @app.route('/exoplanets/<exoplanetVar>')
 def exoplanetPage(exoplanetVar):
+
     return "Received request for exoplanet: " + exoplanetVar
 
 #renders a family page
 @app.route('/families/<familyVar>')
 def familypage(familyVar):
-    
-    return render_template("bayer.html")
+    query = db.session.query(family).filter(family.name == familyVar).first()
+    if(query != None):
+        query_moons = db.session.query(moon, planet, star, constellation, family).filter(family.name == familyVar).filter(moon.fk_planet_moon == planet.id).filter(planet.fk_star_planet == star.id)\
+                                                            .filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
+        query_planets = db.session.query(planet, star, constellation, family).filter(family.name == familyVar).filter(planet.fk_star_planet == star.id)\
+                                                            .filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
+        query_stars = db.session.query(star, constellation, family).filter(family.name == familyVar).filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
+        query_constellations = db.session.query(constellation, family).filter(family.name == familyVar).filter(constellation.fk_constellation_family == family.id).all()
+        return render_template(
+            "family.html",
+			family = query,
+			name = query.name,
+			description = query.description,
+			all_moons = query_moons,
+			all_planets = query_planets,
+			all_stars = query_stars,
+			all_constellations = query_constellations
+			)
+    else:
+        return "Invalid family: " + familyVar
 
 #renders a star page
 @app.route('/stars/<starVar>')
@@ -262,4 +284,4 @@ def venus():
 
 
 if __name__ == "__main__":
-	app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=8080)
