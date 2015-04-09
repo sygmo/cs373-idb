@@ -87,8 +87,27 @@ def exoplanetspage():
 #renders an exoplanet page
 @app.route('/exoplanets/<exoplanetVar>')
 def exoplanetPage(exoplanetVar):
+    query = db.session.query(exoplanet, star, constellation, family).filter(exoplanet.name == exoplanetVar).filter(planet.fk_star_planet == star.id)\
+                                                            .filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).first()
 
-    return "Received request for exoplanet: " + exoplanetVar
+    if(query != None):
+        return render_template(
+            "exoplanet.html",
+            exoplanet = query,
+            exoplanetId = query[0].id,
+            name = query[0].name,
+            discovered = query[0].discovered,
+            orbital_period = query[0].orbital_period,
+            semi_major_axis = query[0].semi_major_axis,
+            discovery_method = query[0].discovery_method,
+            #constellation_name = query[2].name,
+            #constellation_photo = query[2].photo,
+            #star_name = query[1].name,
+            #star_photo = query[1].photo
+            )
+    else:
+        return "Invalid exoplanet: " + exoplanetVar
 
 #renders a family page
 @app.route('/families/<familyVar>')
