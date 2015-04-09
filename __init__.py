@@ -180,6 +180,7 @@ def planetPage(planetVar):
             orbital_period = query[0].orbital_period,
             volume = query[0].volume,
             mass = query[0].mass,
+			radius = query[0].radius,
             density = query[0].density,
             surface_area = query[0].surface_area,
             semi_major_axis = query[0].semi_major_axis,
