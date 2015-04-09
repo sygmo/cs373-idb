@@ -209,18 +209,13 @@ def moonPage(moonVar):
 @app.route('/home')
 def homepage():
     return render_template("home.html")
-
-
 @app.route('/bayer')
 def bayerpage():
     return render_template("bayer.html")    
-
-
     
 @app.route('/perseus')
 def perseuspage():
     return render_template("perseus.html")
-
 @app.route('/andromeda')
 def andromedapage():
     return render_template("andromeda.html")
@@ -232,7 +227,6 @@ def vulpeculapage():
 @app.route('/solarsystem')
 def solarsystem_page():
     return render_template("solarsystem.html")
-
 @app.route('/hd189733')
 def hd189733page():
     return render_template("hd189733.html")
@@ -244,7 +238,6 @@ def wasp1page():
 @app.route('/sun')
 def solarsystempage():
     return render_template("sun.html")  
-
 @app.route('/hd189733b')
 def hd189733bpage():
     return render_template("hd189733b.html")
@@ -268,19 +261,15 @@ def iopage():
 @app.route('/callistro')
 def callistropage():
     return render_template("callistro.html")    
-
 @app.route('/upsand')
 def upsandpage():
     return render_template("upsand.html")
-
 @app.route('/upsandb')
 def upsandbpage():
     return render_template("upsandb.html")
-
 @app.route('/mercury')
 def mercury():
     return render_template("mercury.html")
-
 @app.route('/venus')
 def venus():
     return render_template("venus.html")

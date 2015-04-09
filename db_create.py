@@ -159,7 +159,7 @@ db.session.add(star(name = "79 Ceti", mass = 1.14, radius = 1.57, spectral_type 
 db.session.add(star(name = "Iota Horologii", mass = 1.25, radius = 1.16, spectral_type = "G0Vp", temperature = 6080, luminosity = 1.64, stellar_distance = 56.0, planetary_systems = 1, fk_constellation_star = 42, history = None, photo_link = None, photo = None))
 db.session.add(star(name = "HIP 12961", mass = 0.63, radius = 0.68, spectral_type = "M0V", temperature = 3838, luminosity = 0.101, stellar_distance = 75, planetary_systems = 1, fk_constellation_star = 37, history = None, photo_link = None, photo = None))
 db.session.add(star(name = "HIP 14810", mass = 0.99, radius = 1.1, spectral_type = "G5V", temperature = 5485, luminosity = 1.2, stellar_distance = 170, planetary_systems = 3, fk_constellation_star = 8, history = None, photo_link = None, photo = None))
-db.session.add(star(name = "HD 20367", mass = 1.04, radius = 1.18, spectral_type = "G0", temperature = 5929, luminosity = 1.72, stellar_distance = 87, planetary_systems = 1, fk_constellation_star = 8, history = None, photo_link = None, photo = None))
+db.session.add(star(name = "HD 20367", mass = 1.04, radius = 1.18, spectral_type = "G0", temperature = 5929, luminosity = 1.72, stellar_distance = 87, planetary_systems = 1, fk_constellation_star = 8, history = None, photo_link = None, photo = None))
 db.session.add(star(name = "82 G. Eridani", mass = 0.70, radius = 0.92, spectral_type = "G8", temperature = 5401, luminosity = 0.74, stellar_distance = 19.71, planetary_systems = 11, fk_constellation_star = 37, history = None, photo_link = None, photo = None))
 db.session.add(star(name = "Epsilon Eridani", mass = 0.82, radius = 0.735, spectral_type = "K2V", temperature = 5084, luminosity = 0.34, stellar_distance = 10.475, planetary_systems = 14, fk_constellation_star = 37, history = None, photo_link = None, photo = None))
 db.session.add(star(name = "HD 24496", mass = 0.95, radius = 0.90, spectral_type = "G0", temperature = 5572, luminosity = 0.70, stellar_distance = 66.6, planetary_systems = 1, fk_constellation_star = 79, history = None, photo_link = None, photo = None))
@@ -238,7 +238,7 @@ db.session.add(star(name = "HD 126614", mass = 1.145, radius = 1.09, spectral_ty
 db.session.add(star(name = "HIP 70849", mass = 0.62, radius = 0.67, spectral_type = "K7V", temperature = 3950, luminosity = 0.097, stellar_distance = 77, planetary_systems = 1, fk_constellation_star = 51, history = None, photo_link = None, photo = None))
 db.session.add(star(name = "HD 128311", mass = 0.8, radius = 0.73, spectral_type = "K0V", temperature = 4965, luminosity = 0.221, stellar_distance = 53.8, planetary_systems = 2, fk_constellation_star = 10, history = None, photo_link = None, photo = None))
 db.session.add(star(name = "11 Ursae Minoris", mass = 1.8, radius = 24.08, spectral_type = "K4III", temperature = 4340, luminosity = 185, stellar_distance = 398, planetary_systems = 1, fk_constellation_star = 85, history = None, photo_link = None, photo = None))
-db.session.add(star(name = "Gliese 581", mass = 0.31, radius = 0.29, spectral_type = "M3V", temperature = 3480, luminosity = 0.013, stellar_distance = 20.4, planetary_systems = 16, fk_constellation_star = 50, history = None, photo_link = None, photo = None))
+db.session.add(star(name = "Gliese 581", mass = 0.31, radius = 0.29, spectral_type = "M3V", temperature = 3480, luminosity = 0.013, stellar_distance = 20.4, planetary_systems = 16, fk_constellation_star = 50, history = None, photo_link = None, photo = None))
 db.session.add(star(name = "HAT-P-4", mass = 1.26, radius = 1.59, spectral_type = "F", temperature = 5890, luminosity = 0.41, stellar_distance = 1010.6, planetary_systems = 1, fk_constellation_star = 10, history = None, photo_link = None, photo = None))
 db.session.add(star(name = "Nu2 Lupi", mass = 0.91, radius = 1.04, spectral_type = "G2V", temperature = 5664, luminosity = 0.99, stellar_distance = 48.3, planetary_systems = 3, fk_constellation_star = 51, history = None, photo_link = None, photo = None))
 db.session.add(star(name = "Iota Draconis", mass = 1.82, radius = 11.99, spectral_type = "K2", temperature = 4545, luminosity = 55.3, stellar_distance = 101.2, planetary_systems = 1, fk_constellation_star = 35, history = None, photo_link = None, photo = None))
@@ -306,7 +306,7 @@ db.session.add(star(name = "Tau1 Gruis", mass = 1.25, radius = 2, spectral_type 
 db.session.add(star(name = "Rho Indi", mass = 1.07, radius = 1.1, spectral_type = "G2", temperature = 5636, luminosity = 1.09, stellar_distance = 87.2, planetary_systems = 1, fk_constellation_star = 45, history = None, photo_link = None, photo = None))
 db.session.add(star(name = "51 Pegasi", mass = 1.11, radius = 1.237, spectral_type = "G5V", temperature = 5571, luminosity = 1.30, stellar_distance = 50.9, planetary_systems = 1, fk_constellation_star = 63, history = None, photo_link = None, photo = None))
 db.session.add(star(name = "HD 217107", mass = 0.98, radius = 1.31, spectral_type = "G8IV", temperature = 5570, luminosity = 0.97, stellar_distance = 64.8, planetary_systems = 2, fk_constellation_star = 67, history = None, photo_link = None, photo = None))
-db.session.add(star(name = "HR 8799", mass = 1.47, radius = 1.34, spectral_type = "kA5 hF0 mA5 V", temperature = 7430, luminosity = 4.92, stellar_distance = 129, planetary_systems = 5, fk_constellation_star = 63, history = None, photo_link = None, photo = None))
+db.session.add(star(name = "HR 8799", mass = 1.47, radius = 1.34, spectral_type = "kA5 hF0 mA5 V", temperature = 7430, luminosity = 4.92, stellar_distance = 129, planetary_systems = 5, fk_constellation_star = 63, history = None, photo_link = None, photo = None))
 db.session.add(star(name = "HD 218566", mass = 0.81, radius = 0.86, spectral_type = "K3", temperature = 4849, luminosity = 0.353, stellar_distance = 93, planetary_systems = 1, fk_constellation_star = 67, history = None, photo_link = None, photo = None))
 db.session.add(star(name = "HD 240210", mass = 1.25, radius = 13, spectral_type = "K3III", temperature = 4290, luminosity = 51.6, stellar_distance = 466, planetary_systems = 2, fk_constellation_star = 19, history = None, photo_link = None, photo = None))
 db.session.add(star(name = "91 Aquarii", mass = 1.74, radius = 10.16, spectral_type = "K0", temperature = 4603, luminosity = 49, stellar_distance = 150, planetary_systems = 4, fk_constellation_star = 5, history = None, photo_link = None, photo = None))
@@ -545,30 +545,30 @@ db.session.commit()
 print("Running queries.....")
 
 query = db.session.query(planet, star, constellation, family).filter(planet.fk_star_planet == star.id)\
-															.filter(star.fk_constellation_star == constellation.id)\
-															.filter(constellation.fk_constellation_family == family.id).all()
+                                                            .filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
 for x in query:
-	print("planet: " + x[0].name + ", Star: " + x[1].name + ", constellation: " + x[2].name + ", family: " + x[3].name)
+    print("planet: " + x[0].name + ", Star: " + x[1].name + ", constellation: " + x[2].name + ", family: " + x[3].name)
 
 query1 = db.session.query(star, constellation, family).filter(star.fk_constellation_star == constellation.id)\
-															.filter(constellation.fk_constellation_family == family.id).all()
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
 for x in query1:
-	print("Star: " + x[0].name + ", constellation: " + x[1].name + ", family: " + x[2].name)
+    print("Star: " + x[0].name + ", constellation: " + x[1].name + ", family: " + x[2].name)
 
 query2 = db.session.query(constellation, family).filter(constellation.fk_constellation_family == family.id).all()
 
 for x in query2:
-	print("constellation: " + x[0].name + ", family: " + x[1].name)
+    print("constellation: " + x[0].name + ", family: " + x[1].name)
 
 query3 = db.session.query(star, constellation, family).filter(star.name == "Sun").filter(star.fk_constellation_star == constellation.id)\
                                                             .filter(constellation.fk_constellation_family == family.id).all()
 for x in query3:
-	print("star: " + x[0].name + ", constellation: " + x[1].name + ", family: " + x[2].name)
+    print("star: " + x[0].name + ", constellation: " + x[1].name + ", family: " + x[2].name)
 
 
 query4 = db.session.query(planet, star, constellation, family).filter(planet.name == "Jupiter").filter(planet.fk_star_planet == star.id)\
-															.filter(star.fk_constellation_star == constellation.id)\
-															.filter(constellation.fk_constellation_family == family.id).first()
+                                                            .filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).first()
 print("planet: " + query4[0].name + ", star: " + x[1].name + ", constellation: " + query4[2].name + ", family: " + query4[3].name)
 
 
