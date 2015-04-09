@@ -11,6 +11,10 @@ h1 {
 	margin-top: 0;
 }
 
+.table-sort {
+	min-height: .01%;
+}
+
 .img-center {
 	margin: 0 auto;
 	background-color: #FFFFFF;
