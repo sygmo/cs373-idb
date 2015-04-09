@@ -64,7 +64,7 @@ A single Constellation object with all its details
             }
 
 # Group Exoplanet Resources
-## Exoplanet Collection [/api/exoplanet]
+## Exoplanet Collection [/api/ExoPlanet]
 A list of all Exoplanet objects
 ### List all Exoplanets [GET]
 + Response 200 (application/json)
@@ -93,7 +93,7 @@ A list of all Exoplanet objects
             "fk_star_planet": 4
         }]
 
-## Exoplanet [/api/exoplanet/{id}]
+## Exoplanet [/api/ExoPlanet/{id}]
 A single Exoplanet object with all its details
 
 + Parameters
@@ -138,9 +138,11 @@ A list of all Family objects
         [{ 
             "id": 1, 
             "name": "Ursa Major"
+            "description": "Ursa Major is awesome."
         }, { 
             "id": 2, 
             "name": "Zodiac"
+            "description": "Zodiacs are in astrology and astronomy."
         }]
 
 ## Family [/api/family/{id}]
@@ -157,8 +159,9 @@ A single Family object with all its details
     + Body
 
             { 
-                "id": 1, 
-                "name": "Ursa Major"
+            "id": 1, 
+            "name": "Ursa Major"
+            "description": "Ursa Major is awesome."
             }
 
 + Response 404 (application/json)
@@ -181,9 +184,7 @@ A list of all Moon objects
             "id": 1, 
             "name": "Phobos", 
             "radius": 11.26, 
-            "volume": 5783.61, 
             "mass": 1.0659, 
-            "distance_from_planet": 5826, 
             "orbital_period": .318, 
             "surface_gravity": 0.0057,
             "history": "named after the Greek god Phobos - the personfication of Horror", 
@@ -194,9 +195,7 @@ A list of all Moon objects
             "id": 2, 
             "name": "Io", 
             "radius": 1818.1, 
-            "volume": 2.53, 
             "mass": 8.931, 
-            "distance_from_planet": 421700, 
             "orbital_period": 1.769, 
             "surface_gravity": 1.796,
             "history": "driest known object in the Solar System", 
@@ -222,9 +221,7 @@ A single Moon object with all its details
                 "id": 1, 
                 "name": "Phobos", 
                 "radius": 11.26, 
-                "volume": 5783.61, 
                 "mass": 1.0659, 
-                "distance_from_planet": 5826, 
                 "orbital_period": .318, 
                 "surface_gravity": 0.0057,
                 "history": "named after the Greek god Phobos - the personfication of Horror", 
@@ -253,19 +250,17 @@ A list of all Planet objects
             "id": 1, 
             "name": "Jupiter", 
             "distance_from_sun": 483800000, 
-            "composition": "H2, He, CH4, NH3, HD, C2H6, H2O", 
             "orbital_period": 4332.59, 
             "volume": 1.43, 
             "mass": 1.89, 
-            "density": 1.3, 
+            "density": 1.3,
+            "radius": 3389.5
             "surface_area": 6.14, 
             "semi_major_axis": 778547200, 
-            "rings": 0, 
             "gravity": 3.70, 
             "length_of_day": 9, 
             "surface_temperature": 440, 
-            "atmosphere": "NH3, H2O, NH4SH", 
-            "number_of_moons": 0, 
+            "moons": 0, 
             "history": "largest planet in the Solar System", 
             "photo_link": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Jupiter_New_Horizons.jpg/260px-Jupiter_New_Horizons.jpg", 
             "photo": \000,
@@ -274,19 +269,17 @@ A list of all Planet objects
             "id": 2, 
             "name": "Saturn", 
             "distance_from_sun": 890700000, 
-            "composition": "H2, He, CH4, NH3, HD, C2H6", 
             "orbital_period": 10759.22, 
             "volume": 8.73, 
             "mass": 5.68, 
             "density": 0.687, 
+            "radius": 3389.5
             "surface_area": 4.27, 
             "semi_major_axis": 1433449370, 
-            "rings": "Yes", 
             "gravity": 10.44, 
             "length_of_day": 10.39, 
             "surface_temperature": 227, 
-            "atmosphere": "H2, He", 
-            "number_of_moons": 62, 
+            "moons": 62, 
             "history": "named after the Roman god of agriculture", 
             "photo_link": "http://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Saturn_Equinox_09212014.jpg/280px-Saturn_Equinox_09212014.jpg", 
             "photo": \001,
@@ -310,19 +303,17 @@ A single Planet object with all its details
                 "id": 1, 
                 "name": "Jupiter", 
                 "distance_from_sun": 483800000, 
-                "composition": "H2, He, CH4, NH3, HD, C2H6, H2O", 
                 "orbital_period": 4332.59, 
                 "volume": 1.43, 
                 "mass": 1.89, 
                 "density": 1.3, 
+                "radius": 3389.5
                 "surface_area": 6.14, 
                 "semi_major_axis": 778547200, 
-                "rings": 0, 
                 "gravity": 3.70, 
                 "length_of_day": 9, 
                 "surface_temperature": 440, 
-                "atmosphere": "NH3, H2O, NH4SH", 
-                "number_of_moons": 0, 
+                "moons": 0, 
                 "history": "largest planet in the Solar System", 
                 "photo_link": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Jupiter_New_Horizons.jpg/260px-Jupiter_New_Horizons.jpg", 
                 "photo": \000,
