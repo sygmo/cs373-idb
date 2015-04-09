@@ -170,7 +170,35 @@ def planetPage(planetVar):
 #renders a constellation page
 @app.route('/constellations/<consVar>')
 def constellationPage(consVar):
-    return "Received request for constellation: " + consVar
+    query = db.session.query(constellation, family).filter(constellation.name == consVar).filter(constellation.fk_constellation_family == family.id).first()
+    if(query != None):
+        query_moons = db.session.query(moon, planet, star, constellation, family).filter(constellation.name == consVar).filter(moon.fk_planet_moon == planet.id).filter(planet.fk_star_planet == star.id)\
+                                                            .filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
+        query_planets = db.session.query(planet, star, constellation, family).filter(constellation.name == consVar).filter(planet.fk_star_planet == star.id)\
+                                                            .filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
+        query_stars = db.session.query(star, constellation, family).filter(constellation.name == consVar).filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
+        query_exoplanets = db.session.query(exoplanet, star, constellation, family).filter(constellation.name == consVar).filter(exoplanet.fk_star_planet == star.id)\
+                                                            .filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
+        return render_template(
+            "constellation.html",
+            constellation = query,
+            name = query[0].name,
+            stars_with_planets = query[0].stars_with_planets,
+			meaning = query[0].meaning,
+			history = query[0].history,
+			photo_link = query[0].photo_link,
+			photo = query[0].photo,
+            all_moons = query_moons,
+            all_planets = query_planets,
+            all_stars = query_stars,
+            all_exoplanets = query_exoplanets
+			)
+    else:
+        return "Invalid constellation: " + consVar
 
 #renders a moon page
 @app.route('/moons/<moonVar>')
