@@ -125,8 +125,39 @@ def familypage(familyVar):
 @app.route('/stars/<starVar>')
 def starPage(starVar):
     query = db.session.query(star, constellation, family).filter(star.name ==starVar).filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).first()
+    if(query != None):
+        query_moons = db.session.query(moon, planet, star, constellation, family).filter(star.name == starVar).filter(moon.fk_planet_moon == planet.id).filter(planet.fk_star_planet == star.id)\
+                                                            .filter(star.fk_constellation_star == constellation.id)\
                                                             .filter(constellation.fk_constellation_family == family.id).all()
-    return render_template("star.html", stars = query)
+        query_planets = db.session.query(planet, star, constellation, family).filter(star.name == starVar).filter(planet.fk_star_planet == star.id)\
+                                                            .filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
+        query_exoplanets = db.session.query(exoplanet, star, constellation, family).filter(star.name == starVar).filter(exoplanet.fk_star_planet == star.id)\
+                                                            .filter(star.fk_constellation_star == constellation.id)\
+                                                            .filter(constellation.fk_constellation_family == family.id).all()
+        return render_template(
+            "star.html",
+            star = query,
+            name = query[0].name,
+            mass = query[0].mass,
+            radius = query[0].radius,
+            spectral_type = query[0].spectral_type,
+            temperature = query[0].temperature,
+            luminosity = query[0].luminosity,
+            stellar_distance = query[0].stellar_distance,
+            planetary_systems = query[0].planetary_systems,
+            photo_link = query[0].photo_link,
+            history = query[0].history,
+            photo = query[0].photo,
+            constellation_name = query[1].name,
+            constellation_photo = query[1].photo,
+            all_moons = query_moons,
+            all_planets = query_planets,
+            all_exoplanets = query_exoplanets
+            )
+    else:
+        return "Invalid star: " + starVar
 
 #renders a planet page
 @app.route('/planets/<planetVar>')
@@ -188,16 +219,16 @@ def constellationPage(consVar):
             constellation = query,
             name = query[0].name,
             stars_with_planets = query[0].stars_with_planets,
-			meaning = query[0].meaning,
-			history = query[0].history,
-			photo_link = query[0].photo_link,
-			photo = query[0].photo,
+            meaning = query[0].meaning,
+            history = query[0].history,
+            photo_link = query[0].photo_link,
+            photo = query[0].photo,
             family_name = query[1].name,
             all_moons = query_moons,
             all_planets = query_planets,
             all_stars = query_stars,
             all_exoplanets = query_exoplanets
-			)
+            )
     else:
         return "Invalid constellation: " + consVar
 

@@ -24,12 +24,12 @@
 	   <div class="container">
 			
 			<div class="col-lg-12">
-				<h1 class="page-header">Sun</h1>
+				<h1 class="page-header">{{name}}</h1>
 			</div>
 			<div class="row">
-				
+			{% if name == "Sun" %}	
 		  <div class="table-responsive col-lg-4 col-sm-6 text-center offset 0">
-			<img class="img-responsive img-center" src="{{ url_for('static', filename='images/sun.jpg') }}" alt="Sun">
+					<img class="img-responsive img-center" src="../static/{{ photo }}" alt="{{ name }}">
 		  </div>
 				<div class="table-responsive col-lg-8 col-sm-6 offset 0">          
 		  <table class="table table-hover">
@@ -43,10 +43,10 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td>333,000 Earth mass</td>
-				<td>109 Earth radius</td>
-				<td>G27</td>
-				<td>5778 K</td>
+				<td>{{mass}} Suns</td>
+				<td>{{radius}} Suns</td>
+				<td>{{spectral_type}}</td>
+				<td>{{temperature}} K</td>
 			  </tr>
 			</tbody>
 		  </table>
@@ -61,18 +61,56 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td>3.846 x 10^26 W</td>
-				<td>1.496 x 10^8 km (from Earth)</td>
-				<td>8</td>
-				<td><a href="http://commons.wikimedia.org/wiki/File:The_Sun_in_extreme_ultraviolet.jpg">here</a></td>
+				<td>{{luminosity}} Suns</td>
+				<td>{{stellar_distance}} ly</td>
+				<td>{{planetary_systems}}</td>
+				<td><a href="{{photo_link}}">here</a></td>
 			  </tr>
 			</tbody>
 		  </table>
 		  <hr />
 		  <b>History</b>
-		  <p>The Sun is the center of our Solar System. It is in the <a href="/home">Home</a> family.</p>
+		  <p>{{history}}</p>
 		  </div>
 			</div>
+			{%else%}
+			<div class="table-responsive col-lg-12 col-sm-6 offset 0">          
+		  <table class="table table-hover">
+			<thead>
+			  <tr>
+				<th>Mass</th>
+				<th>Radius</th>
+				<th>Spectral Type</th>
+				<th>Temperature</th>
+			  </tr>
+			</thead>
+			<tbody>
+				<tr>
+				<td>{{mass}} Suns</td>
+				<td>{{radius}} Suns</td>
+				<td>{{spectral_type}}</td>
+				<td>{{temperature}} K</td>
+			  </tr>
+			</tbody>
+		  </table>
+		  <table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Luminosity</th>
+					<th>Stellar Distance</th>
+					<th>Number of Planets</th>
+				</tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td>{{luminosity}} Suns</td>
+				<td>{{stellar_distance}} ly</td>
+				<td>{{planetary_systems}}</td>
+				</tr>
+			</tbody>
+		  </table>
+		  </div>
+			{%endif%}
 			<hr />
 			<div class="row">
 				<h2>Constellation</h2>
@@ -80,9 +118,24 @@
 			<hr />
 			<div class="row">
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
-					<img class="img-responsive img-center" src="{{ url_for('static', filename='images/solarsystem.jpg') }}" alt="Solar System">
-					<h3><a href="/solarsystem">Solar System</a></h3>
+				{% if name == "Sun" %}
+					<img class="img-responsive img-center" src="../static/{{ constellation_photo }}" alt="{{ constellation_name }}">
+				{% endif %}	
+					<h3><a href="/constellations/{{ constellation_name }}">{{ constellation_name }}</a></h3>
 				</div>
+			</div>
+			<hr />
+			<div class="row">
+				<h2>ExoPlanets</h2>
+			</div>
+			<hr />
+			<div class="row">
+				<h3 class="text-center">There are {{ all_exoplanets|length }} notable exoplanet(s)</h3>
+				{% for x in all_exoplanets %}
+				<div class="col-lg-4 col-sm-6 text-center offset 0">
+					<h3><a href="/exoplanets/{{ x[0].name }}">{{ x[0].name }}</a></h3>
+				</div>
+				{% endfor %}
 			</div>
 			<hr />
 			<div class="row">
@@ -90,18 +143,13 @@
 			</div>
 			<hr />
 			<div class="row">
+				<h3 class="text-center">There are {{ all_planets|length }} planet(s)</h3>
+				{% for x in all_planets %}
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
-					<img class="img-responsive img-center" src="{{ url_for('static', filename='images/jupiter.jpg') }}" alt="Jupiter">
-					<h3><a href="/jupiter">Jupiter</a></h3>
+					<img class="img-responsive img-center" src="../static/{{ x[0].photo }}" alt="{{ x[0].name }}">
+					<h3><a href="/planets/{{ x[0].name }}">{{ x[0].name }}</a></h3>
 				</div>
-				<div class="col-lg-4 col-sm-6 text-center offset 0">
-					<img class="img-responsive img-center" src="{{ url_for('static', filename='images/mercury.jpg') }}" alt="Mercury">
-					<h3><a href="/mercury">Mercury</a></h3>
-				</div>
-				<div class="col-lg-4 col-sm-6 text-center offset 0">
-					<img class="img-responsive img-center" src="{{ url_for('static', filename='images/venus.jpg') }}" alt="Venus">
-					<h3><a href="/venus">Venus</a></h3>
-				</div>
+				{% endfor %}
 			</div>
 			<hr />
 			<div class="row">
@@ -109,18 +157,13 @@
 			</div>
 			<hr />
 			<div class="row">
+				<h3 class="text-center">There are {{ all_moons|length }} notable moon(s)</h3>
+				{% for x in all_moons %}
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
-					<img class="img-responsive img-center" src="{{ url_for('static', filename='images/europa.jpg') }}" alt="Europa">
-					<h3><a href="/europa">Europa</a></h3>
+					<img class="img-responsive img-center" src="../static/{{ x[0].photo }}" alt="{{ x[0].name }}">
+					<h3><a href="/constellations/{{ x[0].name }}">{{ x[0].name }}</a></h3>
 				</div>
-				<div class="col-lg-4 col-sm-6 text-center offset 0">
-					<img class="img-responsive img-center" src="{{ url_for('static', filename='images/io.jpg') }}" alt="Io">
-					<h3><a href="/io">Io</a></h3>
-				</div>
-				<div class="col-lg-4 col-sm-6 text-center offset 0">
-					<img class="img-responsive img-center" src="{{ url_for('static', filename='images/callistro.jpg') }}" alt="Callisto">
-					<h3><a href="/callistro">Callistro</a></h3>
-				</div>
+				{% endfor %}
 			</div>
 		</div>
 	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
