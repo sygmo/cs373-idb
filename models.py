@@ -88,4 +88,3 @@ class exoplanet(db.Model):
     
 
 
-
