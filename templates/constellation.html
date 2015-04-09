@@ -45,7 +45,7 @@
 			  <tr>
 				<td>{{stars_with_planets}}</td>
 				<td>{{meaning}}</td>
-				<td>CHANGE THIS TO FAMILY LINK</a></td>
+				<td><a href="/families/{{family_name}}">{{family_name}}</a></td>
 				<td><a href="{{ photo_link }}">here</a></td>
 			  </tr>
 			</tbody>
@@ -56,7 +56,24 @@
 		  </div>
 			</div>
 			{% else %}
-			
+				<div class="table-responsive col-lg-12 col-sm-6 offset 0">          
+		  <table class="table table-hover">
+			<thead>
+			  <tr>
+				<th>Stars with Planets</th>
+				<th>Meaning</th>
+				<th>Family</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td>{{stars_with_planets}}</td>
+				<td>{{meaning}}</td>
+				<td><a href="/families/{{family_name}}">{{family_name}}</a></td>
+			  </tr>
+			</tbody>
+		  </table>
+		  </div>
 			{% endif %}
 			<hr />
 			<div class="row">

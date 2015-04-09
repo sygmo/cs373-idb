@@ -192,6 +192,7 @@ def constellationPage(consVar):
 			history = query[0].history,
 			photo_link = query[0].photo_link,
 			photo = query[0].photo,
+            family_name = query[1].name,
             all_moons = query_moons,
             all_planets = query_planets,
             all_stars = query_stars,
