@@ -362,4 +362,4 @@ if __name__ == "__main__":
     api_manager.create_api(star, methods=['GET'])
     api_manager.create_api(moon, methods=['GET'])
     api_manager.create_api(exoplanet, methods=['GET'])
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=80)
