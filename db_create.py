@@ -11,6 +11,7 @@ db = SQLAlchemy(app)
 
 #creates the database
 print("about to drop")
+db.reflect()
 db.drop_all()
 print("dropped")
 print("about to create")
