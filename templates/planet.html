@@ -128,9 +128,7 @@
 			</div>
 			<hr />
 			<div class="row">
-			{% if moons == 0 %}
-				<p>No moons</p>
-			{% endif %}
+			<h3 class="text-center">There are {{ all_moons|length }} notable moon(s)</h3>
 			{% if moons > 0 %}
 				{% for x in all_moons %}
 					<div class="col-lg-4 col-sm-6 text-center offset 0">

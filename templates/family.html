@@ -42,6 +42,9 @@
 				<h3 class="text-center">There are {{ all_constellations|length }} constellation(s)</h3>
 				{% for x in all_constellations %}
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
+					{% if x[0].name == "Solar System" %}
+						<img class="img-responsive img-center" src="../static/{{ x[0].photo }}" alt="{{ x[0].name }}">
+					{% endif %}
 					<h3><a href="/constellations/{{ x[0].name }}">{{ x[0].name }}</a></h3>
 				</div>
 				{% endfor %}
@@ -52,10 +55,26 @@
 			</div>
 			<hr />
 			<div class="row">
-				<h3 class="text-center">There are {{ stars|length }} star(s)</h3>
-				{% for x in stars %}
+				<h3 class="text-center">There are {{ all_stars|length }} notable star(s)</h3>
+				{% for x in all_stars %}
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
+					{% if x[0].name == "Sun" %}
+						<img class="img-responsive img-center" src="../static/{{ x[0].photo }}" alt="{{ x[0].name }}">
+					{% endif %}
 					<h3><a href="/constellations/{{ x[0].name }}">{{ x[0].name }}</a></h3>
+				</div>
+				{% endfor %}
+			</div>
+			<hr />
+			<div class="row">
+				<h2>ExoPlanets</h2>
+			</div>
+			<hr />
+			<div class="row">
+				<h3 class="text-center">There are {{ all_exoplanets|length }} notable exoplanet(s)</h3>
+				{% for x in all_exoplanets %}
+				<div class="col-lg-4 col-sm-6 text-center offset 0">
+					<h3><a href="/exoplanets/{{ x[0].name }}">{{ x[0].name }}</a></h3>
 				</div>
 				{% endfor %}
 			</div>
@@ -79,7 +98,7 @@
 			</div>
 			<hr />
 			<div class="row">
-				<h3 class="text-center">There are {{ all_moons|length }} moon(s)</h3>
+				<h3 class="text-center">There are {{ all_moons|length }} notable moon(s)</h3>
 				{% for x in all_moons %}
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
 					<img class="img-responsive img-center" src="../static/{{ x[0].photo }}" alt="{{ x[0].name }}">

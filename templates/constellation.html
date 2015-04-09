@@ -24,12 +24,12 @@
 	   <div class="container">
 			
 			<div class="col-lg-12">
-				<h1 class="page-header">Andromeda</h1>
+				<h1 class="page-header">{{name}}</h1>
 			</div>
 			<div class="row">
-				
+			{% if name == "Solar System" %}
 		  <div class="table-responsive col-lg-4 col-sm-6 text-center offset 0">
-			<img class="img-responsive img-center" src="{{ url_for('static', filename='images/andromeda.jpg') }}" alt="Draco">
+					<img class="img-responsive img-center" src="../static/{{ photo }}" alt="{{ name }}">
 		  </div>
 				<div class="table-responsive col-lg-8 col-sm-6 offset 0">          
 		  <table class="table table-hover">
@@ -43,32 +43,36 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td>12</td>
-				<td>Andromeda, the Chained Woman</td>
-				<td><a href="/perseus">Perseus</a></td>
-				<td><a href="http://commons.wikimedia.org/wiki/File:AndromedaCC.jpg">here</a></td>
+				<td>{{stars_with_planets}}</td>
+				<td>{{meaning}}</td>
+				<td>CHANGE THIS TO FAMILY LINK</a></td>
+				<td><a href="{{ photo_link }}">here</a></td>
 			  </tr>
 			</tbody>
 		  </table>
 		  <hr />
 		  <b>History</b>
-		  <p>Andromeda is one of the original constellations listed by Ptolemy and still remains a constellation as one of the 88 modern constellations.</p>
+		  <p>{{history}}</p>
 		  </div>
 			</div>
+			{% else %}
+			
+			{% endif %}
 			<hr />
 			<div class="row">
 				<h2>Stars</h2>
 			</div>
 			<hr />
 			<div class="row">
+				<h3 class="text-center">There are {{ all_stars|length }} notable star(s)</h3>
+				{% for x in all_stars %}
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
-					<img class="img-responsive img-center" src="{{ url_for('static', filename='images/upsand.jpg') }}" alt="Upsilon Andromedae">
-					<h3><a href="/upsand">Upsilon Andromedae</a></h3>
+					{% if x[0].name == "Sun" %}
+						<img class="img-responsive img-center" src="../static/{{ x[0].photo }}" alt="{{ x[0].name }}">
+					{% endif %}
+					<h3><a href="/constellations/{{ x[0].name }}">{{ x[0].name }}</a></h3>
 				</div>
-				<div class="col-lg-4 col-sm-6 text-center offset 0">
-					<img class="img-responsive img-center" src="{{ url_for('static', filename='images/wasp-1.jpg') }}" alt="WASP-1">
-					<h3><a href="/wasp-1">WASP-1</a></h3>
-				</div>
+				{% endfor %}
 			</div>
 			<hr />
 			<div class="row">
@@ -76,14 +80,40 @@
 			</div>
 			<hr />
 			<div class="row">
+				<h3 class="text-center">There are {{ all_exoplanets|length }} notable exoplanet(s)</h3>
+				{% for x in all_exoplanets %}
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
-					<img class="img-responsive img-center" src="{{ url_for('static', filename='images/upsandb.jpg') }}" alt="Upsilon Andromedae b">
-					<h3><a href="/upsandb">Upsilon Andromedae b</a></h3>
+					<h3><a href="/exoplanets/{{ x[0].name }}">{{ x[0].name }}</a></h3>
 				</div>
+				{% endfor %}
+			</div>
+			<hr />
+			<div class="row">
+				<h2>Planets</h2>
+			</div>
+			<hr />
+			<div class="row">
+				<h3 class="text-center">There are {{ all_planets|length }} planet(s)</h3>
+				{% for x in all_planets %}
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
-					<img class="img-responsive img-center" src="{{ url_for('static', filename='images/wasp-1b.jpg') }}" alt="WASP-1b">
-					<h3><a href="/wasp-1b">WASP-1b</a></h3>
+					<img class="img-responsive img-center" src="../static/{{ x[0].photo }}" alt="{{ x[0].name }}">
+					<h3><a href="/planets/{{ x[0].name }}">{{ x[0].name }}</a></h3>
 				</div>
+				{% endfor %}
+			</div>
+			<hr />
+			<div class="row">
+				<h2>Moons</h2>
+			</div>
+			<hr />
+			<div class="row">
+				<h3 class="text-center">There are {{ all_moons|length }} notable moon(s)</h3>
+				{% for x in all_moons %}
+				<div class="col-lg-4 col-sm-6 text-center offset 0">
+					<img class="img-responsive img-center" src="../static/{{ x[0].photo }}" alt="{{ x[0].name }}">
+					<h3><a href="/constellations/{{ x[0].name }}">{{ x[0].name }}</a></h3>
+				</div>
+				{% endfor %}
 			</div>
 		</div>
 	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
