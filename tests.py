@@ -138,15 +138,14 @@ class tests(TestCase):
         db.session.add(constellation(name = "delete"))
         db.session.commit()
 
+        query = db.session.query(constellation).filter(constellation.name == "delete").first()
+
+        assert(query != None)
+
+        db.session.delete(query);
+        db.session.commit()
+
         toRemove = db.session.query(constellation).filter(constellation.name == "delete").first()
-
-        assert(toRemove != None)
-
-        session.delete(toRemove);
-        session.commit()
-
-        toRemove = db.session.query(constellation).filter(constellation.name == "delete").first()
-
         assert(toRemove == None)
 
         
@@ -188,35 +187,27 @@ class tests(TestCase):
         db.session.commit()
 
         query = db.session.query(star).filter_by(name = "Sun").first()
-        print("***********************", query.spectral_type)
+       
         assert (query is not None)
         assert (query.spectral_type == "G2V")
         
 
-    """
+    
     #Test deletion of a row in constellation
     def test_delete_star_row(self):
-        self.lock.acquire()
-        engine = create_engine('sqlite:///testdb.db')
-        Session = sessionmaker(bind = engine)
-        session = Session()
-
         db.session.add(star(name = "delete"))
         db.session.commit()
 
-        toRemove = session.query(star).filter_by(name = "delete").first()
+        query = db.session.query(star).filter(star.name == "delete").first()
 
-        assert(toRemove != None)
+        assert(query != None)
 
-        session.delete(toRemove);
-        session.commit()
+        db.session.delete(query);
+        db.session.commit()
 
-        toRemove = session.query(star).filter_by(name = "delete").first()
-
+        toRemove = db.session.query(star).filter(star.name == "delete").first()
         assert(toRemove == None)
-
-        self.lock.release()
-    """
+    
     def test_write_planet(self):
 
         query = db.session.query(planet).all()
@@ -258,30 +249,22 @@ class tests(TestCase):
         assert (query.length_of_day == 345.0)
         
 
-    """    
+    
     #Test deletion of a row in family
     def test_delete_planet_row(self):
-        self.lock.acquire()
-        engine = create_engine('sqlite:///testdb.db')
-        Session = sessionmaker(bind = engine)
-        session = Session()
-
         db.session.add(planet(name = "delete"))
         db.session.commit()
 
-        toRemove = session.query(planet).filter_by(name = "delete").first()
+        query = db.session.query(planet).filter(planet.name == "delete").first()
 
-        assert(toRemove != None)
+        assert(query != None)
 
-        session.delete(toRemove);
-        session.commit()
+        db.session.delete(query);
+        db.session.commit()
 
-        toRemove = session.query(planet).filter_by(name = "delete").first()
-
+        toRemove = db.session.query(planet).filter(planet.name == "delete").first()
         assert(toRemove == None)
-
-        self.lock.release()
-    """
+    
     def test_write_exoplanet(self):
 
         query = db.session.query(exoplanet).all()
@@ -323,30 +306,22 @@ class tests(TestCase):
         assert (query.discovery_method == "radial velocity")
         
 
-    """    
+    
     #Test deletion of a row in family
     def test_delete_exoplanet_row(self):
-        self.lock.acquire()
-        engine = create_engine('sqlite:///testdb.db')
-        Session = sessionmaker(bind = engine)
-        session = Session()
-
         db.session.add(exoplanet(name = "delete"))
         db.session.commit()
 
-        toRemove = session.query(exoplanet).filter_by(name = "delete").first()
+        query = db.session.query(exoplanet).filter(exoplanet.name == "delete").first()
 
-        assert(toRemove != None)
+        assert(query != None)
 
-        session.delete(toRemove);
-        session.commit()
+        db.session.delete(query);
+        db.session.commit()
 
-        toRemove = session.query(exoplanet).filter_by(name = "delete").first()
-
+        toRemove = db.session.query(exoplanet).filter(exoplanet.name == "delete").first()
         assert(toRemove == None)
-
-        self.lock.release()
-    """
+    
     
     def test_write_moon(self):
 
@@ -389,29 +364,21 @@ class tests(TestCase):
         assert (query.mass == 1.0)
         
 
-"""    
+  
     #Test deletion of a row in family
     def test_delete_moon_row(self):
-        self.lock.acquire()
-        engine = create_engine('sqlite:///testdb.db')
-        Session = sessionmaker(bind = engine)
-        session = Session()
-
         db.session.add(moon(name = "delete"))
         db.session.commit()
 
-        toRemove = session.query(moon).filter_by(name = "delete").first()
+        query = db.session.query(moon).filter(moon.name == "delete").first()
 
-        assert(toRemove != None)
+        assert(query != None)
 
-        session.delete(toRemove);
-        session.commit()
+        db.session.delete(query);
+        db.session.commit()
 
-        toRemove = session.query(moon).filter_by(name = "delete").first()
-
+        toRemove = db.session.query(moon).filter(moon.name == "delete").first()
         assert(toRemove == None)
 
-        self.lock.release()
-"""
 if __name__ == "__main__":
     main()
