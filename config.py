@@ -7,3 +7,8 @@ class BaseConfig(object):
 class TestConfig(object):
 	DEBUG = False
 	SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/testdb'
+
+class UnitTestConfig(object):
+	DEBUG = False
+	SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/unittest'
+

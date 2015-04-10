@@ -6,10 +6,13 @@ import threading
 from flask import Flask, render_template, url_for, g, request, session, redirect, abort, flash
 from flask.ext.sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
-db = SQLAlchemy(app)
-app.config.from_object('config.TestConfig')
+#app = Flask(__name__)
+#db = SQLAlchemy(app)
 from models import *
+from __init__ import unittests
+unittests()
+
+
 
 
 #for this tests to work you need to have a postgres database 

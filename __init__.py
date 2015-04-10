@@ -30,6 +30,10 @@ def unittest_resultspage():
 
 
 
+def unittests():
+    app.config.from_object('config.UnitTestConfig')
+    db = SQLAlchemy(app)
+
 ########################################################
 #               Lists of categories
 ########################################################
