@@ -1,3 +1,602 @@
+commit ccf50bf61c01aecb7e349fca03e42de15ca18d25
+Author: gumarus <a.avila.1@utexas.edu>
+Date:   Fri Apr 10 02:01:25 2015 +0000
+
+    got server working
+
+commit 3f7740aac89716fbfb836f7a3e0c75c26fe6adc0
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Thu Apr 9 20:56:55 2015 -0500
+
+    corrected html
+
+commit 122cc7b4a935f661fcc805fe3a3f3a703678278a
+Author: sygmo <smercier91@wireless-10-147-75-128.public.utexas.edu>
+Date:   Thu Apr 9 20:55:41 2015 -0500
+
+    fixes unit tests
+
+commit 2483736b71f44739af9d43326f262dcfeb869505
+Merge: e4a6e45 13ff1f6
+Author: sygmo <smercier91@wireless-10-147-75-128.public.utexas.edu>
+Date:   Thu Apr 9 20:24:35 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit e4a6e45e04185650e1563898dd633d432344a2f2
+Author: sygmo <smercier91@wireless-10-147-75-128.public.utexas.edu>
+Date:   Thu Apr 9 20:23:44 2015 -0500
+
+    unit tests print, praise Zeus
+
+commit 13ff1f6e2481585f6c4a710808b39e00d9ca258f
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Thu Apr 9 20:06:28 2015 -0500
+
+    Updated README fixes #60
+
+commit 768c86c62f04cc1db44f16990be53444bf010d3b
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Thu Apr 9 20:03:52 2015 -0500
+
+    corrected tests amen
+
+commit 960d81505d81e5e2af0fdeac673adf3915a6fc42
+Merge: a099f64 6fb619d
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Thu Apr 9 19:51:25 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit a099f64207105168c701a4670eab5c099a9287dc
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Thu Apr 9 19:51:02 2015 -0500
+
+    adding tests
+
+commit 6fb619d3c0c8dbbd7e1d81e5bc539254f97419e1
+Author: sygmo <smercier91@wireless-10-147-75-128.public.utexas.edu>
+Date:   Thu Apr 9 19:15:29 2015 -0500
+
+    added blank Unit Tests page
+
+commit 74397b36ebc6036406fbb83844114b31a70541d7
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 9 19:00:58 2015 -0500
+
+    database and tests work now
+
+commit 4a65fb0d2b2dd56aedd739481a74f2d260ae5131
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Apr 9 17:49:55 2015 -0500
+
+    Updated stats and what we did in phase 2
+
+commit 4a228d86241ad6495c9a6c0d8c0204260b3f1960
+Author: Olivia Lin <olivialin@wireless-10-147-219-36.public.utexas.edu>
+Date:   Thu Apr 9 17:45:34 2015 -0500
+
+    add tests for api
+
+commit 55ffc47481e2c9897c23b2eb18d3d3493625460c
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Apr 9 17:32:46 2015 -0500
+
+    Removed previous static pages
+
+commit f27fb8cbbdd0cf321481706dc34260e32745ab42
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 9 16:32:36 2015 -0500
+
+    updated the epydoc
+
+commit 0b2d22a45d6a8e59ce4614f845eb421d16d4cc05
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Thu Apr 9 15:50:28 2015 -0500
+
+    redid UML
+
+commit b73ae7cea97ace0e6c1d3e6ff76c9e309b643e23
+Author: sygmo <smercier91@wireless-10-147-75-128.public.utexas.edu>
+Date:   Thu Apr 9 15:25:16 2015 -0500
+
+    updated __init__ and bootstrap margins
+
+commit 7052d52b4e8f510cec1fa37527464380f0e734ce
+Merge: b99b441 3771262
+Author: sygmo <smercier91@wireless-10-147-75-128.public.utexas.edu>
+Date:   Thu Apr 9 14:04:54 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit b99b441ef0363483054d18d0c12d4ccab4f3b854
+Author: sygmo <smercier91@wireless-10-147-75-128.public.utexas.edu>
+Date:   Thu Apr 9 14:00:04 2015 -0500
+
+    drop_all() now works with the addition of reflect()
+
+commit 377126200a1a9349cdde08e64296db3fbf58ab4a
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Apr 9 13:45:10 2015 -0500
+
+    Fixed tests.py
+
+commit c29f2382923fea2cbd9b6214b2b1ffcc929ef6c0
+Author: sygmo <smercier91@wireless-10-147-75-128.public.utexas.edu>
+Date:   Thu Apr 9 13:45:26 2015 -0500
+
+    try this __init__
+
+commit 7bef29675576f44c710e5f83aae0402c8019dbed
+Merge: 28b61fd 1170d3e
+Author: sygmo <smercier91@wireless-10-147-75-128.public.utexas.edu>
+Date:   Thu Apr 9 13:42:23 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit 28b61fd6dfc700c26edcc39dd7a7a3cf5a20c0e5
+Author: sygmo <smercier91@wireless-10-147-75-128.public.utexas.edu>
+Date:   Thu Apr 9 13:39:39 2015 -0500
+
+    hopefully thihis __init__ will work
+
+commit 1170d3e33094f28c428947597c20f1444a2218aa
+Author: Olivia Lin <olivialin@wireless-10-147-219-36.public.utexas.edu>
+Date:   Thu Apr 9 13:21:24 2015 -0500
+
+    db_create is working again
+
+commit 2e8e59ee85b0ae803842e317c37d8286f58c0656
+Author: sygmo <smercier91@wireless-10-147-75-128.public.utexas.edu>
+Date:   Thu Apr 9 12:45:21 2015 -0500
+
+    exoplanets on __init__.py
+
+commit c8fa610a7937725d65060d52e82e20461d6f6127
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Apr 9 08:48:43 2015 -0500
+
+    fixed horizontal scrollbar issue
+
+commit 78884fa0ccb2303a8ec7802c0f461ca2abc94543
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Apr 9 08:29:55 2015 -0500
+
+    fixed typo on moons page, added radius to planet
+
+commit 953a8419cff27f2a322228e4b763a0ed22e0aac6
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 8 23:29:45 2015 -0500
+
+    fixed units in planet, added sorting moons/planets
+
+commit 86c17b416e5318e27bb21bfc55f7c34cbde1ae23
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 8 22:46:27 2015 -0500
+
+    Added sorting to constellations, stars, exoplanets
+
+commit 9eb0653d3d6236ca76f1b2bebb5c666ef7634d37
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 8 22:35:17 2015 -0500
+
+    Added sorting to families
+
+commit 0b5c0b0ddd5fdf084a456902450b7520cf93e5b7
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 8 20:43:25 2015 -0500
+
+    finished star template
+
+commit e56911c03f0c65feb1039d10935d67514bed40b2
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Wed Apr 8 20:19:13 2015 -0500
+
+    Added port number for GETs on Apiary
+
+commit b786114f945bbe6a63d63643a6ad2e68f3f26e96
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Wed Apr 8 20:06:03 2015 -0500
+
+    Updated API Blueprint for Phase 2
+
+commit 2fee94a16af40118a60fb45103e12d9f3328fa87
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 8 19:59:04 2015 -0500
+
+    finished constellations
+
+commit b85d09d89db92e69ca1e4b4aace57b624a6aecc1
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 8 19:52:28 2015 -0500
+
+    Added capability of going to constellations page
+
+commit f75b2183a9c56914b590fe8c75efb92d6ff774f5
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 8 19:49:31 2015 -0500
+
+    made changes to templates
+
+commit 1e5c90015b07fdc8756a4c3db6918c51a6c2e44c
+Author: Olivia Lin <olivialin@wireless-10-147-241-240.public.utexas.edu>
+Date:   Wed Apr 8 19:44:26 2015 -0500
+
+    Fixed db_create
+
+commit 214bad668aafaecee6b8db0170b2f9380173c5cc
+Author: sygmo <smercier91@wireless-10-147-75-128.public.utexas.edu>
+Date:   Wed Apr 8 19:01:52 2015 -0500
+
+    dynamic page for exoplanets (hopefully)
+
+commit 1c2f6593aae1c7b255ac4081ece8611a32821719
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 8 18:59:59 2015 -0500
+
+    finished families
+
+commit 91658a5d675f5f189e36142b07c35b572b2649f8
+Author: Olivia Lin <olivialin@wireless-10-147-241-240.public.utexas.edu>
+Date:   Wed Apr 8 18:38:27 2015 -0500
+
+    Created API with Flask-Restless - get calls work for all except exoplanet
+
+commit b30306fca161413fe0fb4b256a8fb49dc7a9e8bf
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 8 18:34:19 2015 -0500
+
+    working on families
+
+commit 059e0789b3414a5a9e9408fbb7651697c3391d02
+Author: gumarus <a.avila.1@live.com>
+Date:   Wed Apr 8 18:02:12 2015 -0500
+
+    about to test server
+
+commit 3368fd73dad4f34e060c0e43cebf0d9996aa52c2
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 8 17:03:14 2015 -0500
+
+    Moons is now dynamic
+
+commit 765482286a85aec6fe93a32e19952495f2662f6c
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 8 16:29:30 2015 -0500
+
+    went back to previous file structure for nginx
+
+commit e3d1379b015b15fd827b1feafff6d5e9c6ba9592
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 8 16:17:27 2015 -0500
+
+    working on moons, not working
+
+commit 9f7b4212ec477049762624552749e58c1693b956
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 8 15:48:17 2015 -0500
+
+    fixed units and display moons for planet template
+
+commit 17981c57a66d688dd87f2ae60ad74ce9f2244905
+Author: Olivia Lin <olivialin@wireless-10-147-241-240.public.utexas.edu>
+Date:   Wed Apr 8 15:11:58 2015 -0500
+
+    Fixing error Non-ASCII character '\xc3' in db_create
+
+commit 4ed883f8d184a3672635725082ea2efe8791b07c
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 8 13:25:41 2015 -0500
+
+    updated parser
+
+commit c838b445d61e4deda23fac0b23f06a5061e94afc
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 8 13:22:37 2015 -0500
+
+    Added info on constellations, stars, exoplanets
+
+commit fc5e7f0ca6ebb507180bea3f3c15621277c7b7a3
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Wed Apr 8 13:20:57 2015 -0500
+
+    changed server config
+
+commit fddc1161a8c9b621db6987120ef0c70043ed204e
+Author: gumarus <a.avila.1@live.com>
+Date:   Wed Apr 8 13:13:18 2015 -0500
+
+    reformated the way we query for ease of use
+
+commit ff39de7932b02a50d7faede955d86a879276e135
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Apr 7 21:58:24 2015 -0500
+
+    completed the skeleton and added coments for guidance
+
+commit e88b0b2ef3e5d94a32e63fda04f9cbfd15702d65
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Apr 7 21:29:47 2015 -0500
+
+    removed the to lowecase for planet name
+
+commit b229ca9c80ad7b65cc0f2920a53c4b47dcc83e58
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Apr 7 21:28:42 2015 -0500
+
+    planet is dynamic now
+
+commit b050f733912a4ab343526fb7ec161011a3c36614
+Merge: 4a4d822 d334c02
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Tue Apr 7 18:58:39 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit 4a4d822296cedd02813651263e224fde45b49cbf
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Tue Apr 7 18:58:27 2015 -0500
+
+    latest changes
+
+commit d334c02005063b29c8f62f390f508120070c37c2
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Tue Apr 7 18:54:22 2015 -0500
+
+    added example with all data filled for each attribute
+
+commit d7f61e3cd21601108f1ad2b4b1d60f0474d9eb04
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Tue Apr 7 18:24:19 2015 -0500
+
+    fixed history for planets, added moons to db_create
+
+commit 8470318961959576a4f7877747cfcd447445bc24
+Merge: ff06005 a502612
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Tue Apr 7 18:23:34 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit ff06005d01aa11e52bae366e1ffe857ba1f3197e
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Tue Apr 7 18:22:50 2015 -0500
+
+    corrected views for stars
+
+commit a502612102a6c62750884675d8afa8a2eb64b4c0
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Tue Apr 7 18:21:50 2015 -0500
+
+    Edited models and added images for moon
+
+commit e81718195c870832c77b23d0729b11348646e565
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Tue Apr 7 17:37:35 2015 -0500
+
+    added planet template start
+
+commit b21e722eefbb23591bf6caefe18dcf3a75eff6f5
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Tue Apr 7 17:27:05 2015 -0500
+
+    added test to dbcreate
+
+commit 097201c364d42874bb58c8cefafe01c1668868a1
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Tue Apr 7 17:25:49 2015 -0500
+
+    added single star and constellation page
+
+commit 1913b9fbeb55d118b72a80b3fc4e1b26bf4e08a2
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Tue Apr 7 17:14:25 2015 -0500
+
+    dynamic moons and exoplanets
+
+commit 30a7a33b0272d0747073b94df133a2debeb59b39
+Merge: 21c156b 81dff53
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Tue Apr 7 16:49:01 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit 21c156b3505a3babfb742879d7d78927e42c9829
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Tue Apr 7 16:48:37 2015 -0500
+
+    dynamic exoplanets moons
+
+commit 81dff53c5a9d366246b1ac7abb30a3ede1244fae
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Tue Apr 7 16:43:53 2015 -0500
+
+    finished families in db_create
+
+commit e6521329bbccbe0b3240e1ade67ebd7ed7034c53
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Tue Apr 7 16:17:40 2015 -0500
+
+    fixed typo in db_create
+
+commit 716da9eb7f599e7c6fead806dfc6199615e7f895
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Tue Apr 7 16:16:54 2015 -0500
+
+    Added photos and creation in db for planets
+
+commit b8ebf760b23d3e3d43895621ff8257dcc645f6dd
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Apr 7 16:12:23 2015 -0500
+
+    fixed stars
+
+commit 4aaade8aa1a68ee387a762e48cd338bdc5da1d74
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Tue Apr 7 15:59:51 2015 -0500
+
+    dynamic constellations
+
+commit 915427ea3d999c2f54008c05a92510d4d69bda66
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Tue Apr 7 15:43:26 2015 -0500
+
+    finished views for dynamic
+
+commit d6838245a3e41ddc0b50919ec72644e0edd75ff1
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Apr 7 15:34:22 2015 -0500
+
+    correcting views for stars
+
+commit 10a52cbfcb5851a7545c1b7a1ae77117f1667f6c
+Merge: b60d7ff ea20698
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Apr 7 15:31:39 2015 -0500
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit b60d7ff4b8c0f9165fb4f4a84c974a8a07250a7b
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Apr 7 15:30:16 2015 -0500
+
+    in views added stars
+
+commit ea206987d43ebc986098be56495a4f39d4ebb008
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Tue Apr 7 15:24:10 2015 -0500
+
+    Fixed models file
+
+commit 2c7460f12d96424ee56fbfae462a40f0a7f9c8a6
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Tue Apr 7 13:19:14 2015 -0500
+
+    fixed moonsin planets, added moons in hashmap
+
+commit 4cd22a28598f20e6fbc5d3975e14723c5db480d8
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Tue Apr 7 11:29:32 2015 -0500
+
+    Finished planets except for columns noted in #49
+
+commit 1159bf173b9311f81c40050c9e4dda0d397505aa
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Tue Apr 7 01:05:18 2015 -0500
+
+    Finished stars/exoplanets, halfway with planets
+
+commit c831e0d112ba4ec48b3aef5762e8f306a44db8eb
+Author: gumarus <a.avila.1@live.com>
+Date:   Fri Apr 3 13:27:59 2015 -0500
+
+    planets is dynamic
+
+commit 532a670478e3a883c98ea974ade44c2d3b3f102b
+Author: gumarus <a.avila.1@live.com>
+Date:   Fri Apr 3 11:38:30 2015 -0500
+
+    added a planet
+
+commit 74978ec2b3809684e024b331946e9d73200e63a6
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 2 21:09:37 2015 -0500
+
+    added star for testing
+
+commit 7adc2439d70e5b7fb95c51671f988c6c3a71f4c6
+Author: Olivia Lin <olivialin@wireless-10-147-205-216.public.utexas.edu>
+Date:   Thu Apr 2 20:40:31 2015 -0500
+
+    removed config.py in starlords, correct config.py in cs373-idb still exists
+
+commit d7c18916ffa9f8d76ab3877af8eaddbe160f3e9f
+Author: Olivia Lin <olivialin@wireless-10-147-205-216.public.utexas.edu>
+Date:   Thu Apr 2 20:34:12 2015 -0500
+
+    remove difficulty.py
+
+commit 9d7e652356648850ba22040d00c36fc70f395a33
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 2 19:29:02 2015 -0500
+
+    fixed to postgress database
+
+commit d29fc1d23afd6bd038220fdda19e3606a21fcef4
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 2 18:09:14 2015 -0500
+
+    adding missing files
+
+commit 2a3232270bee552ee78efdd84550a7299fdfef74
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 2 17:45:32 2015 -0500
+
+    made families dynamic
+
+commit 53cce0bdf6d93349bf9a288bae6e6b442086f859
+Author: sygmo <smercier91@wireless-10-147-154-119.public.utexas.edu>
+Date:   Thu Apr 2 17:14:34 2015 -0500
+
+    planet data parsing, 1st attempt
+
+commit a19da9034d1daecb9201fcbf933c38d45f4f3f10
+Merge: 0ed0d2e 8efade7
+Author: sygmo <smercier91@wireless-10-147-154-119.public.utexas.edu>
+Date:   Thu Apr 2 16:19:52 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit 0ed0d2ec49b1e35978a8d2e7fdad8514cfd14da0
+Author: sygmo <smercier91@wireless-10-147-154-119.public.utexas.edu>
+Date:   Thu Apr 2 16:19:39 2015 -0500
+
+    fixed parsing planets
+
+commit 8efade7a891ce5bd56e646eab90999c3c939cc26
+Merge: 6daa5eb b9001ba
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 2 15:51:44 2015 -0500
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit b9001ba279df6d7206c5e364093a7103923c9968
+Author: sygmo <smercier91@wireless-10-147-154-119.public.utexas.edu>
+Date:   Thu Apr 2 15:50:59 2015 -0500
+
+    added ParseData folder
+
+commit 6daa5ebcea02fe07ff9d3949e1146f9f60773dff
+Merge: a5be628 ffc2ea0
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 2 15:50:55 2015 -0500
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit a5be628e8fb2b9bf18e03354944abdf8f41e4dbe
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 2 15:50:38 2015 -0500
+
+    starting to change to dynamic
+
+commit ffc2ea02fb8e9d3ffc16c56d0a2676f04b8d7b67
+Author: sygmo <smercier91@wireless-10-147-154-119.public.utexas.edu>
+Date:   Thu Apr 2 15:47:16 2015 -0500
+
+    added Driver file
+
+commit e460449c7794485804c35030ae4d6e79014e3b9b
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Apr 2 15:41:18 2015 -0500
+
+    fixed file structure so init file is neater
+
+commit ce5625fb5ed1ee9c5fe169652d4acb8ac2d97b75
+Author: Olivia Lin <olivialin@wireless-10-147-154-5.public.utexas.edu>
+Date:   Thu Mar 26 19:53:54 2015 -0500
+
+    Added 2nd commit log
+
 commit a12169574d756ccdea754f3677916e825472561c
 Author: gumarus <a.avila.1@live.com>
 Date:   Thu Mar 26 19:44:43 2015 -0500
