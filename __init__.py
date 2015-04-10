@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, g, request, session, redirect
 from flask.ext.sqlalchemy import SQLAlchemy
 from models import *
 from flask.ext.restless import APIManager
+from subprocess import Popen, PIPE
 
 app = Flask(__name__)
 
@@ -22,7 +23,9 @@ def aboutuspage():
 
 @app.route('/unittest_results')
 def unittest_resultspage():
-    return render_template("unittest_results.html")
+    process = Popen(['python', 'tests.py'], stdout=PIPE, stderr=PIPE)
+    stdout, stderr = process.communicate()
+    return render_template("unittest_results.html", results=stderr)
 
 
 
