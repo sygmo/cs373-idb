@@ -1,6 +1,4 @@
 #coding: utf8
-
-from models import family, constellation, planet, star, moon, exoplanet
 from flask import Flask, render_template, url_for, g, request, session, redirect, abort, flash
 from flask.ext.sqlalchemy import SQLAlchemy
 
@@ -9,9 +7,11 @@ app = Flask(__name__)
 app.config.from_object('config.TestConfig')
 db = SQLAlchemy(app)
 
+from models import *
+
 #creates the database
 print("about to drop")
-db.reflect()
+#db.reflect()
 db.drop_all()
 print("dropped")
 print("about to create")
