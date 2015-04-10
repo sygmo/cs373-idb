@@ -7,9 +7,8 @@ from flask import Flask, render_template, url_for, g, request, session, redirect
 from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-
-app.config.from_object('config.TestConfig')
 db = SQLAlchemy(app)
+app.config.from_object('config.TestConfig')
 from models import *
 
 
@@ -20,11 +19,13 @@ class tests(TestCase):
 
     #setup the database
     def setUp(self):
+       
 
-        db.drop_all()
         db.create_all()
 
-        
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
 
     
     #Test that the table family is writable
@@ -68,10 +69,10 @@ class tests(TestCase):
         
 
 
-    """  
+     
     #Test deletion of a row in family
     def test_delete_family_row(self):
-        self.lock.acquire()
+        
 
         db.session.add(family(name = "delete"))
         db.session.commit()
@@ -86,8 +87,8 @@ class tests(TestCase):
         toRemove = db.session.query(family).filter(family.name == "delete").first()
         assert(toRemove == None)
 
-        self.lock.release()
-    """
+       
+    
 
     def test_write_constellation (self):
 
@@ -129,31 +130,28 @@ class tests(TestCase):
         assert (query is not None)
         assert (query.stars_with_planets == 5)
         
-    """
+    
     #Test deletion of a row in constellation
     def test_delete_constellation_row(self):
-        self.lock.acquire()
-        engine = create_engine('sqlite:///testdb.db')
-        Session = sessionmaker(bind = engine)
-        session = Session()
+        
 
         db.session.add(constellation(name = "delete"))
         db.session.commit()
 
-        toRemove = session.query(constellation).filter_by(name = "delete").first()
+        toRemove = db.session.query(constellation).filter(constellation.name == "delete").first()
 
         assert(toRemove != None)
 
         session.delete(toRemove);
         session.commit()
 
-        toRemove = session.query(constellation).filter_by(name = "delete").first()
+        toRemove = db.session.query(constellation).filter(constellation.name == "delete").first()
 
         assert(toRemove == None)
 
-        self.lock.release()
+        
 
-    """
+   
     def test_write_star (self):
 
         query = db.session.query(star).all()
@@ -190,7 +188,7 @@ class tests(TestCase):
         db.session.commit()
 
         query = db.session.query(star).filter_by(name = "Sun").first()
-
+        print("***********************", query.spectral_type)
         assert (query is not None)
         assert (query.spectral_type == "G2V")
         
@@ -382,13 +380,13 @@ class tests(TestCase):
 
     def test_read_moon_attribute(self):
 
-        db.session.add(moon(name = "Io", fk_planet_moon = 5))
+        db.session.add(moon(name = "Io", mass = 1.0))
         db.session.commit()
 
         query = db.session.query(moon).filter(moon.name == "Io").first()
 
         assert (query is not None)
-        assert (query.fk_planet_moon == 5)
+        assert (query.mass == 1.0)
         
 
 """    
@@ -415,5 +413,5 @@ class tests(TestCase):
 
         self.lock.release()
 """
-#if __name__ == "__main__":
-    #main()
+if __name__ == "__main__":
+    main()
