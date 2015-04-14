@@ -1,3 +1,5 @@
 $(document).ready(function(){
-				$('#sortableTable').dataTable();
+				$('#sortableTable').dataTable({
+					"bFilter": false
+                 });
 			});
