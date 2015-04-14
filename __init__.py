@@ -7,7 +7,7 @@ from subprocess import Popen, PIPE
 app = Flask(__name__)
 
 
-app.config.from_object('config.BaseConfig')
+app.config.from_object('config.LocalConfig')
 db = SQLAlchemy(app)
 ########################################################
 #                Root and information
@@ -31,7 +31,7 @@ def unittest_resultspage():
 
 
 def unittests():
-    app.config.from_object('config.TestConfig')
+    app.config.from_object('config.LocalTestConfig')
     db = SQLAlchemy(app)
 
 ########################################################
@@ -371,4 +371,4 @@ if __name__ == "__main__":
     api_manager.create_api(star, methods=['GET'])
     api_manager.create_api(moon, methods=['GET'])
     api_manager.create_api(exoplanet, methods=['GET'])
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=8080)
