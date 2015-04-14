@@ -1,3 +1,4 @@
 $(document).ready(function(){
-				$('#sortableTable').dataTable();
+				$('#sortableTable').dataTable({
+                 });
 			});
