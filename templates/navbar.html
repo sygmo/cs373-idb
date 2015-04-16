@@ -9,6 +9,15 @@
 	  <a class="navbar-brand" href="/">Star Lords</a>
 	</div>
 	<div class="collapse navbar-collapse" id="spaceNavbar">
+
+		<form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+		
+		
 		<ul class="nav navbar-nav navbar-right"> 			
 			<li {% if request.path == "/families" %}class="active"{% endif %}><a href="/families">Families</a></li>
 			<li {% if request.path == "/constellations" %}class="active"{% endif %}><a href="/constellations">Constellations</a></li>

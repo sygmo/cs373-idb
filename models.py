@@ -3,16 +3,20 @@ import sys
 from sqlalchemy import Column, ForeignKey, Integer, String, Text, Float, LargeBinary, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-from __init__ import db
+from __init__ import db, app
+
+import flask.ext.whooshalchemy as whooshalchemy
 
 class family(db.Model):
     __tablename__ = "family"
+    __searchable__ = ['name']
     id = db.Column(Integer, primary_key = True)
     name = db.Column(Text, nullable = False)
     description = db.Column(Text)
 
 class constellation(db.Model):
     __tablename__ = "constellation"
+    __searchable__ = ['name']
     id = db.Column(Integer, primary_key = True)
     name = db.Column(Text, nullable = False)
     stars_with_planets = db.Column(Integer)
@@ -24,6 +28,7 @@ class constellation(db.Model):
 
 class planet(db.Model):
     __tablename__ = "planet"
+    __searchable__ = ['name']
     id = db.Column(Integer, primary_key = True)
     name = db.Column(Text, nullable = False)
     distance_from_sun = db.Column(Float)
@@ -45,6 +50,7 @@ class planet(db.Model):
 
 class star(db.Model):
     __tablename__ = "star"
+    __searchable__ = ['name']
     id = db.Column(Integer, primary_key = True)
     name = db.Column(Text, nullable = False)
     mass = db.Column(Float)
@@ -61,6 +67,7 @@ class star(db.Model):
 
 class moon(db.Model):
     __tablename__ = "moon"
+    __searchable__ = ['name']
     id = db.Column(Integer, primary_key = True)
     name = db.Column(Text, nullable = False)
     radius = db.Column(Float)
@@ -74,6 +81,7 @@ class moon(db.Model):
 
 class exoplanet(db.Model):
     __tablename__ = "ExoPlanet"
+    __searchable__ = ['name']
     id = db.Column(Integer, primary_key = True)
     name = db.Column(Text, nullable = False)
     discovered = db.Column(Text)
@@ -86,5 +94,12 @@ class exoplanet(db.Model):
     fk_star_planet = db.Column(Integer, ForeignKey("star.id"))
 
     
+whooshalchemy.whoosh_index(app, family)
+whooshalchemy.whoosh_index(app, constellation)
+whooshalchemy.whoosh_index(app, planet)
+whooshalchemy.whoosh_index(app, star)
+whooshalchemy.whoosh_index(app, moon)
+whooshalchemy.whoosh_index(app, exoplanet)
+
 
 

@@ -11,6 +11,7 @@ class TestConfig(object):
 class LocalConfig(object):
 	DEBUG = False	
 	SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/universe'
+	#WHOOSH_BASE = 'postgresql://localhost/universe'
 
 class LocalTestConfig(object):
 	DEBUG = False	
