@@ -19,7 +19,11 @@ def indexpage():
 
 @app.route('/aboutus')
 def aboutuspage():
-    return render_template("aboutus.html") 
+    return render_template("aboutus.html")
+
+@app.route('/darksideapi')
+def darksideapipage():
+    return render_template("darksideapi.html")
 
 @app.route('/unittest_results')
 def unittest_resultspage():
