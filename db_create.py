@@ -12,9 +12,12 @@ from models import *
 #creates the database
 print("about to drop")
 #db.reflect()
+db.configure_mappers()
+
 db.drop_all()
 print("dropped")
 print("about to create")
+
 db.create_all()
 print("created")
 
@@ -542,7 +545,7 @@ db.session.add(moon(name = "Triton", radius = 0.2122, mass = 0.00359, orbital_pe
 db.session.commit()
 
 
-
+'''
 print("Running queries.....")
 
 query = db.session.query(planet, star, constellation, family).filter(planet.fk_star_planet == star.id)\
@@ -574,7 +577,7 @@ print("planet: " + query4[0].name + ", star: " + x[1].name + ", constellation: "
 
 
 
-
+'''
 
 
 

@@ -5,18 +5,23 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from __init__ import db, app
 
-import flask.ext.whooshalchemy as whooshalchemy
+import sqlalchemy as sa
+from sqlalchemy_searchable import make_searchable
+from sqlalchemy_utils.types import TSVectorType
 
-class family(db.Model):
+Base = declarative_base()
+make_searchable()
+
+class family(db.Model, Base):
     __tablename__ = "family"
-    __searchable__ = ['name']
     id = db.Column(Integer, primary_key = True)
     name = db.Column(Text, nullable = False)
     description = db.Column(Text)
 
-class constellation(db.Model):
+    search_vector = db.Column(TSVectorType('name'))
+
+class constellation(db.Model, Base):
     __tablename__ = "constellation"
-    __searchable__ = ['name']
     id = db.Column(Integer, primary_key = True)
     name = db.Column(Text, nullable = False)
     stars_with_planets = db.Column(Integer)
@@ -26,9 +31,10 @@ class constellation(db.Model):
     photo = db.Column(Text)
     fk_constellation_family = db.Column(Integer, ForeignKey("family.id"))
 
-class planet(db.Model):
+    search_vector = db.Column(TSVectorType('name'))
+
+class planet(db.Model, Base):
     __tablename__ = "planet"
-    __searchable__ = ['name']
     id = db.Column(Integer, primary_key = True)
     name = db.Column(Text, nullable = False)
     distance_from_sun = db.Column(Float)
@@ -48,9 +54,10 @@ class planet(db.Model):
     photo = db.Column(Text)
     fk_star_planet = db.Column(Integer, ForeignKey("star.id"))
 
-class star(db.Model):
+    search_vector = db.Column(TSVectorType('name'))
+
+class star(db.Model, Base):
     __tablename__ = "star"
-    __searchable__ = ['name']
     id = db.Column(Integer, primary_key = True)
     name = db.Column(Text, nullable = False)
     mass = db.Column(Float)
@@ -65,9 +72,10 @@ class star(db.Model):
     photo = db.Column(Text)
     fk_constellation_star = db.Column(Integer, ForeignKey("constellation.id"))
 
-class moon(db.Model):
+    search_vector = db.Column(TSVectorType('name'))
+
+class moon(db.Model, Base):
     __tablename__ = "moon"
-    __searchable__ = ['name']
     id = db.Column(Integer, primary_key = True)
     name = db.Column(Text, nullable = False)
     radius = db.Column(Float)
@@ -79,9 +87,10 @@ class moon(db.Model):
     photo = db.Column(Text)
     fk_planet_moon = db.Column(Integer, ForeignKey("planet.id"))
 
-class exoplanet(db.Model):
+    search_vector = db.Column(TSVectorType('name'))
+
+class exoplanet(db.Model, Base):
     __tablename__ = "ExoPlanet"
-    __searchable__ = ['name']
     id = db.Column(Integer, primary_key = True)
     name = db.Column(Text, nullable = False)
     discovered = db.Column(Text)
@@ -93,13 +102,9 @@ class exoplanet(db.Model):
     photo = db.Column(Text)
     fk_star_planet = db.Column(Integer, ForeignKey("star.id"))
 
-    
-whooshalchemy.whoosh_index(app, family)
-whooshalchemy.whoosh_index(app, constellation)
-whooshalchemy.whoosh_index(app, planet)
-whooshalchemy.whoosh_index(app, star)
-whooshalchemy.whoosh_index(app, moon)
-whooshalchemy.whoosh_index(app, exoplanet)
+    search_vector = db.Column(TSVectorType('name'))
+
+
 
 
 

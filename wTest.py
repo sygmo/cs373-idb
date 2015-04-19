@@ -1,23 +1,13 @@
-from flask import Flask, render_template, url_for, g, request, session, redirect, abort, flash
-from flask.ext.sqlalchemy import SQLAlchemy
+from sqlalchemy_searchable import parse_search_query
+from sqlalchemy_searchable import search
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 from models import *
 
-import os, os.path
-from whoosh import index
-
-ix = index.create_in("whoosh_index", family)
-
-app = Flask(__name__)
-
-app.config.from_object('config.LocalConfig')
-db = SQLAlchemy(app)
-
-if __name__ == "__main__":
-	print("Testing Whoosh!")
-	result = family.query.whoosh_search("home").all()
-
-	for x in result:
-		print(x.name)
-	#print(result)
+from __init__ import db
 
 
+query = db.session.query(family)
+query = search(query, "zodiac")
+
+print(query.first().name)
