@@ -17,6 +17,12 @@ db = SQLAlchemy(app)
 def indexpage():
     return render_template("index.html")
 
+
+@app.route('/search')
+def searchPage():
+    
+    return "Got string: " + request.args.get("user") 
+
 @app.route('/aboutus')
 def aboutuspage():
     return render_template("aboutus.html")
