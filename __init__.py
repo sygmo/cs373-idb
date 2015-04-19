@@ -21,7 +21,7 @@ def indexpage():
 @app.route('/search')
 def searchPage():
     
-    return "Got string: "  request.args.get("val") 
+    return "Got string: "  + request.args.get("val") 
 
 @app.route('/aboutus')
 def aboutuspage():
