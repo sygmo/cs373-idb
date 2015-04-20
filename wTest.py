@@ -7,7 +7,10 @@ from models import *
 from __init__ import db
 from sqlalchemy import or_
 
-searchVal = "family"
+searchVal = "or earth sun"
+
+if(" or " in searchVal):
+	searchVal = searchVal.replace(" or ", " ")
 
 query_family = db.session.query(family)
 query_constellation = db.session.query(constellation)
@@ -16,15 +19,7 @@ query_moon = db.session.query(moon)
 query_planet = db.session.query(planet)
 query_exoplanet = db.session.query(exoplanet)
 
-#query = db.session.query(family).filter(or_(family.name.like(searchVal), family.description.like(searchVal)))
-#query = search(query, searchVal, vector=family.search_vector)
-
-combined_search_vector = family.search_vector | constellation.search_vector
-"""
-query = (
-    db.session.query(family, constellation).filter(constellation.fk_constellation_family == family.id)
-)
-"""
+print("and results")
 query = search(query_family, searchVal)
 
 for x in query.all():
@@ -34,11 +29,62 @@ query = search(query_constellation, searchVal)
 
 for x in query.all():
     print (x.name)
-"""
-for x in articles.all():
-    print (x[0].name)
-    print (x[1].name)
 
-    #print (x[1].meaning)
-    print()
-"""
+query = search(query_star, searchVal)
+
+for x in query.all():
+    print (x.name)
+	
+query = search(query_exoplanet, searchVal)
+
+for x in query.all():
+    print (x.name)
+	
+query = search(query_planet, searchVal)
+
+for x in query.all():
+    print (x.name)
+	
+query = search(query_moon, searchVal)
+
+for x in query.all():
+    print (x.name)
+	
+
+print("or results")
+or_results = searchVal.split(' ')
+searchVal = or_results[0]
+for i in range (1, len(or_results)):
+	searchVal = searchVal + " or " + or_results[i]
+	
+query = search(query_planet, searchVal)
+
+query = search(query_family, searchVal)
+
+for x in query.all():
+    print (x.name)
+
+query = search(query_constellation, searchVal)
+
+for x in query.all():
+    print (x.name)
+
+query = search(query_star, searchVal)
+
+for x in query.all():
+    print (x.name)
+	
+query = search(query_exoplanet, searchVal)
+
+for x in query.all():
+    print (x.name)
+	
+query = search(query_planet, searchVal)
+
+for x in query.all():
+    print (x.name)
+	
+query = search(query_moon, searchVal)
+
+for x in query.all():
+    print (x.name)
