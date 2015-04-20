@@ -9,6 +9,7 @@ import sqlalchemy as sa
 from sqlalchemy_searchable import make_searchable
 from sqlalchemy_utils.types import TSVectorType
 
+
 Base = declarative_base()
 make_searchable()
 
@@ -31,7 +32,7 @@ class constellation(db.Model, Base):
     photo = db.Column(Text)
     fk_constellation_family = db.Column(Integer, ForeignKey("family.id"))
 
-    search_vector = db.Column(TSVectorType('name', 'meaning'))
+    search_vector = db.Column(TSVectorType('name', 'meaning', 'history', 'photo_link', 'photo', catalog='simple'))
     
 class planet(db.Model, Base):
     __tablename__ = "planet"
