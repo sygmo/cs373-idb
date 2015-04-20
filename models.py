@@ -18,7 +18,7 @@ class family(db.Model, Base):
     name = db.Column(Text, nullable = False)
     description = db.Column(Text)
 
-    search_vector = db.Column(TSVectorType('name'))
+    search_vector = db.Column(TSVectorType('name', 'description', catalog='simple'))
     
 class constellation(db.Model, Base):
     __tablename__ = "constellation"
