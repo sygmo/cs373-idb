@@ -7,7 +7,7 @@ from models import *
 from __init__ import db
 from sqlalchemy import or_
 
-searchVal = "or earth sun"
+searchVal = "poop"
 
 if(" or " in searchVal):
 	searchVal = searchVal.replace(" or ", " ")
@@ -56,8 +56,6 @@ or_results = searchVal.split(' ')
 searchVal = or_results[0]
 for i in range (1, len(or_results)):
 	searchVal = searchVal + " or " + or_results[i]
-	
-query = search(query_planet, searchVal)
 
 query = search(query_family, searchVal)
 
