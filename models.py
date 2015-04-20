@@ -18,7 +18,7 @@ class family(db.Model, Base):
     name = db.Column(Text, nullable = False)
     description = db.Column(Text)
 
-    search_vector = db.Column(TSVectorType('name'))
+    search_vector = db.Column(TSVectorType('name', 'description'))
 
 class constellation(db.Model, Base):
     __tablename__ = "constellation"
@@ -31,7 +31,7 @@ class constellation(db.Model, Base):
     photo = db.Column(Text)
     fk_constellation_family = db.Column(Integer, ForeignKey("family.id"))
 
-    search_vector = db.Column(TSVectorType('name'))
+    search_vector = db.Column(TSVectorType('name', 'meaning'))
 
 class planet(db.Model, Base):
     __tablename__ = "planet"
