@@ -3,7 +3,8 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from models import *
 from flask.ext.restless import APIManager
 from subprocess import Popen, PIPE
-
+from sqlalchemy_searchable import parse_search_query
+from sqlalchemy_searchable import search
 app = Flask(__name__)
 
 
@@ -20,8 +21,17 @@ def indexpage():
 
 @app.route('/search')
 def searchPage():
+    searchVal = request.args.get("val")
+    query = db.session.query(family)
+    query = search(query, searchVal)
+
     
-    return "Got string: "  + request.args.get("val") 
+
+
+    if (query.first() != None):
+        return "Got string: "  + query.first().name
+    else:
+        return "Result does not exist: " + searchVal  
 
 @app.route('/aboutus')
 def aboutuspage():
