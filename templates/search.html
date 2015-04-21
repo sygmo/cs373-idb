@@ -28,12 +28,68 @@
                 
 			</div>
 			<hr />
-			{%for x in results%}
+			<p>AND</p>
+			{%for x in and_family%}
 			<tr>
-				<td><a href="/search/{{ x }}">{{ x }}</a></td>
+				<td><a href="/families/{{ x.name }}">{{ x.name }}</a></td>
 			</tr>
 			{% endfor %}
-
+			{%for x in and_constellation%}
+			<tr>
+				<td><a href="/constellations/{{ x.name }}">{{ x.name }}</a></td>
+			</tr>
+			{% endfor %}
+			<!--{%for x in and_star%}
+			<tr>
+				<td><a href="/stars/{{ x.name }}">{{ x.name }}</a></td>
+			</tr>
+			{% endfor %}
+			{%for x in and_exoplanet%}
+			<tr>
+				<td><a href="/exoplanets/{{ x.name }}">{{ x.name }}</a></td>
+			</tr>
+			{% endfor %}
+			{%for x in and_planet%}
+			<tr>
+				<td><a href="/planets/{{ x.name }}">{{ x.name }}</a></td>
+			</tr>
+			{% endfor %}
+			{%for x in and_moon%}
+			<tr>
+				<td><a href="/moons/{{ x.name }}">{{ x.name }}</a></td>
+			</tr>
+			<hr />
+			<p>OR</p>
+			{%for x in or_family%}
+			<tr>
+				<td><a href="/families/{{ x.name }}">{{ x.name }}</a></td>
+			</tr>
+			{% endfor %}
+			{%for x in or_constellation%}
+			<tr>
+				<td><a href="/constellations/{{ x.name }}">{{ x.name }}</a></td>
+			</tr>
+			{% endfor %}
+			{%for x in or_star%}
+			<tr>
+				<td><a href="/stars/{{ x.name }}">{{ x.name }}</a></td>
+			</tr>
+			{% endfor %}
+			{%for x in or_exoplanet%}
+			<tr>
+				<td><a href="/exoplanets/{{ x.name }}">{{ x.name }}</a></td>
+			</tr>
+			{% endfor %}
+			{%for x in or_planet%}
+			<tr>
+				<td><a href="/planets/{{ x.name }}">{{ x.name }}</a></td>
+			</tr>
+			{% endfor %}
+			{%for x in or_moon%}
+			<tr>
+				<td><a href="/moons/{{ x.name }}">{{ x.name }}</a></td>
+			</tr>
+			{% endfor %}-->
 		</div>
 	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		
