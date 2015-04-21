@@ -29,25 +29,11 @@
 			</div>
 			<hr />
 			<div>
-				<h2>We use the group SWE_t.py's API to make the following info:</h2>
-                <script>
-                (function() {
-                  var sweAPI = "http://23.253.252.30/api/crime";
-                  $.getJSON( sweAPI, {
-                    tags: "mount rainier",
-                    tagmode: "any",
-                    format: "json"
-                  })
-                    .done(function( data ) {
-                      $.each( data.items, function( i, item ) {
-                        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
-                        if ( i === 3 ) {
-                          return false;
-                        }
-                      });
-                    });
-                })();
-                </script>
+				{% for x in data %}
+					<p>{{x['name']}}</p>
+
+				{% endfor %}
+
 			</div>
 
 			<hr />
