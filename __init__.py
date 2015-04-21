@@ -28,16 +28,64 @@ def indexpage():
 @app.route('/search')
 def searchPage():
     searchVal = request.args.get("val")
-    query = db.session.query(family)
-    query = search(query, searchVal)
 
-    
+    if(" or " in searchVal):
+        searchVal = searchVal.replace(" or ", " ")
+
+    query_family = db.session.query(family)
+    query_constellation = db.session.query(constellation)
+    query_star = db.session.query(star)
+    query_moon = db.session.query(moon)
+    query_planet = db.session.query(planet)
+    query_exoplanet = db.session.query(exoplanet)
+
+    print("and results")
+    and_query_family = search(query_family, searchVal)
+
+    and_query_constellation = search(query_constellation, searchVal)
+
+    and_query_star = search(query_star, searchVal)
+        
+    and_query_exoplanet = search(query_exoplanet, searchVal)
+        
+    and_query_planet = search(query_planet, searchVal)
+        
+    and_query_moon = search(query_moon, searchVal)
+        
+
+    print("or results")
+    or_results = searchVal.split(' ')
+    searchVal = or_results[0]
+    for i in range (1, len(or_results)):
+        searchVal = searchVal + " or " + or_results[i]
+
+    or_query_family = search(query_family, searchVal)
+
+    or_query_constellation = search(query_constellation, searchVal)
+
+    or_query_star = search(query_star, searchVal)
+        
+    or_query_exoplanet = search(query_exoplanet, searchVal)
+        
+    or_query_planet = search(query_planet, searchVal)
+        
+    or_query_moon = search(query_moon, searchVal)
 
 
-    if (query.first() != None):
-        return "Got string: "  + query.first().name
-    else:
-        return "Result does not exist: " + searchVal  
+    return render_template(
+        "search.html", 
+        and_family = and_query_family,
+        and_constellation = and_query_constellation,
+        and_star = and_query_star,
+        and_exoplanet = and_query_exoplanet,
+        and_planet = and_query_planet,
+        and_moon = and_query_moon,
+        or_family = or_query_family,
+        or_constellation = or_query_constellation,
+        or_star = or_query_star,
+        or_exoplanet = or_query_exoplanet,
+        or_planet = or_query_planet,
+        or_moon = or_query_moon)
 
 @app.route('/aboutus')
 def aboutuspage():

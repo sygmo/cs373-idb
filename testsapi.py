@@ -1,13 +1,9 @@
 from unittest import main, TestCase
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.restless import APIManager
 from flask import request
-from sqlalchemy import create_engine
-from sqlalchemy.orm.session import sessionmaker
 from sqlalchemy import Column, ForeignKey, Integer, String, Text, Float, LargeBinary, Boolean
 
-from helpers import DatabaseTestBase
 app = Flask(__name__)
 db = SQLAlchemy(app)
 

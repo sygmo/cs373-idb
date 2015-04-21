@@ -7,7 +7,7 @@ from models import *
 from __init__ import db
 from sqlalchemy import or_
 
-searchVal = "poop"
+searchVal = "earth"
 
 if(" or " in searchVal):
 	searchVal = searchVal.replace(" or ", " ")
