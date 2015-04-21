@@ -39,7 +39,7 @@
 				<td><a href="/constellations/{{ x.name }}">{{ x.name }}</a></td>
 			</tr>
 			{% endfor %}
-			<!--{%for x in and_star%}
+			{%for x in and_star%}
 			<tr>
 				<td><a href="/stars/{{ x.name }}">{{ x.name }}</a></td>
 			</tr>
@@ -58,6 +58,7 @@
 			<tr>
 				<td><a href="/moons/{{ x.name }}">{{ x.name }}</a></td>
 			</tr>
+			{% endfor %}
 			<hr />
 			<p>OR</p>
 			{%for x in or_family%}
@@ -89,7 +90,7 @@
 			<tr>
 				<td><a href="/moons/{{ x.name }}">{{ x.name }}</a></td>
 			</tr>
-			{% endfor %}-->
+			{% endfor %}
 		</div>
 	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		
