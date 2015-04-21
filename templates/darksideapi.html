@@ -23,18 +23,29 @@
 		{% include 'navbar.html' %}
 	    <div id="about-us" class="container">
 
-			<div class="col-lg-12">
-				<h1 class="page-header">Crimes Against the Universe </h1>
+			
+			<h1 class="page-header">Crimes Against the Universe </h1>
 
-			</div>
-			<hr />
-			<div>
-				{% for x in data %}
-					<p>{{x['name']}}</p>
 
-				{% endfor %}
+			
+			{% for x in data %}
+				<p>{{ x['name'] }}</p>
+				<img src="{{ x['photo'] }}"></img>
+				<p>{{ x['crime'] }}</p>
+				<p>{{ x['description'] }}</p>
+				</br>
+			{% endfor %}
 
-			</div>
+
+
+
+
+
+
+
+
+
+
 
 			<hr />
 

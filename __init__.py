@@ -8,6 +8,8 @@ from sqlalchemy_searchable import search
 app = Flask(__name__)
 
 from getJson import getJson
+import getJson as getCeleb
+
 import json
 
 
@@ -43,11 +45,16 @@ def aboutuspage():
 
 @app.route('/darksideapi')
 def darksideapipage():
-
     obj = getJson("http://23.253.252.30/api/celebrity")
+    li = []
+    #return "Length is " + str(len(li))
+    for x in obj:
+        celebrity = getCeleb.getCelebrity(x['id'])
+        li.append(celebrity)
 
 
-    return render_template("darksideapi.html", data = obj)
+
+    return render_template("darksideapi.html", data = li)
 
 @app.route('/unittest_results')
 def unittest_resultspage():
