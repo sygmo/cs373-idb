@@ -28,40 +28,75 @@
                 
 			</div>
 			<hr />
-			<p>AND</p>
+			<h2>AND Results</h2>
+			<hr />
+			<div class="table-responsive col-lg-12 col-sm-6 offset 0">          
+			<table class="table table-hover">
+			<thead>
+			<tr>
+			<th>Family Name</th>
+			<th>Description</th>
+			</tr>
+			</thead>
+			<tbody>
 			{%for x in and_family%}
 			<tr>
 				<td><a href="/families/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.description}}</td>
 				<br>
 			</tr>
 			{% endfor %}
+			</tbody>
+			</table>
+			</div>
+			<hr />
+			<div class="table-responsive col-lg-12 col-sm-6 offset 0">          
+			<table class="table table-hover">
+			<thead>
+			<tr>
+			<th>Name</th>
+			<th>Meaning</th>
+			<th>History</tj>
+			</tr>
+			</thead>
+			<tbody>
 			{%for x in and_constellation%}
 			<tr>
 				<td><a href="/constellations/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.meaning}}</td>
+				<td>{{x.history}}</td>
 				<br>
 			</tr>
 			{% endfor %}
+			</tbody>
+			</table>
+			</div>
+			<hr />
 			{%for x in and_star%}
 			<tr>
 				<td><a href="/stars/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.history}}</td>
 				<br>
 			</tr>
 			{% endfor %}
 			{%for x in and_exoplanet%}
 			<tr>
 				<td><a href="/exoplanets/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.history}}</td>
 				<br>
 			</tr>
 			{% endfor %}
 			{%for x in and_planet%}
 			<tr>
 				<td><a href="/planets/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.history}}</td>
 				<br>
 			</tr>
 			{% endfor %}
 			{%for x in and_moon%}
 			<tr>
 				<td><a href="/moons/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.history}}</td>
 				<br>
 			</tr>
 			{% endfor %}
@@ -70,36 +105,46 @@
 			{%for x in or_family%}
 			<tr>
 				<td><a href="/families/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.description}}</td>
 				<br>
 			</tr>
 			{% endfor %}
 			{%for x in or_constellation%}
 			<tr>
 				<td><a href="/constellations/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.history}}</td>
 				<br>
 			</tr>
 			{% endfor %}
 			{%for x in or_star%}
 			<tr>
 				<td><a href="/stars/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.history}}</td>
 				<br>
 			</tr>
 			{% endfor %}
 			{%for x in or_exoplanet%}
 			<tr>
 				<td><a href="/exoplanets/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.history}}</td>
 				<br>
 			</tr>
 			{% endfor %}
+			<table>
+			<tbody>
 			{%for x in or_planet%}
 			<tr>
 				<td><a href="/planets/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.history}}</td>
 				<br>
 			</tr>
 			{% endfor %}
+			</tbody>
+			</table>
 			{%for x in or_moon%}
 			<tr>
 				<td><a href="/moons/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.history}}</td>
 				<br>
 			</tr>
 			{% endfor %}

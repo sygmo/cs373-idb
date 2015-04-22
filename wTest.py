@@ -1,3 +1,4 @@
+import re
 from sqlalchemy_searchable import parse_search_query
 from sqlalchemy_searchable import search
 from sqlalchemy import create_engine
@@ -7,8 +8,8 @@ from models import *
 from __init__ import db
 from sqlalchemy import or_
 
-searchVal = "earth"
-
+searchVal = "XO-3"
+searchVal = re.sub(r'(?i)(?<=[^\s|^])-(?=[^\s])', ' ', searchVal)
 if(" or " in searchVal):
 	searchVal = searchVal.replace(" or ", " ")
 

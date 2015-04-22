@@ -32,7 +32,7 @@ class constellation(db.Model, Base):
     photo = db.Column(Text)
     fk_constellation_family = db.Column(Integer, ForeignKey("family.id"))
 
-    search_vector = db.Column(TSVectorType('name', 'meaning', 'history', 'photo_link', 'photo'))
+    search_vector = db.Column(TSVectorType('name', 'meaning', 'history'))
     
 class planet(db.Model, Base):
     __tablename__ = "planet"
@@ -55,7 +55,7 @@ class planet(db.Model, Base):
     photo = db.Column(Text)
     fk_star_planet = db.Column(Integer, ForeignKey("star.id"))
 
-    search_vector = db.Column(TSVectorType('name', 'history', 'photo_link', 'photo'))
+    search_vector = db.Column(TSVectorType('name', 'history'))
 
 class star(db.Model, Base):
     __tablename__ = "star"
@@ -73,7 +73,7 @@ class star(db.Model, Base):
     photo = db.Column(Text)
     fk_constellation_star = db.Column(Integer, ForeignKey("constellation.id"))
 
-    search_vector = db.Column(TSVectorType('name', 'spectral_type', 'history', 'photo_link', 'photo'))
+    search_vector = db.Column(TSVectorType('name', 'spectral_type', 'history'))
 
 class moon(db.Model, Base):
     __tablename__ = "moon"
@@ -88,7 +88,7 @@ class moon(db.Model, Base):
     photo = db.Column(Text)
     fk_planet_moon = db.Column(Integer, ForeignKey("planet.id"))
 
-    search_vector = db.Column(TSVectorType('name', 'history', 'photo_link', 'photo'))
+    search_vector = db.Column(TSVectorType('name', 'history'))
 
 class exoplanet(db.Model, Base):
     __tablename__ = "ExoPlanet"
@@ -103,7 +103,7 @@ class exoplanet(db.Model, Base):
     photo = db.Column(Text)
     fk_star_planet = db.Column(Integer, ForeignKey("star.id"))
 
-    search_vector = db.Column(TSVectorType('name', 'discovered', 'discovery_method', 'history', 'photo_link', 'photo'))
+    search_vector = db.Column(TSVectorType('name', 'discovered', 'discovery_method', 'history'))
 
 
 

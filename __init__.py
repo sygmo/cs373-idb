@@ -5,6 +5,7 @@ from flask.ext.restless import APIManager
 from subprocess import Popen, PIPE
 from sqlalchemy_searchable import parse_search_query
 from sqlalchemy_searchable import search
+import re
 app = Flask(__name__)
 
 from getJson import getJson
@@ -28,7 +29,8 @@ def indexpage():
 @app.route('/search')
 def searchPage():
     searchVal = request.args.get("val")
-
+    
+    searchVal = re.sub(r'(?i)(?<=[^\s|^])-(?=[^\s])', ' ', searchVal)
     if(" or " in searchVal):
         searchVal = searchVal.replace(" or ", " ")
 
