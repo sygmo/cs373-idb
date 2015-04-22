@@ -33,7 +33,11 @@ def searchPage():
     searchVal = re.sub(r'(?i)(?<=[^\s|^])-(?=[^\s])', ' ', searchVal)
     if(" or " in searchVal):
         searchVal = searchVal.replace(" or ", " ")
-
+    if(" and " in searchVal):
+        searchVal = searchVal.replace(" and ", " ")
+        
+    searcher = searchVal
+    
     query_family = db.session.query(family)
     query_constellation = db.session.query(constellation)
     query_star = db.session.query(star)
@@ -87,7 +91,8 @@ def searchPage():
         or_star = or_query_star,
         or_exoplanet = or_query_exoplanet,
         or_planet = or_query_planet,
-        or_moon = or_query_moon)
+        or_moon = or_query_moon,
+        searcher = searcher)
 
 @app.route('/aboutus')
 def aboutuspage():
