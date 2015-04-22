@@ -14,7 +14,6 @@ def getCharge(val):
 	crime['description'] = jsonObj['description']
 	return crime
 
-
 def getCelebrity(val):
 	jsonObj = getJson("http://23.253.252.30/api/celebrity/" + str(val))
 	celebrity = {}
@@ -30,7 +29,11 @@ def getCelebrity(val):
 	celebrity['photo'] = jsonObj['picture_url']
 	return celebrity
 
-
+def getChargeCount(val):
+    jsonObj = getJson("http://23.253.252.30/api/charge")
+    charge = {}
+    charge['count'] = jsonObj['id']
+    return charge
 
 
 

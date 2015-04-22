@@ -106,10 +106,13 @@ def darksideapipage():
     for x in obj:
         celebrity = getCeleb.getCelebrity(x['id'])
         li.append(celebrity)
-
-
-
-    return render_template("darksideapi.html", data = li)
+    charge = getJson("http://23.253.252.30/api/charge")
+    liCharge = []
+    for x in charge:
+        charge = getCeleb.getCharge(x['id'])
+        liCharge.append(charge)
+    chargeSize = str(len(liCharge))
+    return render_template("darksideapi.html", data = li, chargeSize = chargeSize)
 
 @app.route('/unittest_results')
 def unittest_resultspage():
