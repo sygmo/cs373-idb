@@ -30,11 +30,14 @@
 			<hr />
 			<h2>AND Results</h2>
 			<hr />
+			
+			{% if and_family.count() > 0 %}
+			<h3>Results for Family:</h3>
 			<div class="table-responsive col-lg-12 col-sm-6 offset 0">          
 			<table class="table table-hover">
 			<thead>
 			<tr>
-			<th>Family Name</th>
+			<th>Name</th>
 			<th>Description</th>
 			</tr>
 			</thead>
@@ -43,20 +46,22 @@
 			<tr>
 				<td><a href="/families/{{ x.name }}">{{ x.name }}</a></td>
 				<td>{{x.description}}</td>
-				<br>
 			</tr>
 			{% endfor %}
 			</tbody>
 			</table>
 			</div>
 			<hr />
+			{% endif %}
+			{% if and_constellation.count() > 0 %}
+			<h3>Results for Constellation:</h3>
 			<div class="table-responsive col-lg-12 col-sm-6 offset 0">          
 			<table class="table table-hover">
 			<thead>
 			<tr>
 			<th>Name</th>
 			<th>Meaning</th>
-			<th>History</tj>
+			<th>History</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -65,89 +70,252 @@
 				<td><a href="/constellations/{{ x.name }}">{{ x.name }}</a></td>
 				<td>{{x.meaning}}</td>
 				<td>{{x.history}}</td>
-				<br>
 			</tr>
 			{% endfor %}
 			</tbody>
 			</table>
 			</div>
 			<hr />
+			{% endif %}
+			{% if and_star.count() > 0 %}
+			<h3>Results for Star:</h3>
+			<div class="table-responsive col-lg-12 col-sm-6 offset 0">          
+			<table class="table table-hover">
+			<thead>
+			<tr>
+			<th>Name</th>
+			<th>Spectral Type</th>
+			<th>History</th>
+			</tr>
+			</thead>
+			<tbody>
 			{%for x in and_star%}
 			<tr>
 				<td><a href="/stars/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.spectral_type}}</td>
 				<td>{{x.history}}</td>
-				<br>
 			</tr>
 			{% endfor %}
+			</tbody>
+			</table>
+			</div>
+			<hr />
+			{% endif %}
+			{% if and_exoplanet.count() > 0 %}
+			<h3>Results for Exoplanet:</h3>
+			<div class="table-responsive col-lg-12 col-sm-6 offset 0">          
+			<table class="table table-hover">
+			<thead>
+			<tr>
+			<th>Name</th>
+			<th>Discovered</th>
+			<th>Discovery Method</th>
+			<th>History</th>
+			</tr>
+			</thead>
+			<tbody>
 			{%for x in and_exoplanet%}
 			<tr>
 				<td><a href="/exoplanets/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.discovered}}</td>
+				<td>{{x.discovery_method}}</td>
 				<td>{{x.history}}</td>
-				<br>
 			</tr>
 			{% endfor %}
+			</tbody>
+			</table>
+			</div>
+			<hr />
+			{% endif %}
+			{% if and_planet.count() > 0 %}
+			<h3>Results for Planet:</h3>
+			<div class="table-responsive col-lg-12 col-sm-6 offset 0">          
+			<table class="table table-hover">
+			<thead>
+			<tr>
+			<th>Name</th>
+			<th>History</th>
+			</tr>
+			</thead>
+			<tbody>
 			{%for x in and_planet%}
 			<tr>
 				<td><a href="/planets/{{ x.name }}">{{ x.name }}</a></td>
 				<td>{{x.history}}</td>
-				<br>
 			</tr>
 			{% endfor %}
+			</tbody>
+			</table>
+			</div>
+			<hr />
+			{% endif %}
+			{% if and_moon.count() > 0 %}
+			<h3>Results for Moon:</h3>
+			<div class="table-responsive col-lg-12 col-sm-6 offset 0">          
+			<table class="table table-hover">
+			<thead>
+			<tr>
+			<th>Name</th>
+			<th>History</th>
+			</tr>
+			</thead>
+			<tbody>
 			{%for x in and_moon%}
 			<tr>
 				<td><a href="/moons/{{ x.name }}">{{ x.name }}</a></td>
 				<td>{{x.history}}</td>
-				<br>
 			</tr>
 			{% endfor %}
+			</tbody>
+			</table>
+			</div>
 			<hr />
-			<p>OR</p>
+			{% endif %}
+			<hr />
+			<h2>OR Results</h2>
+			<hr />
+			
+			{% if or_family.count() > 0 %}
+			<h3>Results for Family:</h3>
+			<div class="table-responsive col-lg-12 col-sm-6 offset 0">          
+			<table class="table table-hover">
+			<thead>
+			<tr>
+			<th>Name</th>
+			<th>Description</th>
+			</tr>
+			</thead>
+			<tbody>
 			{%for x in or_family%}
 			<tr>
 				<td><a href="/families/{{ x.name }}">{{ x.name }}</a></td>
 				<td>{{x.description}}</td>
-				<br>
 			</tr>
 			{% endfor %}
+			</tbody>
+			</table>
+			</div>
+			<hr />
+			{% endif %}
+			{% if or_constellation.count() > 0 %}
+			<h3>Results for Constellation:</h3>
+			<div class="table-responsive col-lg-12 col-sm-6 offset 0">          
+			<table class="table table-hover">
+			<thead>
+			<tr>
+			<th>Name</th>
+			<th>Meaning</th>
+			<th>History</th>
+			</tr>
+			</thead>
+			<tbody>
 			{%for x in or_constellation%}
 			<tr>
 				<td><a href="/constellations/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.meaning}}</td>
 				<td>{{x.history}}</td>
-				<br>
 			</tr>
 			{% endfor %}
+			</tbody>
+			</table>
+			</div>
+			<hr />
+			{% endif %}
+			{% if or_star.count() > 0 %}
+			<h3>Results for Star:</h3>
+			<div class="table-responsive col-lg-12 col-sm-6 offset 0">          
+			<table class="table table-hover">
+			<thead>
+			<tr>
+			<th>Name</th>
+			<th>Spectral Type</th>
+			<th>History</th>
+			</tr>
+			</thead>
+			<tbody>
 			{%for x in or_star%}
 			<tr>
 				<td><a href="/stars/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.spectral_type}}</td>
 				<td>{{x.history}}</td>
-				<br>
 			</tr>
 			{% endfor %}
+			</tbody>
+			</table>
+			</div>
+			<hr />
+			{% endif %}
+			{% if or_exoplanet.count() > 0 %}
+			<h3>Results for Exoplanet:</h3>
+			<div class="table-responsive col-lg-12 col-sm-6 offset 0">          
+			<table class="table table-hover">
+			<thead>
+			<tr>
+			<th>Name</th>
+			<th>Discovered</th>
+			<th>Discovery Method</th>
+			<th>History</th>
+			</tr>
+			</thead>
+			<tbody>
 			{%for x in or_exoplanet%}
 			<tr>
 				<td><a href="/exoplanets/{{ x.name }}">{{ x.name }}</a></td>
+				<td>{{x.discovered}}</td>
+				<td>{{x.discovery_method}}</td>
 				<td>{{x.history}}</td>
-				<br>
 			</tr>
 			{% endfor %}
-			<table>
+			</tbody>
+			</table>
+			</div>
+			<hr />
+			{% endif %}
+			{% if or_planet.count() > 0 %}
+			<h3>Results for Planet:</h3>
+			<div class="table-responsive col-lg-12 col-sm-6 offset 0">          
+			<table class="table table-hover">
+			<thead>
+			<tr>
+			<th>Name</th>
+			<th>History</th>
+			</tr>
+			</thead>
 			<tbody>
 			{%for x in or_planet%}
 			<tr>
 				<td><a href="/planets/{{ x.name }}">{{ x.name }}</a></td>
 				<td>{{x.history}}</td>
-				<br>
 			</tr>
 			{% endfor %}
 			</tbody>
 			</table>
+			</div>
+			<hr />
+			{% endif %}
+			{% if or_moon.count() > 0 %}
+			<h3>Results for Moon:</h3>
+			<div class="table-responsive col-lg-12 col-sm-6 offset 0">          
+			<table class="table table-hover">
+			<thead>
+			<tr>
+			<th>Name</th>
+			<th>History</th>
+			</tr>
+			</thead>
+			<tbody>
 			{%for x in or_moon%}
 			<tr>
 				<td><a href="/moons/{{ x.name }}">{{ x.name }}</a></td>
 				<td>{{x.history}}</td>
-				<br>
 			</tr>
 			{% endfor %}
+			</tbody>
+			</table>
+			</div>
+			<hr />
+			{% endif %}
+			<hr />
 		</div>
 	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		
