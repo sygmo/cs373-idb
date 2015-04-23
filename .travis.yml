@@ -13,3 +13,8 @@ before_script:
 # run tests
 script: python tests.py
 script: bash travis.bash
+
+# ignore push events to this branch
+branches:
+  except:
+    - travis-ci
