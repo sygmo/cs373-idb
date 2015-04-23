@@ -46,7 +46,7 @@ hr {
 }
 
 .container {
-	background-color: #BFBFBF;
+	background: rgba(191, 191, 191, .9);
 	opacity: 0.9;
 	margin-bottom: 20px;
 }
@@ -59,3 +59,5 @@ hr {
 {
 	background-color:yellow;
 }
+
+.
