@@ -55,13 +55,16 @@
 
 			
 			<h1 class="page-header">Crimes Against the Universe </h1>
+            <p> We used the API from the group SWE_t.py (<a href="http://docs.starlords.apiary.io/#reference">http://docs.starlords.apiary.io/#reference</a>) to pull and represent the following data and represent it in the following form.</p>
             <div id="piechart" style="width: 450px; height: 250px;"></div>
 			{% for x in data %}
                 <hr/>
 				<p><b> Name:</b> {{ x['name'] }}</p>
 				<img style="max-width: 150px; height: auto;" src="{{ x['photo'] }}"></img>
-				<p>Crime: {{ x['crime'] }}</p>
-				<p>Crime Description: {{ x['description'] }}</p>
+				<p><b>Crime: </b>{{ x['crime'] }}</p>
+                <div align = "justify">
+				<p><b>Crime Description: </b>{{ x['description'] }}</p>
+                </div>
 				</br>
 			{% endfor %}
 
