@@ -7,9 +7,6 @@ python:
 # install dependencies
 install: pip install -r dependencies.txt
 
-before_script:
-  - psql -c 'database test;' - U postgres
-
 # run tests
 script: models.py
 script: nosetests tests.py
