@@ -49,6 +49,7 @@
 	<!-- Optional theme -->
 	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
 	 <body>
+     <div align = "center">
 		{% include 'navbar.html' %}
 	    <div id="about-us" class="container">
 
@@ -56,10 +57,11 @@
 			<h1 class="page-header">Crimes Against the Universe </h1>
             <div id="piechart" style="width: 450px; height: 250px;"></div>
 			{% for x in data %}
-				<p>{{ x['name'] }}</p>
-				<img src="{{ x['photo'] }}"></img>
-				<p>{{ x['crime'] }}</p>
-				<p>{{ x['description'] }}</p>
+                <hr/>
+				<p><b> Name:</b> {{ x['name'] }}</p>
+				<img style="max-width: 150px; height: auto;" src="{{ x['photo'] }}"></img>
+				<p>Crime: {{ x['crime'] }}</p>
+				<p>Crime Description: {{ x['description'] }}</p>
 				</br>
 			{% endfor %}
 
@@ -72,5 +74,6 @@
 	    <script src="{{ url_for('static', filename='js/jquery-2.1.3.min.js') }}"></script>
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+     </div>
 	</body>
 </html>
