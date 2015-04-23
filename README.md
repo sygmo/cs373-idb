@@ -1,11 +1,11 @@
 # cs373-idb
 
 **Team Members:**
-Andres Avila
-Megan Knocke
-Olivia Lin
-Sydney Mercier
-Chris Metcalf
+Andres Avila, 
+Megan Knocke, 
+Olivia Lin, 
+Sydney Mercier, 
+Chris Metcalf 
 
 **Website:** http://104.130.244.239/
 
@@ -26,9 +26,5 @@ Chris Metcalf
 -tests.out (output of PostgreSQL database tests): https://github.com/sygmo/cs373-idb/blob/master/tests.out
 
 -tests.py (tests PostgeSQL database): https://github.com/sygmo/cs373-idb/blob/master/tests.py
-
--testsapi.out (output of API tests): https://github.com/sygmo/cs373-idb/blob/master/testsapi.out
-
--testsapi.py (tests API): https://github.com/sygmo/cs373-idb/blob/master/testsapi.py
 
 -UML.pdf: https://github.com/sygmo/cs373-idb/blob/master/UML.pdf
