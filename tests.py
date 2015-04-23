@@ -3,6 +3,11 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker 
 from sqlalchemy_searchable import search
 
+from flask import Flask
+from flask.ext.sqlalchemy import SQLAlchemy
+from flask import request
+from sqlalchemy import Column, ForeignKey, Integer, String, Text, Float, LargeBinary, Boolean
+
 import threading
 from flask import Flask, render_template, url_for, g, request, session, redirect, abort, flash
 from flask.ext.sqlalchemy import SQLAlchemy
@@ -12,8 +17,6 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from models import *
 from __init__ import unittests
 unittests()
-
-
 
 #for this tests to work you need to have a postgres database 
 #set up with the name testdb, no username, no password
@@ -458,6 +461,36 @@ class tests(TestCase):
         for x in query.all():
             assert (x.name == "Moon")
             assert (x.history == "TEST")
+
+    # testing parts of the API
+    def test_api_path1(self):
+        with app.test_request_context('/planettest'):
+            assert request.path == '/planettest'
+
+    def test_api_path2(self):
+        with app.test_request_context('/constellationtest'):
+            assert request.path == '/constellationtest'
+
+    def test_api_path3(self):
+        with app.test_request_context('/familytest'):
+            assert request.path == '/familytest'
+
+    def test_api_path4(self):
+        with app.test_request_context('/startest'):
+            assert request.path == '/startest'
+
+    def test_api_path5(self):
+        with app.test_request_context('/moontest'):
+            assert request.path == '/moontest'
+
+    def test_api_path6(self):
+        with app.test_request_context('/ExoPlanettest'):
+            assert request.path == '/ExoPlanettest'
+
+    def test_api_get(self):
+        with app.test_request_context('/planet', method='GET'):
+            assert request.method == 'GET'
+
     
 if __name__ == "__main__":
     main()
