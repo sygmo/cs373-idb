@@ -1,6 +1,7 @@
 from unittest import main, TestCase
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker 
+from sqlalchemy_searchable import search
 
 import threading
 from flask import Flask, render_template, url_for, g, request, session, redirect, abort, flash
@@ -14,7 +15,6 @@ unittests()
 
 
 
-
 #for this tests to work you need to have a postgres database 
 #set up with the name testdb, no username, no password
 
@@ -22,7 +22,7 @@ class tests(TestCase):
 
     #setup the database
     def setUp(self):
-       
+        db.configure_mappers()
 
         db.create_all()
 
@@ -383,5 +383,81 @@ class tests(TestCase):
         toRemove = db.session.query(moon).filter(moon.name == "delete").first()
         assert(toRemove == None)
 
+    def test_search_family(self):
+        db.session.add(family(name = "Zodiac", description="TEST"))
+        db.session.commit()
+        searchVal = "Zodiac"
+        query_family = db.session.query(family)
+        query = search(query_family, searchVal)
+        assert(query != None)
+        assert(query.count() > 0)
+        for x in query.all():
+            assert (x.name == "Zodiac")
+            assert (x.description == "TEST")
+            
+    def test_search_constellation(self):
+        db.session.add(constellation(name = "Puppis", meaning="TEST", history="TEST"))
+        db.session.commit()
+        searchVal = "Puppis"
+        query_constellation = db.session.query(constellation)
+        query = search(query_constellation, searchVal)
+        assert(query != None)
+        assert(query.count() > 0)
+        for x in query.all():
+            assert (x.name == "Puppis")
+            assert (x.meaning == "TEST")
+            assert (x.history == "TEST")
+            
+    def test_search_star(self):
+        db.session.add(star(name = "Sun", spectral_type="TEST", history="TEST"))
+        db.session.commit()
+        searchVal = "Sun"
+        query_star = db.session.query(star)
+        query = search(query_star, searchVal)
+        assert(query != None)
+        assert(query.count() > 0)
+        for x in query.all():
+            assert (x.name == "Sun")
+            assert (x.spectral_type == "TEST")
+            assert (x.history == "TEST")
+            
+    def test_search_exoplanet(self):
+        db.session.add(exoplanet(name = "WASP-1b", discovered="TEST", discovery_method="TEST", history="TEST"))
+        db.session.commit()
+        searchVal = "WASP-1b"
+        query_exoplanet = db.session.query(exoplanet)
+        query = search(query_exoplanet, searchVal)
+        assert(query != None)
+        assert(query.count() > 0)
+        for x in query.all():
+            assert (x.name == "WASP-1b")
+            assert (x.discovered == "TEST")
+            assert (x.discovery_method == "TEST")
+            assert (x.history == "TEST")
+            
+    def test_search_planet(self):
+        db.session.add(planet(name = "Earth", history="TEST"))
+        db.session.commit()
+        searchVal = "Earth"
+        query_planet = db.session.query(planet)
+        query = search(query_planet, searchVal)
+        assert(query != None)
+        assert(query.count() > 0)
+        for x in query.all():
+            assert (x.name == "Earth")
+            assert (x.history == "TEST")
+            
+    def test_search_moon(self):
+        db.session.add(moon(name = "Moon", history="TEST"))
+        db.session.commit()
+        searchVal = "Moon"
+        query_moon = db.session.query(moon)
+        query = search(query_moon, searchVal)
+        assert(query != None)
+        assert(query.count() > 0)
+        for x in query.all():
+            assert (x.name == "Moon")
+            assert (x.history == "TEST")
+    
 if __name__ == "__main__":
     main()
