@@ -1,3 +1,478 @@
+commit e5a76ad26159c120131b9fc4b5920a1d28d627ab
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Thu Apr 23 16:04:12 2015 -0500
+
+    Changed description of darkside API
+
+commit c385187283704d282364fcd5f766ceb43a70f751
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 23 15:52:20 2015 -0500
+
+    updated epydoc
+
+commit 1cd24bd21a1b5dfbe96f27c83e4e5f4eb83ef56c
+Merge: 0884cac db0a290
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Thu Apr 23 15:44:11 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit db0a290210200d1960a7f8578b599d8228c19a84
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 15:43:40 2015 -0500
+
+    updated travis, checks for files
+
+commit 0884cac737f946e98f98cbbce66f5c0d81d91415
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Thu Apr 23 15:43:33 2015 -0500
+
+    udpated darkside description
+
+commit e8d4ab57e79d1a9b5cfadf293d6b8f6e78415624
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Thu Apr 23 15:32:11 2015 -0500
+
+    updating about us again
+
+commit 6d74abea57a5b6d3e0bdfb1f14b30504f8ae42d8
+Merge: ce46bb8 9037103
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Thu Apr 23 15:25:12 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit ce46bb878025ea0f89219db3931c86a1bdc928fd
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Thu Apr 23 15:23:24 2015 -0500
+
+    updated about us
+
+commit 90371037c90abaced29ac42893ea837de3356ac8
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 15:18:15 2015 -0500
+
+    creates idb.log
+
+commit 5b3b8475511a6778c8e5beb9f35c89685941d9cf
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 15:13:38 2015 -0500
+
+    updated travis.bash
+
+commit 2e8dc64ee3f47903d0b652df28b3726ab7354180
+Merge: 99947d1 2ea68fc
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 15:09:31 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit 99947d1b99016a7f633e52957db196091bca103e
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 15:09:21 2015 -0500
+
+    stops checking for nonexistant files
+
+commit 2ea68fc109139aab11c983555b540017150773de
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Thu Apr 23 15:09:06 2015 -0500
+
+    Update README.md
+
+commit 5d97fcaa4cf89cf88fd107aaa804035eb1e5bf52
+Merge: c745f72 fdaf3f0
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 15:05:28 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit c745f7278acff36d483bba778269a97064223e69
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 15:05:19 2015 -0500
+
+    added travis.bash file
+
+commit fdaf3f02ddc468c35ccce4fa24abf64fe0002abb
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Thu Apr 23 14:48:04 2015 -0500
+
+    left justify about us
+
+commit 77e6517b5ea0df070d362fdeb658dbf961b4cb19
+Merge: b55a131 a9dcb4b
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Thu Apr 23 14:10:54 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit b55a1319fc3fd068535f56fe0e9b502c47a93ac3
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Thu Apr 23 14:10:42 2015 -0500
+
+    centered items on darksideapi
+
+commit a9dcb4bb1dd338a3a0c879b715df7cd8b8398cb7
+Merge: 89f5da9 cdfc5c3
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 13:46:24 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit 89f5da9f0b4dff1f09728f6bbc5d8b014e9644c1
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 13:46:06 2015 -0500
+
+    puncutuation error?
+
+commit cdfc5c3e5ae52dc99f288b40392eeba3e4c2205a
+Merge: 5cf1233 051e0c9
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Thu Apr 23 13:25:46 2015 -0500
+
+    added changes to tests.py and tests.out
+
+commit 5cf1233b6308ed7943a76a9bf9b6f35adb830426
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Thu Apr 23 13:23:37 2015 -0500
+
+    updated tests.py to include api tests
+
+commit 051e0c95d853e981e759dcf206c18a7dd92331a3
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 13:22:27 2015 -0500
+
+    maybe quotation marks make a difference?
+
+commit ddbfae4fb334bd619188a630df39a1a624c28a2c
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 13:16:35 2015 -0500
+
+    created database in travis ci file
+
+commit 264181ac19545f7ba29b08a66d192b4ce402b89e
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 13:10:18 2015 -0500
+
+    yet more updates to travis
+
+commit 2eaf9fa68adedc34238d2e4bbd8ad0493ffe2aed
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 13:03:15 2015 -0500
+
+    more updates to travis
+
+commit 169feab93f7b44604b1a8221ae1bfc44406653b7
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 13:00:09 2015 -0500
+
+    more updates to travis ci file
+
+commit d6232f4fc5d2d051e5731e18900d3860e66d160a
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 12:51:36 2015 -0500
+
+    updated dependencies
+
+commit c756eb9086384da0edd44db36ff19637f3c82aa6
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Apr 23 12:13:17 2015 -0500
+
+    Added tests for search in tests.py with @sygmo
+
+commit a7a20efdfc5476de77a565799d57b7a68f7a6df8
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 12:05:25 2015 -0500
+
+    travis ci should run tests
+
+commit 07944537711389bb56f5d67d72786b023eeebc97
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 11:47:48 2015 -0500
+
+    travis ci file should check for dependencies
+
+commit 52cf1477dede61cb48479c74b3b4d5761e11e3ee
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Thu Apr 23 11:45:31 2015 -0500
+
+    list of required dependencies
+
+commit 237aaacc5a12d68640b805dba4e3a50db5cccf44
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Wed Apr 22 18:03:17 2015 -0500
+
+    broke and fixed darksideapi navbar
+
+commit 3febf046526da7ac3663bfc7f442b1de064e493c
+Merge: 13b977f cfeee7f
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Wed Apr 22 17:59:03 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit 13b977fa2e8aa5179da512aff17785f7da94c5b7
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Wed Apr 22 17:57:44 2015 -0500
+
+    Added gchart pie chart to darksideapi
+
+commit cfeee7f297e104654880e41246b88f85e573f7ac
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Wed Apr 22 17:53:39 2015 -0500
+
+    added basic .travis.yml file
+
+commit ee36f6707ac81571171049716844fd27f8e6cc99
+Author: sygmo <smercier91@wireless-10-147-154-31.public.utexas.edu>
+Date:   Wed Apr 22 17:23:44 2015 -0500
+
+    found a rogue ? and smited it, fix #102
+
+commit 1fe416297bb30b2b5d9b60527b03eabd065a7afc
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Wed Apr 22 16:34:47 2015 -0500
+
+    Removed carousels: unneeded from front page for now. megan, olivia
+
+commit ba7c964c72abd0896d22956b74ffa1a813d80cbf
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Wed Apr 22 16:32:43 2015 -0500
+
+    Removed carousels: unneeded for now. from megan and olivia
+
+commit 262f8c0138a4b3ef797121d259408bebedc0351a
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 22 15:48:53 2015 -0500
+
+    Search done??? :dancer:
+
+commit 6a97e77921ee96e78f930441784506ec40c41038
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 22 13:13:54 2015 -0500
+
+    finished formatting basic template for search.html
+
+commit f217ed220db85a175bd66bd9c0686e7fd2b92af6
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Wed Apr 22 12:24:00 2015 -0500
+
+    started adding columns to tables
+
+commit c35d2225f79abf7542d029640adc94b39e051240
+Merge: 9c391ba 7a559e7
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Apr 21 18:35:40 2015 -0500
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit 9c391ba3a4761076b4a59f289db1a3efa2ff30c4
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Apr 21 18:35:12 2015 -0500
+
+    inserted data from other group's API into page
+
+commit 7a559e760e31f2742e6b087967e467e915b13e27
+Author: sygmo <smercier91@wireless-10-147-199-45.public.utexas.edu>
+Date:   Tue Apr 21 16:23:29 2015 -0500
+
+    added line breaks to search results
+
+commit af3c3ab2c640c0ab359881eae80209ab904cb82e
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Tue Apr 21 16:20:38 2015 -0500
+
+    fixed search.html to remove internal server error
+
+commit 736c71a891a0b6470e592f853de3d64e9c51a31f
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Tue Apr 21 16:12:16 2015 -0500
+
+    started changing for search
+
+commit 2d8d0a7542ab0aa8914e98362e8668dbcce9ab14
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Tue Apr 21 15:51:58 2015 -0500
+
+    updated aboutus page to display the 7 unit tests from testsapi.py
+
+commit f3b7cd2387482fb31d91a342c19223c3d9eda879
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Apr 21 15:07:47 2015 -0500
+
+    added content form API from other group to page
+
+commit 50007590dd159356fd21a7424a63bc052606fba9
+Author: gumarus <a.avila.1@live.com>
+Date:   Tue Apr 21 13:50:46 2015 -0500
+
+    added code to get JSON from other group
+
+commit 7222d9fc5f849fe1e36fbbae39fbd58354ce6fe6
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Mon Apr 20 15:29:06 2015 -0500
+
+    cleaned up code
+
+commit 9147710f9ac7c54f347d0ac70122bb0fa73b5aa8
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Mon Apr 20 15:02:21 2015 -0500
+
+    Added and and or searching in wTest
+
+commit f0b5dd172ed037afc0717360136211749ae54f5e
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Mon Apr 20 14:07:50 2015 -0500
+
+    search kind of working, not finding the, this
+
+commit 2de9f5d7e02ce795ae4d9b52130fe8ee5b4c7660
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Mon Apr 20 13:13:37 2015 -0500
+
+    still not working
+
+commit 19d027de8fcc843b3d4b09ffbd6844ca58d2dc24
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Mon Apr 20 12:43:17 2015 -0500
+
+    search description not working
+
+commit 51ba3bb7c39f100109abc0179750ce7533d05e32
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Sun Apr 19 19:31:05 2015 -0500
+
+    working on search
+
+commit 3cb2da6558c3cd417205b24d74d24ef4260d0a77
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Sun Apr 19 18:49:40 2015 -0500
+
+    corrected + sign
+
+commit 8d501bc25e7537e210b317573b3054c152fb02f6
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Sun Apr 19 18:22:49 2015 -0500
+
+    Got search bar to redirect to search page
+
+commit 25c1afca435107c3d0dcb14344ebf95a0db46b48
+Merge: 2120929 2444f1f
+Author: sygmo <smercier91@wireless-10-147-199-45.public.utexas.edu>
+Date:   Sun Apr 19 17:45:12 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit 2120929fc1441921c9d86b010f4aa1c387bd3aca
+Author: sygmo <smercier91@wireless-10-147-199-45.public.utexas.edu>
+Date:   Sun Apr 19 17:44:22 2015 -0500
+
+    created basic search results page
+
+commit 2444f1f7192ae53d21aa4b82b17e5cdac3dc4dd6
+Author: gumarus <a.avila.1@live.com>
+Date:   Sun Apr 19 17:33:32 2015 -0500
+
+    listening for val in search page
+
+commit 233f2ba32888cf1988829befcf6caae3a511f107
+Author: gumarus <a.avila.1@live.com>
+Date:   Sun Apr 19 17:21:22 2015 -0500
+
+    created routing for search
+
+commit 95499b765cde3efffe0e54cdcc1edb71e85136fa
+Author: gumarus <a.avila.1@live.com>
+Date:   Sun Apr 19 16:44:49 2015 -0500
+
+    added search capabilities
+
+commit 7fa3c3bccfd49743ef120266fe45ea67ef28e941
+Merge: bba7aa2 92280d8
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 16 15:46:07 2015 -0500
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit 92280d895b4269b896d6e93cba3be72377436958
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Apr 16 15:33:37 2015 -0500
+
+    Fixed stars link on families page
+
+commit bba7aa26b25078e9494f72b070718a22d9fce36b
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 16 14:59:08 2015 -0500
+
+    started working with whoosh
+
+commit 4d5312d27f08ec098b56b66f2615bba3e0ea3800
+Merge: 7f25e2a 677f840
+Author: Olivia Lin <olivialin@wireless-10-147-251-195.public.utexas.edu>
+Date:   Tue Apr 14 17:26:15 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit 7f25e2a7ef8d92ec5824c35bc1ebba8f9d8ae228
+Author: Olivia Lin <olivialin@wireless-10-147-251-195.public.utexas.edu>
+Date:   Tue Apr 14 17:23:56 2015 -0500
+
+    added dark said api page to navbar
+
+commit 677f840e9a2a0d11a9949f95a4bbc608b0eba589
+Author: sygmo <smercier91@wireless-10-147-178-208.public.utexas.edu>
+Date:   Tue Apr 14 17:21:10 2015 -0500
+
+    added images and links to carousel, fix #90
+
+commit 376b14625459e28459f1bc1b84f6e5ed1e7e414e
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Tue Apr 14 16:50:36 2015 -0500
+
+    started carousel
+
+commit 63514880ccffc92d9cfabd454e7c9af50cb46415
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Tue Apr 14 16:19:43 2015 -0500
+
+    Removed searchbar datatables made
+
+commit 43ba5faaf528a209b10645d22163ae2cc3a44aa1
+Author: sygmo <smercier91@wireless-10-147-178-208.public.utexas.edu>
+Date:   Tue Apr 14 16:17:53 2015 -0500
+
+    adjusted margin size in css, fix #84
+
+commit fa9de3b621e8c9d5f61661f90f2ecc08a2c5f590
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Tue Apr 14 15:28:35 2015 -0500
+
+    fixed local server issue
+
+commit a458336be0fa4dac3acc2a930e85c864e23747e7
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Tue Apr 14 13:47:52 2015 -0500
+
+    Editing Apiary HOST
+
+commit cc7d17d25f5cd7416cc0fb175fab3e1cea21094c
+Author: Olivia Lin <olivialin@wireless-10-147-219-36.public.utexas.edu>
+Date:   Thu Apr 9 21:13:02 2015 -0500
+
+    Updated Phase 2 IDB.log
+
+commit b769e42063f0957d4966b1d5a1b4f57e3bc6c4de
+Merge: cb59b90 c15b805
+Author: sygmo <smercier91@wireless-10-147-75-128.public.utexas.edu>
+Date:   Thu Apr 9 21:11:58 2015 -0500
+
+    Merge branch 'master' of https://github.com/sygmo/cs373-idb
+
+commit cb59b90d12a9ac5d1ee7bb5e5c3dcb1b9e22c61f
+Author: sygmo <smercier91@wireless-10-147-75-128.public.utexas.edu>
+Date:   Thu Apr 9 21:11:49 2015 -0500
+
+    added tests.out
+
 commit c15b805f7aae39bc1413013da6d31373034ecaa7
 Author: Olivia Lin <olivialin@wireless-10-147-219-36.public.utexas.edu>
 Date:   Thu Apr 9 21:07:04 2015 -0500
