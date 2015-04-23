@@ -23,11 +23,6 @@ check_file "__init__.py"
 check_file "db_create.py"
 check_file "README.md"
 
-echo "Running tests"
-
-coverage run tests.py 2> tests.out
-coverage report -m FreeSpirits/*.py >> tests.out
-
 echo "Making IDB.log"
 
 commit_message=`git log -1 --pretty=%B`
