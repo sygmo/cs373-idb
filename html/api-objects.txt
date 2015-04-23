@@ -1,4 +1,5 @@
 cs373-idb.models	cs373-idb.models-module.html
+cs373-idb.models.Base	cs373-idb.models-module.html#Base
 cs373-idb.models.constellation	cs373-idb.models.constellation-class.html
 cs373-idb.models.constellation.name	cs373-idb.models.constellation-class.html#name
 cs373-idb.models.constellation.photo	cs373-idb.models.constellation-class.html#photo
@@ -7,6 +8,7 @@ cs373-idb.models.constellation.photo_link	cs373-idb.models.constellation-class.h
 cs373-idb.models.constellation.meaning	cs373-idb.models.constellation-class.html#meaning
 cs373-idb.models.constellation.fk_constellation_family	cs373-idb.models.constellation-class.html#fk_constellation_family
 cs373-idb.models.constellation.__tablename__	cs373-idb.models.constellation-class.html#__tablename__
+cs373-idb.models.constellation.search_vector	cs373-idb.models.constellation-class.html#search_vector
 cs373-idb.models.constellation.id	cs373-idb.models.constellation-class.html#id
 cs373-idb.models.constellation.history	cs373-idb.models.constellation-class.html#history
 cs373-idb.models.exoplanet	cs373-idb.models.exoplanet-class.html
@@ -19,11 +21,13 @@ cs373-idb.models.exoplanet.photo_link	cs373-idb.models.exoplanet-class.html#phot
 cs373-idb.models.exoplanet.discovered	cs373-idb.models.exoplanet-class.html#discovered
 cs373-idb.models.exoplanet.orbital_period	cs373-idb.models.exoplanet-class.html#orbital_period
 cs373-idb.models.exoplanet.__tablename__	cs373-idb.models.exoplanet-class.html#__tablename__
+cs373-idb.models.exoplanet.search_vector	cs373-idb.models.exoplanet-class.html#search_vector
 cs373-idb.models.exoplanet.id	cs373-idb.models.exoplanet-class.html#id
 cs373-idb.models.exoplanet.history	cs373-idb.models.exoplanet-class.html#history
 cs373-idb.models.family	cs373-idb.models.family-class.html
 cs373-idb.models.family.__tablename__	cs373-idb.models.family-class.html#__tablename__
 cs373-idb.models.family.description	cs373-idb.models.family-class.html#description
+cs373-idb.models.family.search_vector	cs373-idb.models.family-class.html#search_vector
 cs373-idb.models.family.id	cs373-idb.models.family-class.html#id
 cs373-idb.models.family.name	cs373-idb.models.family-class.html#name
 cs373-idb.models.moon	cs373-idb.models.moon-class.html
@@ -36,6 +40,7 @@ cs373-idb.models.moon.orbital_period	cs373-idb.models.moon-class.html#orbital_pe
 cs373-idb.models.moon.mass	cs373-idb.models.moon-class.html#mass
 cs373-idb.models.moon.__tablename__	cs373-idb.models.moon-class.html#__tablename__
 cs373-idb.models.moon.radius	cs373-idb.models.moon-class.html#radius
+cs373-idb.models.moon.search_vector	cs373-idb.models.moon-class.html#search_vector
 cs373-idb.models.moon.id	cs373-idb.models.moon-class.html#id
 cs373-idb.models.moon.history	cs373-idb.models.moon-class.html#history
 cs373-idb.models.planet	cs373-idb.models.planet-class.html
@@ -56,9 +61,11 @@ cs373-idb.models.planet.fk_star_planet	cs373-idb.models.planet-class.html#fk_sta
 cs373-idb.models.planet.moons	cs373-idb.models.planet-class.html#moons
 cs373-idb.models.planet.__tablename__	cs373-idb.models.planet-class.html#__tablename__
 cs373-idb.models.planet.radius	cs373-idb.models.planet-class.html#radius
+cs373-idb.models.planet.search_vector	cs373-idb.models.planet-class.html#search_vector
 cs373-idb.models.planet.id	cs373-idb.models.planet-class.html#id
 cs373-idb.models.planet.history	cs373-idb.models.planet-class.html#history
 cs373-idb.models.star	cs373-idb.models.star-class.html
+cs373-idb.models.star.search_vector	cs373-idb.models.star-class.html#search_vector
 cs373-idb.models.star.photo	cs373-idb.models.star-class.html#photo
 cs373-idb.models.star.name	cs373-idb.models.star-class.html#name
 cs373-idb.models.star.luminosity	cs373-idb.models.star-class.html#luminosity
