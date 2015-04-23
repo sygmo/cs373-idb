@@ -4,8 +4,13 @@ language: python
 python:
   - "3.4"
 
+
 # install dependencies
 install: pip install -r dependencies.txt
 
+# create database
+before_script:
+  - psql -c 'create database testdb'; -U postgres
+
 # run tests
-script: python models.py develop && nosetests tests.py
+script: nosetests tests.py
