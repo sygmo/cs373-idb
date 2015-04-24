@@ -1,3 +1,58 @@
+commit 71d2bbd99d17dda4af070bca283b8723a8794141
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 23 20:32:41 2015 -0500
+
+    finished styling site
+
+commit 59e5fd03c3f546de2cdce7b20b67864bced1172b
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 23 19:47:40 2015 -0500
+
+    fixed style for constellation page
+
+commit b1a46fdee7951d74962cf6ea561f91e089b23fce
+Author: Christopher Metcalf <csmetcalf@gmail.com>
+Date:   Thu Apr 23 19:41:28 2015 -0500
+
+    added images
+
+commit 71e01e8eb978f57ea58efaf0f8fc3625f05b4b4e
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 23 19:37:18 2015 -0500
+
+    fixed style for rest of pages
+
+commit f4c8d6902468846ef7f91babb0d3ab3010d38ac6
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 23 19:02:27 2015 -0500
+
+    finished adding a little touch to pages
+
+commit b910e33acd4ae05cdb71b9652c4d58badac80152
+Merge: 7ca345f 7900b7a
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 23 18:22:45 2015 -0500
+
+    Merge branch 'master' of github.com:sygmo/cs373-idb
+
+commit 7ca345f161d17030e5825b3057c94a64d3cdb5df
+Author: gumarus <a.avila.1@live.com>
+Date:   Thu Apr 23 18:22:20 2015 -0500
+
+    added style to family
+
+commit 7900b7aff4a6192fdaf28efa7502f6af723c5cea
+Author: mknocke <megan.knocke@utexas.edu>
+Date:   Thu Apr 23 16:44:33 2015 -0500
+
+    Updated UML
+
+commit 2317e413ac96328a33eb57e1ce66d80979f7e9b2
+Author: Olivia Lin <oliviajlin@utexas.edu>
+Date:   Thu Apr 23 16:36:49 2015 -0500
+
+    Updated IDB.log for Phase 3
+
 commit e5a76ad26159c120131b9fc4b5920a1d28d627ab
 Author: Olivia Lin <oliviajlin@utexas.edu>
 Date:   Thu Apr 23 16:04:12 2015 -0500
