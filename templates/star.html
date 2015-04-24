@@ -113,24 +113,24 @@
 			{%endif%}
 			<hr />
 			<div class="row">
-				<h2 >Constellation</h2>
+				<h3 style="font-variant: small-caps;">Constellation</h3>
 			</div>
 			<hr />
 			<div class="row">
-				<div class="col-lg-4 col-sm-6 text-center offset 0">
+				<div class="col-lg-4 col-sm-6 text-left offset 0">
 				{% if name == "Sun" %}
-					<img class="img-responsive img-center" src="../static/{{ constellation_photo }}" alt="{{ constellation_name }}">
+					<img class="img-responsive img-left" src="../static/{{ constellation_photo }}" alt="{{ constellation_name }}">
 				{% endif %}	
 					<h3><a href="/constellations/{{ constellation_name }}">{{ constellation_name }}</a></h3>
 				</div>
 			</div>
 			<hr />
 			<div class="row">
-				<h2>ExoPlanets</h2>
+				<h3 style="font-variant: small-caps;">ExoPlanets</h3>
 			</div>
 			<hr />
 			<div class="row">
-				<h3 class="text-center">There are {{ all_exoplanets|length }} notable exoplanet(s)</h3>
+				<h4 class="text-left" style="margin-left:15px;">There are {{ all_exoplanets|length }} notable exoplanet(s)</h4>
 				{% for x in all_exoplanets %}
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
 					<h3><a href="/exoplanets/{{ x[0].name }}">{{ x[0].name }}</a></h3>
@@ -139,11 +139,11 @@
 			</div>
 			<hr />
 			<div class="row">
-				<h2>Planets</h2>
+				<h3 style="font-variant: small-caps;">Planets</h3>
 			</div>
 			<hr />
 			<div class="row">
-				<h3 class="text-center">There are {{ all_planets|length }} planet(s)</h3>
+				<h4 class="text-left" style="margin-left:15px;">There are {{ all_planets|length }} planet(s)</h4>
 				{% for x in all_planets %}
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
 					<img class="img-responsive img-center" src="../static/{{ x[0].photo }}" alt="{{ x[0].name }}">
@@ -153,11 +153,11 @@
 			</div>
 			<hr />
 			<div class="row">
-				<h2>Moons</h2>
+				<h3 style="font-variant: small-caps;">Moons</h3>
 			</div>
 			<hr />
 			<div class="row">
-				<h3 class="text-center">There are {{ all_moons|length }} notable moon(s)</h3>
+				<h4 class="text-left" style="margin-left:15px;">There are {{ all_moons|length }} notable moon(s)</h4>
 				{% for x in all_moons %}
 				<div class="col-lg-4 col-sm-6 text-center offset 0">
 					<img class="img-responsive img-center" src="../static/{{ x[0].photo }}" alt="{{ x[0].name }}">
